@@ -218,9 +218,9 @@
     .gal-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
     .foot-top{grid-template-columns:1fr 1fr}
     .acad-visual{min-height:280px}
-    /* hero: let it flow instead of forcing full height + absolute meta */
-    .hero{min-height:auto}
-    .hero .wrap{padding:8.5rem 0 2.5rem}
+    /* hero: stack content + meta vertically instead of flex row + absolute meta */
+    .hero{min-height:auto;flex-direction:column;align-items:stretch;padding-bottom:3rem}
+    .hero .wrap{padding:8.5rem 0 0}
     .hero p.lead{font-size:1.04rem;line-height:1.65}
     .hero-meta{position:static;margin-top:2.6rem}
     .hero-meta .wrap{flex-direction:column;align-items:flex-start;gap:.55rem}
