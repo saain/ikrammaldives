@@ -1,0 +1,13 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# archives
+*.zip
+
+# vercel
+.vercel
+
+# deps (none used, but just in case)
+node_modules/
