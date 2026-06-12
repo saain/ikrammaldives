@@ -626,7 +626,13 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
   display:flex;flex-direction:column;align-items:center;gap:.7rem;text-align:center;
   padding-left:2.2rem;border-left:1px solid var(--line-light);
 }
-.pw-moonsvg{width:108px;height:108px;filter:drop-shadow(0 8px 26px rgba(0,0,0,.45))}
+.pw-moonsvg{
+  width:118px;height:118px;
+  /* moonlight halo + depth — gives even a thin crescent real presence */
+  filter:drop-shadow(0 0 14px rgba(246,241,231,.16))
+         drop-shadow(0 0 30px rgba(217,184,120,.22))
+         drop-shadow(0 10px 26px rgba(0,0,0,.45));
+}
 .pw-moontxt{display:flex;flex-direction:column;gap:.2rem}
 .pw-moontxt strong{font-family:var(--serif);font-weight:500;font-size:1.06rem;color:var(--paper)}
 .pw-moontxt span{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,231,.6)}

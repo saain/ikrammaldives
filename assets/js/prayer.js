@@ -149,10 +149,10 @@
       '<path d="' + litPath(m.p) + '" fill="#fff" filter="url(#pw-ms)"/></mask>' +
       '</defs>' +
       '<g clip-path="url(#pw-mc)">' +
-      '<image href="assets/img/moon.jpg" x="0" y="0" width="100" height="100" opacity="0.14"/>' +
+      '<image href="assets/img/moon.jpg" x="0" y="0" width="100" height="100" opacity="0.22"/>' +
       '<image href="assets/img/moon.jpg" x="0" y="0" width="100" height="100" mask="url(#pw-ml)"/>' +
       '</g>' +
-      '<circle cx="50" cy="50" r="48" fill="none" stroke="rgba(217,184,120,.3)" stroke-width="1"/>' +
+      '<circle cx="50" cy="50" r="48" fill="none" stroke="rgba(217,184,120,.45)" stroke-width="1"/>' +
       '</svg>';
   }
 
@@ -291,14 +291,27 @@
   function buildStrip(t, row) {
     if (!els["pw-strip"]) return;
     var st = getState(t);
+    /* after ʿIshā the board rolls over to tomorrow's schedule */
+    var rolled = !!st.nextRow;
+    var dispRow = rolled ? st.nextRow : row;
+    var fridayForLabels = isFriday(t);
+    if (rolled) {
+      var tm = tomorrowOf(t.y, t.m, t.d);
+      fridayForLabels = new Date(Date.UTC(tm.y, tm.m - 1, tm.d)).getUTCDay() === 5;
+    }
+    var labelOf = function (p) {
+      if (p.key === "dhuhr" && fridayForLabels) return { en: "Jumuʿah", ar: "الجمعة" };
+      return { en: p.en, ar: p.ar };
+    };
     var html = PRAYERS.map(function (p) {
-      var nm = displayName(p, t);
-      var adhan = row[p.i];
-      var iq = iqamaOf(p.key, adhan, t);
+      var nm = labelOf(p);
+      var adhan = dispRow[p.i];
+      var iq = iqamaOf(p.key, adhan, rolled ? null : t);
+      if (p.key === "dhuhr" && fridayForLabels && rolled) iq = adhan + IQAMA_MINUTES_JUMUAH;
       var cls = [];
       if (p.key === "sunrise") cls.push("pw-sun");
-      if (st.prayer.key === p.key && !st.nextRow) cls.push("is-next");
-      else if (adhan * 60 < t.secs && p.key !== "sunrise") cls.push("is-past");
+      if (st.prayer.key === p.key) cls.push("is-next");
+      else if (!rolled && adhan * 60 < t.secs && p.key !== "sunrise") cls.push("is-past");
       return '<li class="' + cls.join(" ") + '"><span class="pw-p">' + nm.en +
         '</span><strong>' + fmt(adhan) + "</strong>" +
         (iq ? '<small>Iqāmah ' + fmt(iq) + "</small>" : '<small>&nbsp;</small>') + "</li>";
