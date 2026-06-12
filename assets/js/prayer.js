@@ -16,7 +16,9 @@
   "use strict";
 
   /* ---------------- settings ---------------- */
-  var IQAMA_MINUTES = { fajr: 15, dhuhr: 15, asr: 15, maghrib: 15, isha: 15 };
+  /* minutes from adhān to iqāmah — from the Masjidul Ikrām azan board */
+  var IQAMA_MINUTES = { fajr: 20, dhuhr: 15, asr: 15, maghrib: 11, isha: 13 };
+  var IQAMA_MINUTES_JUMUAH = 23; /* Friday: khutbah begins (12:12 → 12:35 on the board) */
   var JAMAAH_MINUTES = 10;       /* "congregation in prayer" state after iqāmah */
   var JAMAAH_MINUTES_JUMUAH = 45;/* longer on Fridays: khutbah + ṣalāh */
   var HIJRI_OFFSET_DAYS = 0;     /* set to 1 or -1 if local moon-sighting differs */
@@ -91,8 +93,10 @@
       timeZone: TZ, weekday: "long", day: "numeric", month: "long", year: "numeric"
     }).format(base);
   }
-  function iqamaOf(key, adhan) {
-    return key in IQAMA_MINUTES ? adhan + IQAMA_MINUTES[key] : null;
+  function iqamaOf(key, adhan, t) {
+    if (!(key in IQAMA_MINUTES)) return null;
+    if (key === "dhuhr" && t && isFriday(t)) return adhan + IQAMA_MINUTES_JUMUAH;
+    return adhan + IQAMA_MINUTES[key];
   }
 
   /* ---------------- moon phase ---------------- */
@@ -184,7 +188,7 @@
     var list = PRAYERS.filter(function (p) { return p.key !== "sunrise"; });
     for (var k = 0; k < list.length; k++) {
       var p = list[k];
-      var adhan = row[p.i], iq = iqamaOf(p.key, adhan);
+      var adhan = row[p.i], iq = iqamaOf(p.key, adhan, t);
       var jamaahMin = (p.key === "dhuhr" && isFriday(t)) ? JAMAAH_MINUTES_JUMUAH : JAMAAH_MINUTES;
       if (t.secs < adhan * 60) {
         return { prayer: p, mode: "adhan", target: adhan * 60, row: row };
@@ -290,7 +294,7 @@
     var html = PRAYERS.map(function (p) {
       var nm = displayName(p, t);
       var adhan = row[p.i];
-      var iq = iqamaOf(p.key, adhan);
+      var iq = iqamaOf(p.key, adhan, t);
       var cls = [];
       if (p.key === "sunrise") cls.push("pw-sun");
       if (st.prayer.key === p.key && !st.nextRow) cls.push("is-next");
@@ -319,7 +323,7 @@
         st.mode === "iqama" ? "Adhān called · iqāmah in" :
         st.mode === "jamaah" ? "Congregation in prayer" : "Next prayer";
       var row = st.nextRow || st.row;
-      var adhan = row[st.prayer.i], iq = iqamaOf(st.prayer.key, adhan);
+      var adhan = row[st.prayer.i], iq = iqamaOf(st.prayer.key, adhan, t);
       var metaTxt = "Adhān " + fmt(adhan) + " &nbsp;·&nbsp; Iqāmah " + fmt(iq);
       if (st.mode === "jamaah") {
         var nx = nextAfter(t, st);
