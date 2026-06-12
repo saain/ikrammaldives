@@ -17,10 +17,14 @@
 
   /* ---------------- settings ---------------- */
   var IQAMA_MINUTES = { fajr: 15, dhuhr: 15, asr: 15, maghrib: 15, isha: 15 };
+  var JAMAAH_MINUTES = 10;       /* "congregation in prayer" state after iqāmah */
+  var JAMAAH_MINUTES_JUMUAH = 45;/* longer on Fridays: khutbah + ṣalāh */
   var HIJRI_OFFSET_DAYS = 0;     /* set to 1 or -1 if local moon-sighting differs */
   var HOUR12 = true;             /* false = 24-hour clock */
   var MOSQUE_EN = "Masjidul Ikrām";
   var MOSQUE_AR = "مسجد الإكرام";
+  var DUA_AR = "«إِنَّ الدُّعَاءَ لَا يُرَدُّ بَيْنَ الْأَذَانِ وَالْإِقَامَةِ»";
+  var DUA_EN = "Duʿā' between the adhān and the iqāmah is not rejected — at-Tirmidhī";
   /* ------------------------------------------ */
 
   var DATA = window.IKRAM_PRAYER_DATA;
@@ -172,24 +176,44 @@
   }
 
   /* Determine current state.
-     Returns { prayer, mode: "adhan"|"iqama", targetSecs, dayShift } */
+     mode: "adhan"  — counting down to the next adhān
+           "iqama"  — adhān has been called; counting down to iqāmah
+           "jamaah" — congregation in prayer (after iqāmah)            */
   function getState(t) {
     var row = rowFor(t.y, t.m, t.d);
     var list = PRAYERS.filter(function (p) { return p.key !== "sunrise"; });
     for (var k = 0; k < list.length; k++) {
       var p = list[k];
       var adhan = row[p.i], iq = iqamaOf(p.key, adhan);
+      var jamaahMin = (p.key === "dhuhr" && isFriday(t)) ? JAMAAH_MINUTES_JUMUAH : JAMAAH_MINUTES;
       if (t.secs < adhan * 60) {
         return { prayer: p, mode: "adhan", target: adhan * 60, row: row };
       }
       if (t.secs < iq * 60) {
-        return { prayer: p, mode: "iqama", target: iq * 60, row: row };
+        return { prayer: p, mode: "iqama", target: iq * 60, span: (iq - adhan) * 60, row: row };
+      }
+      if (t.secs < (iq + jamaahMin) * 60) {
+        return { prayer: p, mode: "jamaah", target: (iq + jamaahMin) * 60, row: row };
       }
     }
-    /* past ʿIshā iqāmah → tomorrow's Fajr */
+    /* past ʿIshā congregation → tomorrow's Fajr */
     var tm = tomorrowOf(t.y, t.m, t.d);
     var trow = rowFor(tm.y, tm.m, tm.d);
     return { prayer: list[0], mode: "adhan", target: 86400 + trow[0] * 60, row: row, nextRow: trow };
+  }
+
+  /* the prayer that follows the active one (for the quiet line in jamāʿah state) */
+  function nextAfter(t, st) {
+    var row = st.row;
+    var list = PRAYERS.filter(function (p) { return p.key !== "sunrise"; });
+    for (var k = 0; k < list.length; k++) {
+      if (row[list[k].i] * 60 > st.target) {
+        return { prayer: list[k], adhan: row[list[k].i], t: t };
+      }
+    }
+    var tm = tomorrowOf(t.y, t.m, t.d);
+    var trow = rowFor(tm.y, tm.m, tm.d);
+    return { prayer: list[0], adhan: trow[0], t: t };
   }
 
   function isFriday(t) { return t.weekday === "Fri"; }
@@ -240,7 +264,9 @@
     html += '<div class="pw-next"><span class="pw-label" id="pw-label">Next prayer</span>';
     html += '<span class="pw-name" id="pw-name"></span>';
     html += '<span class="pw-count" id="pw-count">--:--:--</span>';
-    html += '<span class="pw-meta" id="pw-meta"></span></div>';
+    html += '<span class="pw-iqbar" aria-hidden="true"><span class="pw-iqfill" id="pw-iqfill"></span></span>';
+    html += '<span class="pw-meta" id="pw-meta"></span>';
+    html += '<span class="pw-dua"><span class="pw-dua-ar">' + DUA_AR + '</span><span class="pw-dua-en">' + DUA_EN + "</span></span></div>";
     html += '<ul class="pw-strip" id="pw-strip"></ul>';
     var m = moonInfo();
     var badge = moonBadge(m);
@@ -251,7 +277,7 @@
       "</div></div>";
     html += '</div>';
     mount.innerHTML = html;
-    ["pw-label", "pw-name", "pw-count", "pw-meta", "pw-strip", "pw-greg", "pw-hijri"].forEach(function (id) {
+    ["pw-label", "pw-name", "pw-count", "pw-meta", "pw-strip", "pw-greg", "pw-hijri", "pw-iqfill"].forEach(function (id) {
       els[id] = document.getElementById(id);
     });
     buildStrip(t, row);
@@ -289,18 +315,32 @@
     var nm = displayName(st.prayer, t);
     if (st.prayer.key !== lastPrayerKey || st.mode !== lastMode) {
       lastPrayerKey = st.prayer.key; lastMode = st.mode;
-      var label = st.mode === "iqama" ? "Iqāmah in" : "Next prayer";
+      var label =
+        st.mode === "iqama" ? "Adhān called · iqāmah in" :
+        st.mode === "jamaah" ? "Congregation in prayer" : "Next prayer";
       var row = st.nextRow || st.row;
       var adhan = row[st.prayer.i], iq = iqamaOf(st.prayer.key, adhan);
       var metaTxt = "Adhān " + fmt(adhan) + " &nbsp;·&nbsp; Iqāmah " + fmt(iq);
+      if (st.mode === "jamaah") {
+        var nx = nextAfter(t, st);
+        var nxName = displayName(nx.prayer, t);
+        metaTxt = "Next &nbsp;·&nbsp; " + nxName.en + " " + fmt(nx.adhan);
+      }
+      if (mount) {
+        mount.classList.toggle("is-iqama", st.mode === "iqama");
+        mount.classList.toggle("is-jamaah", st.mode === "jamaah");
+      }
       if (els["pw-label"]) {
         els["pw-label"].textContent = label;
         els["pw-name"].innerHTML = nm.en + ' <span class="pw-ar">' + nm.ar + "</span>";
         els["pw-meta"].innerHTML = metaTxt;
+        if (st.mode === "jamaah") els["pw-count"].innerHTML = "قَامَتِ الصَّلَاة";
         buildStrip(t, st.row);
       }
       if (els["pr-name"]) {
-        els["pr-name"].textContent = st.mode === "iqama" ? nm.en + " — iqāmah" : nm.en;
+        els["pr-name"].textContent =
+          st.mode === "iqama" ? nm.en + " — iqāmah" :
+          st.mode === "jamaah" ? nm.en + " — in congregation" : nm.en;
         els["pr-meta"].innerHTML = metaTxt;
       }
       if (els["phm-label"]) {
@@ -313,9 +353,18 @@
     if (left < 0) left = 0;
     var h = Math.floor(left / 3600), m = Math.floor((left % 3600) / 60), s = left % 60;
     var cd = (h > 0 ? pad(h) + ":" : "") + pad(m) + ":" + pad(s);
-    if (els["pw-count"]) els["pw-count"].textContent = cd;
-    if (els["pr-count"]) els["pr-count"].textContent = "in " + cd;
-    if (els["phm-count"]) els["phm-count"].textContent = cd;
+    if (st.mode === "jamaah") {
+      /* digits rest while the congregation prays */
+      if (els["pr-count"]) els["pr-count"].textContent = "ṣalāh in progress";
+      if (els["phm-count"]) els["phm-count"].textContent = "—";
+    } else {
+      if (els["pw-count"]) els["pw-count"].textContent = cd;
+      if (els["pr-count"]) els["pr-count"].textContent = "in " + cd;
+      if (els["phm-count"]) els["phm-count"].textContent = cd;
+    }
+    if (st.mode === "iqama" && els["pw-iqfill"] && st.span) {
+      els["pw-iqfill"].style.width = Math.max(0, Math.min(100, (left / st.span) * 100)).toFixed(2) + "%";
+    }
   }
 
   build(nowMv());
