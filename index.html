@@ -3,514 +3,232 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ikram &mdash; Islamic Da'wah Association of the Maldives</title>
-<meta name="description" content="Ikram is a Maldivian da'wah association founded in 2026, dedicated to nurturing faith through lessons, academy programs, community da'wah, and youth activities." />
+<title>IKRAM — Inviting Hearts to the Light of Guidance</title>
+<meta name="description" content="IKRAM is a da'wah jamiyyah rooted in the Qur'an and Sunnah — teaching authentic knowledge with wisdom, mercy, and beautiful conduct." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Amiri&display=swap" rel="stylesheet" />
-<style>
-  :root{
-    --green:#13322b;        /* deep emerald */
-    --green-2:#1d4a3e;
-    --green-soft:#2f5d4f;
-    --gold:#b8924d;         /* warm brass */
-    --gold-light:#d9b878;
-    --cream:#f6f1e7;        /* paper */
-    --cream-2:#efe8d8;
-    --ink:#1b201d;
-    --muted:#5d655f;
-    --line:rgba(27,32,29,.12);
-    --serif:'Cormorant Garamond',Georgia,serif;
-    --sans:'Inter',system-ui,sans-serif;
-    --arab:'Amiri',serif;
-    --ease:cubic-bezier(.22,1,.36,1);
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:var(--sans);
-    color:var(--ink);
-    background:var(--cream);
-    line-height:1.7;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:.2px}
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%;display:block}
-  .wrap{width:min(1180px,90vw);margin:0 auto}
-  .eyebrow{
-    font-family:var(--sans);font-size:.72rem;font-weight:600;
-    letter-spacing:.28em;text-transform:uppercase;color:var(--gold);
-    display:inline-flex;align-items:center;gap:.7rem;
-  }
-  .eyebrow::before{content:"";width:32px;height:1px;background:var(--gold);display:inline-block}
-
-  /* reveal */
-  .reveal{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
-  .reveal.in{opacity:1;transform:none}
-  .reveal.d1{transition-delay:.12s}.reveal.d2{transition-delay:.24s}.reveal.d3{transition-delay:.36s}.reveal.d4{transition-delay:.48s}
-
-  /* ===== NAV ===== */
-  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:all .5s var(--ease)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:1.6rem 0;transition:padding .5s var(--ease)}
-  .brand{font-family:var(--sans);font-size:1.5rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);transition:color .4s}
-  .brand span{color:var(--gold-light)}
-  .navlinks{display:flex;gap:2.3rem;align-items:center}
-  .navlinks a{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,241,231,.82);position:relative;transition:color .3s}
-  .navlinks a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold-light);transition:width .4s var(--ease)}
-  .navlinks a:hover{color:#fff}.navlinks a:hover::after{width:100%}
-  .nav-cta{border:1px solid rgba(217,184,120,.5);padding:.6rem 1.4rem;border-radius:100px;color:var(--gold-light)!important;transition:all .4s}
-  .nav-cta:hover{background:var(--gold);color:var(--green)!important;border-color:var(--gold)}
-  .nav-cta::after{display:none}
-  header.nav.solid{background:var(--cream);box-shadow:0 1px 0 var(--line)}
-  header.nav.solid .nav-inner{padding:1rem 0}
-  header.nav.solid .brand{color:var(--green)}
-  header.nav.solid .brand span{color:var(--gold)}
-  header.nav.solid .navlinks a{color:var(--muted)}
-  header.nav.solid .navlinks a:hover{color:var(--green)}
-  header.nav.solid .nav-cta{color:var(--green)!important;border-color:var(--gold)}
-  header.nav.solid .nav-cta:hover{background:var(--gold);color:#fff!important}
-  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0}
-  .burger span{width:26px;height:2px;background:var(--cream);transition:.3s}
-  header.nav.solid .burger span{background:var(--green)}
-
-  /* ===== HERO ===== */
-  .hero{position:relative;min-height:100vh;display:flex;align-items:center;color:var(--cream);overflow:hidden}
-  .hero-bg{position:absolute;inset:0;background:
-    radial-gradient(1200px 600px at 75% 15%,rgba(184,146,77,.22),transparent 60%),
-    linear-gradient(160deg,#0d241f 0%,#13322b 45%,#1d4a3e 100%);}
-  .hero-bg::after{content:"";position:absolute;inset:0;opacity:.5;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='1'%3E%3Cpath d='M80 0l28 52 52 28-52 28-28 52-28-52L0 80l52-28z'/%3E%3Ccircle cx='80' cy='80' r='40'/%3E%3C/g%3E%3C/svg%3E");}
-  .hero-glow{position:absolute;width:520px;height:520px;border-radius:50%;
-    background:radial-gradient(circle,rgba(217,184,120,.18),transparent 70%);
-    top:-120px;right:-80px;filter:blur(20px)}
-  .hero .wrap{position:relative;z-index:2;padding:9rem 0 6rem}
-  .hero-arab{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,2vw,1.5rem);letter-spacing:.02em;color:var(--gold-light);margin-bottom:1.6rem;opacity:.92}
-  .hero h1{font-size:clamp(3rem,8vw,6.4rem);font-weight:600;letter-spacing:-.5px;max-width:14ch}
-  .hero h1 em{font-style:italic;color:var(--gold-light)}
-  .hero p.lead{margin-top:1.8rem;max-width:46ch;font-size:1.12rem;color:rgba(246,241,231,.82);font-weight:300}
-  .hero-actions{margin-top:2.6rem;display:flex;gap:1rem;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.9rem;border-radius:100px;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;transition:all .45s var(--ease)}
-  .btn-gold{background:var(--gold);color:var(--green)}
-  .btn-gold:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 14px 30px rgba(184,146,77,.3)}
-  .btn-ghost{border:1px solid rgba(246,241,231,.35);color:var(--cream)}
-  .btn-ghost:hover{border-color:var(--gold-light);color:var(--gold-light)}
-  .hero-meta{position:absolute;bottom:2.4rem;left:0;right:0;z-index:2}
-  .hero-meta .wrap{display:flex;justify-content:space-between;align-items:center;gap:2rem;border-top:1px solid rgba(246,241,231,.14);padding-top:1.4rem;flex-wrap:wrap}
-  .hero-meta span{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,241,231,.6)}
-  .hero-meta strong{color:var(--gold-light);font-weight:500}
-
-  /* ===== SECTION SHELL ===== */
-  section{padding:7rem 0;position:relative}
-  .sec-head{max-width:620px;margin-bottom:3.4rem}
-  .sec-head h2{font-size:clamp(2.1rem,4.4vw,3.2rem);margin-top:1.1rem;color:var(--green)}
-  .sec-head p{margin-top:1.1rem;color:var(--muted);font-size:1.05rem}
-
-  /* ===== ABOUT ===== */
-  .about{background:var(--cream)}
-  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:4.5rem;align-items:center}
-  .about-grid p{color:var(--muted);font-size:1.06rem;margin-bottom:1.2rem}
-  .about-grid p.lead-q{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--green);line-height:1.4}
-  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:2rem}
-  .pillar{padding:1.6rem;border:1px solid var(--line);border-radius:14px;background:#fff;transition:all .45s var(--ease)}
-  .pillar:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 18px 40px rgba(19,50,43,.08)}
-  .pillar h4{font-size:1.35rem;color:var(--green);margin-bottom:.3rem}
-  .pillar span{font-family:var(--arab);color:var(--gold);font-size:1.1rem}
-  .pillar p{font-size:.92rem;color:var(--muted);margin:0;margin-top:.4rem}
-  .stats{display:flex;gap:2.5rem;margin-top:2.4rem;flex-wrap:wrap}
-  .stat .num{font-family:var(--serif);font-size:2.6rem;color:var(--gold);line-height:1}
-  .stat .lbl{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-
-  /* ===== PROGRAMS ===== */
-  .programs{background:var(--green);color:var(--cream)}
-  .programs .sec-head h2{color:var(--cream)}
-  .programs .sec-head p{color:rgba(246,241,231,.7)}
-  .prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-  .prog{padding:2.2rem 1.9rem;border:1px solid rgba(246,241,231,.14);border-radius:16px;background:rgba(255,255,255,.025);transition:all .5s var(--ease);position:relative;overflow:hidden}
-  .prog::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
-  .prog:hover{background:rgba(255,255,255,.06);transform:translateY(-6px)}
-  .prog:hover::before{transform:scaleX(1)}
-  .prog .ic{width:50px;height:50px;display:flex;align-items:center;justify-content:center;border:1px solid var(--gold);border-radius:50%;color:var(--gold-light);margin-bottom:1.3rem}
-  .prog h3{font-size:1.6rem;margin-bottom:.5rem}
-  .prog p{font-size:.94rem;color:rgba(246,241,231,.72)}
-
-  /* ===== ACADEMY feature ===== */
-  .academy{background:var(--cream-2)}
-  .acad-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(19,50,43,.12)}
-  .acad-visual{background:linear-gradient(150deg,#1d4a3e,#13322b);position:relative;min-height:440px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-  .acad-visual::after{content:"";position:absolute;inset:0;opacity:.4;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='none' stroke='%23d9b878' stroke-opacity='0.15'%3E%3Cpath d='M60 5l15 40 40 15-40 15-15 40-15-40L5 60l40-15z'/%3E%3C/g%3E%3C/svg%3E")}
-  .acad-visual .mark{position:relative;z-index:2;text-align:center;color:var(--cream)}
-  .acad-visual .mark .ar{font-family:var(--arab);font-size:3.2rem;color:var(--gold-light);margin-bottom:.6rem}
-  .acad-visual .mark .en{font-family:var(--serif);font-size:1.4rem;letter-spacing:.3em;text-transform:uppercase;opacity:.8}
-  .acad-text{background:#fff;padding:3.4rem}
-  .acad-text h2{font-size:2.4rem;color:var(--green);margin:1rem 0}
-  .acad-text p{color:var(--muted);margin-bottom:1.4rem}
-  .acad-list{list-style:none;display:flex;flex-direction:column;gap:.9rem;margin-bottom:1.8rem}
-  .acad-list li{display:flex;gap:.8rem;align-items:flex-start;font-size:.98rem;color:var(--ink)}
-  .acad-list li::before{content:"✦";color:var(--gold);margin-top:2px}
-
-  /* ===== GALLERY ===== */
-  .gallery{background:var(--cream)}
-  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:1rem}
-  .gal-item{border-radius:14px;overflow:hidden;position:relative;background:var(--green-2);transition:transform .5s var(--ease)}
-  .gal-item span{position:absolute;left:1rem;bottom:.8rem;z-index:3;color:#fff;font-family:var(--serif);font-size:1.15rem;letter-spacing:.02em;text-shadow:0 2px 12px rgba(0,0,0,.4)}
-  .gal-item::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(13,36,31,.7));z-index:2}
-  .gal-item .ph{position:absolute;inset:0;z-index:1;transition:transform .8s var(--ease)}
-  .gal-item:hover .ph{transform:scale(1.08)}
-  .g-tall{grid-row:span 2}.g-wide{grid-column:span 2}
-  .ph1{background:linear-gradient(135deg,#1d4a3e,#2f5d4f)}
-  .ph2{background:linear-gradient(135deg,#13322b,#1d4a3e)}
-  .ph3{background:linear-gradient(135deg,#3a5a4d,#1d4a3e)}
-  .ph4{background:linear-gradient(135deg,#0d241f,#2f5d4f)}
-  .ph5{background:linear-gradient(135deg,#2f5d4f,#13322b)}
-  .ph6{background:linear-gradient(135deg,#1d4a3e,#0d241f)}
-  .gal-note{margin-top:1.4rem;font-size:.85rem;color:var(--muted);font-style:italic}
-
-  /* ===== RESOURCES ===== */
-  .resources{background:var(--cream-2)}
-  .res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
-  .res-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:2rem;transition:all .45s var(--ease);display:flex;flex-direction:column;gap:.6rem}
-  .res-card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(19,50,43,.1);border-color:var(--gold)}
-  .res-card .tag{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
-  .res-card h3{font-size:1.5rem;color:var(--green)}
-  .res-card p{color:var(--muted);font-size:.94rem;flex:1}
-  .res-card .more{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--green);font-weight:600;display:inline-flex;gap:.5rem;align-items:center;transition:gap .3s}
-  .res-card:hover .more{gap:.9rem;color:var(--gold)}
-
-  /* ===== CTA / CONTACT ===== */
-  .contact{background:var(--green);color:var(--cream);position:relative;overflow:hidden}
-  .contact .glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(217,184,120,.14),transparent 70%);bottom:-260px;left:-120px}
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;position:relative;z-index:2}
-  .contact-grid h2{font-size:clamp(2.2rem,4.5vw,3.3rem);color:var(--cream)}
-  .contact-grid .sub{color:rgba(246,241,231,.75);margin:1.2rem 0 2rem;max-width:42ch}
-  .cinfo{display:flex;flex-direction:column;gap:1.3rem;margin-top:2rem}
-  .cinfo div{display:flex;gap:1rem;align-items:flex-start}
-  .cinfo .k{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light)}
-  .cinfo .v{color:var(--cream);font-size:1.02rem}
-  form{display:flex;flex-direction:column;gap:1.1rem;background:rgba(255,255,255,.04);border:1px solid rgba(246,241,231,.14);padding:2.4rem;border-radius:18px}
-  form label{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,231,.7);margin-bottom:-.5rem}
-  input,textarea{background:rgba(255,255,255,.06);border:1px solid rgba(246,241,231,.16);border-radius:10px;padding:.9rem 1rem;color:var(--cream);font-family:var(--sans);font-size:.95rem;transition:border .3s}
-  input:focus,textarea:focus{outline:none;border-color:var(--gold-light)}
-  input::placeholder,textarea::placeholder{color:rgba(246,241,231,.4)}
-  form button{margin-top:.5rem;cursor:pointer;border:0}
-
-  /* ===== FOOTER ===== */
-  footer{background:#0d241f;color:rgba(246,241,231,.7);padding:4rem 0 2rem}
-  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:3rem;border-bottom:1px solid rgba(246,241,231,.12)}
-  .foot-brand{font-family:var(--sans);font-size:1.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cream)}
-  .foot-brand span{color:var(--gold-light)}
-  .foot-top p{font-size:.92rem;margin-top:.8rem;max-width:34ch}
-  .foot-col h5{font-family:var(--sans);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:1.1rem}
-  .foot-col a{display:block;font-size:.92rem;margin-bottom:.6rem;color:rgba(246,241,231,.7);transition:color .3s}
-  .foot-col a:hover{color:var(--gold-light)}
-  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.6rem;font-size:.82rem;color:rgba(246,241,231,.5);flex-wrap:wrap;gap:1rem}
-  .foot-ar{font-family:var(--serif);font-style:italic;color:var(--gold-light)}
-
-  /* ===== RESPONSIVE ===== */
-  @media(max-width:900px){
-    .navlinks{display:none}
-    .burger{display:flex}
-    .navlinks.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--cream);padding:1.5rem 5vw;gap:1.3rem;box-shadow:0 20px 40px rgba(0,0,0,.12)}
-    .navlinks.open a{color:var(--green)}
-    .about-grid,.acad-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}
-    .prog-grid,.res-grid{grid-template-columns:1fr}
-    .gal-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
-    .foot-top{grid-template-columns:1fr 1fr}
-    .acad-visual{min-height:280px}
-    /* hero: stack content + meta vertically instead of flex row + absolute meta */
-    .hero{min-height:auto;flex-direction:column;align-items:stretch;padding-bottom:3rem}
-    .hero .wrap{padding:8.5rem 0 0}
-    .hero p.lead{font-size:1.04rem;line-height:1.65}
-    .hero-meta{position:static;margin-top:2.6rem}
-    .hero-meta .wrap{flex-direction:column;align-items:flex-start;gap:.55rem}
-    .hero-meta span{font-size:.68rem;letter-spacing:.08em;line-height:1.7;word-break:break-word}
-    .acad-text{padding:2.4rem}
-  }
-  @media(max-width:560px){
-    .pillars{grid-template-columns:1fr}
-    .gal-grid{grid-template-columns:1fr;grid-auto-rows:180px}
-    .g-wide{grid-column:span 1}.g-tall{grid-row:span 1}
-    .foot-top{grid-template-columns:1fr}
-    section{padding:5rem 0}
-    .hero h1{font-size:clamp(2.4rem,10vw,3.4rem)}
-    .hero .wrap{padding:7.5rem 0 2rem}
-    .hero p.lead{font-size:1.02rem}
-    .hero-actions{gap:.7rem}
-    .hero-actions .btn{flex:1 1 auto;justify-content:center}
-    .hero-meta .wrap{flex-direction:column;align-items:flex-start;gap:.6rem}
-    .stats{gap:1.8rem}
-    .acad-visual .mark .ar{font-size:2.4rem}
-    .acad-visual .mark .en{font-size:1.1rem;letter-spacing:.2em}
-    .acad-text{padding:2rem 1.6rem}
-    .foot-bottom{flex-direction:column;align-items:flex-start}
-    .cinfo div{align-items:flex-start}
-    form{padding:1.8rem 1.4rem}
-  }
-</style>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+<meta name="theme-color" content="#13322b" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="IKRAM" />
+<meta property="og:title" content="IKRAM — Inviting Hearts to the Light of Guidance" />
+<meta property="og:description" content="IKRAM is a da'wah jamiyyah rooted in the Qur'an and Sunnah — teaching authentic knowledge with wisdom, mercy, and beautiful conduct." />
+<meta property="og:image" content="https://www.ikrammaldives.org/assets/img/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
 
-<!-- NAV -->
-<header class="nav" id="nav">
-  <div class="wrap nav-inner">
-    <a href="#home" class="brand">Ikram<span>.</span></a>
-    <nav class="navlinks" id="menu">
-      <a href="#about">About</a>
-      <a href="#programs">Programs</a>
-      <a href="#academy">Academy</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#resources">Resources</a>
-      <a href="#contact" class="nav-cta">Get Involved</a>
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="IKRAM home"><span class="mark">IKRAM</span><span class="dot"></span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="events.html">Programs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
-    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <a href="resources.html" class="btn btn-ghost nav-cta">Explore Resources</a>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-glow"></div>
-  <div class="wrap">
-    <p class="hero-arab reveal in">In the name of Allah, the Most Gracious, the Most Merciful</p>
-    <h1 class="reveal in d1">Nurturing faith,<br/><em>building community.</em></h1>
-    <p class="lead reveal in d2">Ikram is a Maldivian da'wah association founded in 2026 — devoted to spreading knowledge, strengthening character, and bringing people together through learning, worship, and service.</p>
-    <div class="hero-actions reveal in d3">
-      <a href="#programs" class="btn btn-gold">Explore Programs →</a>
-      <a href="#about" class="btn btn-ghost">Our Mission</a>
+<!-- ===== HERO ===== -->
+<section class="hero" data-hero>
+  <div class="hero-pattern" aria-hidden="true" data-parallax="140"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">Da'wah · Knowledge · Community</span>
+      <p class="bismillah reveal d1">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+      <h1 class="reveal d1">Ik<span class="em">rā</span>m</h1>
+      <p class="hero-sub reveal d2">inviting hearts to the light of guidance</p>
+      <p class="lede reveal d2">A da'wah jamiyyah rooted in the Qur'ān and Sunnah — sharing authentic knowledge with wisdom, mercy, and beautiful conduct.</p>
+      <div class="hero-actions reveal d3">
+        <a href="resources.html" class="btn btn-primary">Begin Learning <span class="arrow">→</span></a>
+        <a href="about.html" class="btn btn-ghost">Our Mission</a>
+      </div>
+      <div class="hero-meta reveal d4">
+        <div><span>120+</span><small>Lessons &amp; Lectures</small></div>
+        <div><span>40+</span><small>Articles</small></div>
+        <div><span>Weekly</span><small>Halaqāt</small></div>
+      </div>
     </div>
-  </div>
-  <div class="hero-meta">
-    <div class="wrap">
-      <span>Established <strong>2026</strong> · Maldives</span>
-      <span>Da'wah · Education · Community · Youth</span>
-    </div>
-  </div>
-</section>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="wrap about-grid">
-    <div class="reveal">
-      <span class="eyebrow">About Ikram</span>
-      <p class="lead-q" style="margin-top:1.4rem">"Honour, generosity, and care — the meaning of <em>Ikram</em> — guide everything we do."</p>
-      <p style="margin-top:1.4rem">Founded in 2026, Ikram is a non-profit Islamic da'wah association based in the Maldives. We exist to make authentic Islamic knowledge accessible, to nurture sincere worship, and to support a generation that lives its faith with confidence and compassion.</p>
-      <p>From structured lessons and our academy to community outreach and youth sport, our work is rooted in mercy, moderation, and excellence — meeting people where they are and walking with them.</p>
-      <div class="stats">
-        <div class="stat"><div class="num">2026</div><div class="lbl">Founded</div></div>
-        <div class="stat"><div class="num">5+</div><div class="lbl">Core Programs</div></div>
-        <div class="stat"><div class="num">All</div><div class="lbl">Ages Welcome</div></div>
-      </div>
-    </div>
-    <div class="reveal d2">
-      <div class="pillars">
-        <div class="pillar"><span>الدعوة</span><h4>Da'wah</h4><p>Inviting to good with wisdom and beautiful conduct.</p></div>
-        <div class="pillar"><span>العلم</span><h4>Knowledge</h4><p>Authentic learning grounded in the Qur'an and Sunnah.</p></div>
-        <div class="pillar"><span>التربية</span><h4>Tarbiyah</h4><p>Cultivating character, sincerity, and discipline.</p></div>
-        <div class="pillar"><span>الأخوة</span><h4>Brotherhood</h4><p>A community that supports one another in faith and life.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROGRAMS -->
-<section class="programs" id="programs">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">What We Do</span>
-      <h2>Programs &amp; Offerings</h2>
-      <p>A holistic path of learning, worship, and community life — for every age and stage of the journey.</p>
-    </div>
-    <div class="prog-grid">
-      <div class="prog reveal">
-        <div class="ic">☾</div>
-        <h3>Da'wah &amp; Outreach</h3>
-        <p>Public talks, island visits, and one-to-one guidance that invite hearts toward Islam with wisdom and warmth.</p>
-      </div>
-      <div class="prog reveal d1">
-        <div class="ic">✎</div>
-        <h3>Lessons &amp; Classes</h3>
-        <p>Weekly circles in Qur'an, Tajweed, Fiqh, Aqeedah, and Seerah — taught by qualified, caring teachers.</p>
-      </div>
-      <div class="prog reveal d2">
-        <div class="ic">✦</div>
-        <h3>Ikram Academy</h3>
-        <p>Structured courses and certifications for students seeking deeper, sustained Islamic study.</p>
-      </div>
-      <div class="prog reveal">
-        <div class="ic">⚑</div>
-        <h3>Youth &amp; Sports</h3>
-        <p>Football, fitness, and team activities that build discipline, brotherhood, and healthy living.</p>
-      </div>
-      <div class="prog reveal d1">
-        <div class="ic">❖</div>
-        <h3>Community Events</h3>
-        <p>Ramadan programs, family gatherings, lectures, and seasonal initiatives that bring people together.</p>
-      </div>
-      <div class="prog reveal d2">
-        <div class="ic">♡</div>
-        <h3>Social &amp; Welfare</h3>
-        <p>Charity drives and support for those in need — translating faith into compassionate action.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ACADEMY FEATURE -->
-<section class="academy" id="academy">
-  <div class="wrap">
-    <div class="acad-grid reveal">
-      <div class="acad-visual">
-        <div class="mark">
-          <div class="ar">أكاديمية إكرام</div>
-          <div class="en">Ikram Academy</div>
+    <div class="hero-arch reveal d2">
+      <div class="arch">
+        <svg class="lamp" viewBox="0 0 48 100" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <line x1="24" y1="0" x2="24" y2="18"/>
+          <circle cx="24" cy="21" r="3"/>
+          <path d="M15 27 H33"/>
+          <path d="M17 28 C7 44 7 68 24 82 C41 68 41 44 31 28 Z" fill="rgba(226,204,146,.14)"/>
+          <path d="M24 82 V90"/>
+          <circle cx="24" cy="94" r="3.2" fill="currentColor" stroke="none"/>
+          <path d="M16 50 H32" opacity=".7"/>
+        </svg>
+        <div class="ayah">
+          <span class="ar">اللَّهُ نُورُ السَّمَاوَاتِ وَالْأَرْضِ</span>
+          <span class="ref">Sūrah an-Nūr · 24:35</span>
         </div>
       </div>
-      <div class="acad-text">
-        <span class="eyebrow">Learn With Us</span>
-        <h2>A place to grow in knowledge</h2>
-        <p>Ikram Academy offers a guided curriculum for learners at every level — from the fundamentals of reading the Qur'an to advanced studies in the Islamic sciences.</p>
-        <ul class="acad-list">
-          <li>Qur'an recitation &amp; memorisation (Hifz)</li>
-          <li>Tajweed, Tafseer &amp; Arabic language</li>
-          <li>Fiqh, Aqeedah &amp; Seerah foundations</li>
-          <li>Courses for children, youth &amp; adults</li>
-          <li>In-person circles and online learning</li>
-        </ul>
-        <a href="#contact" class="btn btn-gold">Enrol &amp; Enquire →</a>
-      </div>
+      <div class="float-badge">Open circles every week — all are welcome</div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery" id="gallery">
+<!-- ===== MEANING / INTRO ===== -->
+<section class="section alt">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Moments</span>
-      <h2>Gallery</h2>
-      <p>Glimpses of learning, gathering, and service across our programs and events.</p>
+    <div class="motif reveal"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 1l3 6 6.5-3-3 6.5 6 3-6 3 3 6.5L15 20l-3 3-3-3-6.5 3 3-6.5-6-3 6-3-3-6.5L9 7z"/></svg></div>
+    <div class="split" style="margin-top:3.4rem">
+      <div class="visual reveal"><span class="ar" data-scrub-scale="1.15">إِكْرَام</span></div>
+      <div class="reveal d2">
+        <span class="eyebrow">The name we carry</span>
+        <h2>Ikrām — a calling to honour</h2>
+        <p>The word <em>ikrām</em> means honouring, generosity, and nobility. It echoes one of the most beautiful descriptions of our Lord in the Qur'ān — <span class="arabic">ذُو الْجَلَالِ وَالْإِكْرَام</span> — <em>the Owner of Majesty and Honour</em>.</p>
+        <p>To honour Allah is to know Him, to worship Him sincerely, and to call others gently toward Him. That is our purpose: to spread beneficial knowledge with mercy, wisdom, and beautiful conduct.</p>
+        <a href="about.html" class="btn btn-ghost" style="margin-top:.6rem">Read our story <span class="arrow">→</span></a>
+      </div>
     </div>
-    <div class="gal-grid reveal">
-      <div class="gal-item g-tall"><div class="ph ph1"></div><span>Weekly Circle</span></div>
-      <div class="gal-item g-wide"><div class="ph ph2"></div><span>Community Lecture</span></div>
-      <div class="gal-item"><div class="ph ph3"></div><span>Youth Football</span></div>
-      <div class="gal-item"><div class="ph ph4"></div><span>Qur'an Class</span></div>
-      <div class="gal-item g-wide"><div class="ph ph5"></div><span>Ramadan Program</span></div>
-      <div class="gal-item"><div class="ph ph6"></div><span>Family Day</span></div>
-    </div>
-    <p class="gal-note">Photography from our programs will appear here as the association grows.</p>
   </div>
 </section>
 
-<!-- RESOURCES -->
-<section class="resources" id="resources">
+<!-- ===== PILLARS ===== -->
+<section class="section">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Knowledge</span>
-      <h2>Resources</h2>
-      <p>Reflections, lesson notes, and practical guidance to benefit your journey — wherever you are.</p>
+    <div class="flourish" aria-hidden="true">
+      <svg viewBox="0 0 420 44" xmlns="http://www.w3.org/2000/svg">
+        <path data-draw d="M10 22 H176"/>
+        <path data-draw d="M244 22 H410"/>
+        <path data-draw d="M210 7 L225 22 L210 37 L195 22 Z"/>
+        <circle data-draw cx="210" cy="22" r="5.5"/>
+      </svg>
     </div>
-    <div class="res-grid">
-      <div class="res-card reveal">
-        <span class="tag">Article</span>
-        <h3>The Meaning of Ikram</h3>
-        <p>How honour, generosity, and care shape the believer's conduct toward others.</p>
-        <a class="more" href="#">Read more →</a>
-      </div>
-      <div class="res-card reveal d1">
-        <span class="tag">Lesson Notes</span>
-        <h3>Foundations of Tawheed</h3>
-        <p>A concise primer on the oneness of Allah and its place in daily worship.</p>
-        <a class="more" href="#">Read more →</a>
-      </div>
-      <div class="res-card reveal d2">
-        <span class="tag">Audio</span>
-        <h3>Friday Reminders</h3>
-        <p>Short, recurring reflections to carry the lessons of jumu'ah through the week.</p>
-        <a class="more" href="#">Listen →</a>
-      </div>
+    <div class="section-head center reveal">
+      <span class="eyebrow">What we do</span>
+      <h2>Three pillars of our work</h2>
+      <p>Everything we create serves one of these aims — to teach, to invite, and to gather upon goodness.</p>
+    </div>
+    <div class="pillars" data-stagger>
+      <article class="pillar reveal d1">
+        <div class="archline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v18M3 7l9-4 9 4M5 10v7a7 3 0 0 0 14 0v-7"/></svg></div>
+        <h3>Da'wah</h3>
+        <p>Inviting people to Allah with wisdom and good counsel — meeting hearts where they are, offering clarity, not pressure.</p>
+      </article>
+      <article class="pillar reveal d2">
+        <div class="archline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 5h12a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4z"/><path d="M20 5H8a2 2 0 0 0-2 2v12"/></svg></div>
+        <h3>Education</h3>
+        <p>Structured lessons in 'aqīdah, fiqh, Qur'ān, and seerah — taught faithfully from authentic sources for every level.</p>
+      </article>
+      <article class="pillar reveal d3">
+        <div class="archline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3 20c0-3.3 2.7-5 6-5s6 1.7 6 5M15 20c0-2.2 1.3-3.6 3.5-3.6S22 17.8 22 20"/></svg></div>
+        <h3>Community</h3>
+        <p>Weekly halaqāt, family programs, and gatherings that turn knowledge into companionship and lasting brotherhood and sisterhood.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- CONTACT / CTA -->
-<section class="contact" id="contact">
-  <div class="glow"></div>
-  <div class="wrap contact-grid">
-    <div class="reveal">
-      <span class="eyebrow">Get Involved</span>
-      <h2>Join the Ikram family</h2>
-      <p class="sub">Whether you want to learn, volunteer, support, or simply ask a question — we'd love to hear from you.</p>
-      <div class="cinfo">
-        <div><div><div class="k">Email</div><div class="v">info@ikrammaldives.org</div></div></div>
-        <div><div><div class="k">Location</div><div class="v">Maldives</div></div></div>
-        <div><div><div class="k">Hours</div><div class="v">Open for enquiries throughout the week</div></div></div>
-      </div>
-    </div>
-    <form class="reveal d2" onsubmit="event.preventDefault();this.reset();alert('Thank you — your message has been noted. We will be in touch in shā Allah.');">
-      <label>Name</label>
-      <input type="text" placeholder="Your name" required />
-      <label>Email</label>
-      <input type="email" placeholder="you@example.com" required />
-      <label>Message</label>
-      <textarea rows="4" placeholder="How can we help?" required></textarea>
-      <button type="submit" class="btn btn-gold">Send Message →</button>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
+<!-- ===== VERSE BAND ===== -->
+<section class="dark verse" data-pin>
+  <div class="band-pattern" aria-hidden="true" data-parallax="110"></div>
   <div class="wrap">
-    <div class="foot-top">
-      <div>
-        <div class="foot-brand">Ikram<span>.</span></div>
-        <p>A Maldivian Islamic da'wah association founded in 2026 — devoted to knowledge, worship, and community.</p>
-      </div>
-      <div class="foot-col">
-        <h5>Explore</h5>
-        <a href="#about">About</a>
-        <a href="#programs">Programs</a>
-        <a href="#academy">Academy</a>
-        <a href="#gallery">Gallery</a>
-      </div>
-      <div class="foot-col">
-        <h5>Engage</h5>
-        <a href="#resources">Resources</a>
-        <a href="#contact">Get Involved</a>
-        <a href="#contact">Volunteer</a>
-        <a href="#contact">Donate</a>
-      </div>
-      <div class="foot-col">
-        <h5>Contact</h5>
-        <a href="mailto:info@ikrammaldives.org">info@ikrammaldives.org</a>
-        <a href="#">Maldives</a>
-      </div>
+    <p class="ar reveal">ادْعُ إِلَىٰ سَبِيلِ رَبِّكَ بِالْحِكْمَةِ وَالْمَوْعِظَةِ الْحَسَنَةِ</p>
+    <p class="tr reveal d1">"Invite to the way of your Lord with wisdom and good instruction."</p>
+    <p class="ref reveal d2">Sūrah an-Naḥl · 16:125</p>
+  </div>
+</section>
+
+<!-- ===== LATEST ARTICLES ===== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">From the journal</span>
+      <h2>Latest writings</h2>
+      <p>Reflections, reminders, and grounded answers to the questions of everyday faith.</p>
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 Ikram Maldives. All rights reserved.</span>
-      <span class="foot-ar">"And do good — indeed, Allah loves the doers of good."</span>
+    <div class="cards" data-stagger>
+      <a href="article.html" class="card reveal d1">
+        <div class="thumb"><span class="tag">'Aqīdah</span><div class="archwin"></div></div>
+        <div class="body"><div class="meta">Foundations · 6 min</div><h3>The first thing every believer must know</h3><p>Beginning with tawḥīd — why knowing Allah comes before everything else.</p><span class="read">Read article <span class="arrow">→</span></span></div>
+      </a>
+      <a href="article.html" class="card reveal d2">
+        <div class="thumb"><span class="tag">Worship</span><div class="archwin"></div></div>
+        <div class="body"><div class="meta">Practice · 8 min</div><h3>Finding khushū' in a distracted age</h3><p>Prophetic steps to bring presence of heart back into the prayer.</p><span class="read">Read article <span class="arrow">→</span></span></div>
+      </a>
+      <a href="article.html" class="card reveal d3">
+        <div class="thumb"><span class="tag">Character</span><div class="archwin"></div></div>
+        <div class="body"><div class="meta">Akhlāq · 5 min</div><h3>The weight of good character on the scale</h3><p>How the Prophet ﷺ tied beautiful manners to nearness to him.</p><span class="read">Read article <span class="arrow">→</span></span></div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:3.2rem" class="reveal"><a href="articles.html" class="btn btn-ghost">View all articles <span class="arrow">→</span></a></div>
+  </div>
+</section>
+
+<!-- ===== RESOURCES PREVIEW ===== -->
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Listen &amp; learn</span>
+      <h2>Audio lessons this week</h2>
+      <p>Short, focused lessons to take with you — on the commute, in the home, between salawāt.</p>
+    </div>
+    <div class="res-grid" data-stagger>
+      <a href="resources.html" class="res-item reveal d1"><span class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><div class="info"><h4>The Names of Allah — Ar-Raḥmān</h4><span>Knowing Your Lord · Lesson 3</span></div><span class="dur">18 min</span></a>
+      <a href="resources.html" class="res-item reveal d2"><span class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><div class="info"><h4>Tafsīr of Sūrah al-Fātiḥah</h4><span>Living with the Qur'ān · Lesson 1</span></div><span class="dur">32 min</span></a>
+      <a href="resources.html" class="res-item reveal d1"><span class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><div class="info"><h4>The Fiqh of Wuḍū'</h4><span>Pillars of Worship · Lesson 2</span></div><span class="dur">24 min</span></a>
+      <a href="resources.html" class="res-item reveal d2"><span class="play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><div class="info"><h4>Stories of the Prophets — Ādam ﷺ</h4><span>The Chosen Ones · Lesson 1</span></div><span class="dur">29 min</span></a>
+    </div>
+    <div style="text-align:center;margin-top:3.2rem" class="reveal"><a href="resources.html" class="btn btn-ghost">Browse all resources <span class="arrow">→</span></a></div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="dark cta-band">
+  <div class="band-pattern" aria-hidden="true" data-parallax="110"></div>
+  <div class="wrap">
+    <div class="motif reveal" style="color:var(--gold-soft)"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 1l3 6 6.5-3-3 6.5 6 3-6 3 3 6.5L15 20l-3 3-3-3-6.5 3 3-6.5-6-3 6-3-3-6.5L9 7z"/></svg></div>
+    <h2 class="reveal d1">Walk the path of knowledge with us</h2>
+    <p class="reveal d2">Join a weekly halaqah, receive new lessons, and be reminded of what matters most. There is no fee — only sincerity.</p>
+    <div class="reveal d3" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="contact.html" class="btn btn-gold">Get Involved <span class="arrow">→</span></a>
+      <a href="events.html" class="btn btn-ghost" style="border-color:rgba(244,238,225,.3);color:var(--paper)">See Programs</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top" data-stagger>
+      <div class="footer-about">
+        <a class="brand" href="index.html"><span class="mark">IKRAM</span><span class="dot"></span></a>
+        <p>A da'wah jamiyyah devoted to spreading beneficial knowledge and inviting hearts to Allah with wisdom and mercy.</p>
+      </div>
+      <div class="footer-col"><h5>Explore</h5><a href="about.html">About Us</a><a href="articles.html">Articles</a><a href="resources.html">Resources</a><a href="events.html">Programs</a></div>
+      <div class="footer-col"><h5>Learn</h5><a href="resources.html">Audio Lessons</a><a href="resources.html">Video Lectures</a><a href="resources.html">Downloads</a><a href="resources.html">Reading List</a></div>
+      <div class="footer-col"><h5>Connect</h5><a href="contact.html">Contact</a><a href="contact.html">Volunteer</a><a href="contact.html">Support</a><a href="contact.html">Newsletter</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> IKRAM Maldives. All rights reserved.</p>
+      <div class="socials">
+        <a href="#" data-demo aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      </div>
     </div>
   </div>
 </footer>
 
-<script>
-  // sticky nav
-  const nav=document.getElementById('nav');
-  const onScroll=()=>nav.classList.toggle('solid',window.scrollY>60);
-  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
-
-  // mobile menu
-  const burger=document.getElementById('burger'),menu=document.getElementById('menu');
-  burger.addEventListener('click',()=>menu.classList.toggle('open'));
-  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
-
-  // reveal on scroll
-  const io=new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-  },{threshold:.14});
-  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
-</script>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/animations.js"></script>
 </body>
 </html>

@@ -11,3 +11,6 @@ Thumbs.db
 
 # deps (none used, but just in case)
 node_modules/
+
+# local preview workspace
+preview/
