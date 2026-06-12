@@ -22,7 +22,7 @@
 <body>
 
 <!-- ===== HEADER ===== -->
-<header class="site-header">
+<header class="site-header on-dark">
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="IKRAM home"><span class="mark">IKRAM</span><span class="dot"></span></a>
     <nav>
@@ -39,6 +39,14 @@
     <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
+
+<!-- ===== PRAYER TIMES — Masjidul Ikram ===== -->
+<section class="dark prayer-band prayer-band-top" id="prayer-times">
+  <div class="band-pattern" aria-hidden="true" data-parallax="80"></div>
+  <div class="wrap"><div id="prayer-widget" aria-live="polite"></div></div>
+</section>
+
+
 
 <!-- ===== HERO ===== -->
 <section class="hero" data-hero>
@@ -229,6 +237,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/prayer-data.js"></script>
+<script src="assets/js/prayer.js"></script>
 <script src="assets/js/animations.js"></script>
 </body>
 </html>

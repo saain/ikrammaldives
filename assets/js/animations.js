@@ -190,6 +190,9 @@
     var tl = gsap.timeline({
       delay: 0.15,
       defaults: { ease: EASE },
+      /* if the hero isn't the first section (e.g. prayer board first),
+         hold the entrance until the hero scrolls into view */
+      scrollTrigger: { trigger: hero, start: "top 78%", once: true },
       onComplete: function () {
         /* free line clipping so descenders are never cut afterwards */
         if (split.outers.length) gsap.set(split.outers, { overflow: "visible" });

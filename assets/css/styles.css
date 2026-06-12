@@ -159,6 +159,51 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
+/* ============ PRAYER RIBBON (header strip, all pages) ============ */
+.prayer-ribbon{display:block}
+.prayer-ribbon:empty{display:none}
+.prayer-ribbon .pr-in{
+  display:flex;align-items:center;justify-content:center;gap:.8rem;
+  background:linear-gradient(90deg,var(--green-deep),var(--green-2) 55%,var(--green-deep));
+  color:rgba(246,241,231,.85);
+  font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:.5rem 1rem;transition:color .3s;
+}
+.prayer-ribbon .pr-in:hover{color:var(--paper)}
+.prayer-ribbon svg{width:12px;height:12px;color:var(--brass);flex:none}
+.prayer-ribbon .pr-sep{color:var(--brass);opacity:.7}
+.prayer-ribbon strong{
+  color:var(--brass-soft);font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:.1em;
+}
+@media (max-width:560px){
+  .prayer-ribbon .pr-in{gap:.55rem;font-size:.62rem;letter-spacing:.1em}
+  .prayer-ribbon #pr-meta{display:none}
+  .prayer-ribbon .pr-sep:nth-of-type(2){display:none}
+}
+
+/* ============ HERO MINI PRAYER ROW (option C) ============ */
+#prayer-hero-mini{align-items:center;gap:1.5rem;flex-wrap:nowrap}
+#prayer-hero-mini .phm-moon{flex:none;display:flex}
+#prayer-hero-mini .phm-moon svg{width:62px;height:62px;filter:drop-shadow(0 6px 18px rgba(19,50,43,.35))}
+#prayer-hero-mini .phm-txt{display:flex;flex-direction:column;gap:.15rem;flex:1;min-width:0}
+#prayer-hero-mini span.phm-label{
+  font-family:var(--sans);font-size:.62rem;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--brass);display:block;
+}
+#prayer-hero-mini span.phm-name{
+  font-family:var(--serif);font-size:1.55rem;font-weight:560;
+  letter-spacing:0;text-transform:none;color:var(--green);line-height:1.12;display:block;
+}
+#prayer-hero-mini .phm-name .pw-ar{font-family:var(--arab);font-size:.95rem;color:var(--brass);margin-left:.35rem}
+#prayer-hero-mini span.phm-meta{
+  font-family:var(--sans);font-size:.66rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;
+}
+#prayer-hero-mini strong.phm-count{
+  font-family:var(--sans);font-size:clamp(1.8rem,2.6vw,2.4rem);font-weight:300;
+  color:var(--green-2);font-variant-numeric:tabular-nums;line-height:1;flex:none;
+}
+
 /* ============ HOME HERO ============ */
 .hero{
   position:relative;overflow:hidden;
@@ -537,6 +582,90 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
 }
 .socials a:hover{border-color:var(--brass);color:var(--brass-soft);transform:translateY(-3px)}
 
+/* ============ PRAYER TIMES BAND (Masjidul Ikrām) ============ */
+.prayer-band{padding:0}
+.prayer-band .wrap{position:relative;z-index:2;padding:2.5rem 0 2.7rem}
+/* band as the first section of the page (home) */
+.prayer-band-top .wrap{padding-top:7.6rem}
+.prayer-band-top + .hero .hero-grid{padding-top:6rem}
+
+/* header over the dark band: inverted until scrolled */
+.site-header.on-dark:not(.is-scrolled){
+  background:linear-gradient(rgba(13,36,31,.55),rgba(13,36,31,0));
+}
+.site-header.on-dark:not(.is-scrolled) .brand .mark{color:var(--paper)}
+.site-header.on-dark:not(.is-scrolled) .nav-links a{color:rgba(246,241,231,.78)}
+.site-header.on-dark:not(.is-scrolled) .nav-links a:hover{color:var(--paper)}
+.site-header.on-dark:not(.is-scrolled) .nav-cta{
+  border-color:rgba(217,184,120,.5);color:var(--brass-soft);
+}
+.site-header.on-dark:not(.is-scrolled) .nav-cta:hover{
+  border-color:var(--brass-soft);color:var(--paper);
+}
+.site-header.on-dark:not(.is-scrolled) .burger span{background:var(--paper)}
+@media (max-width:980px){
+  /* mobile menu panel stays parchment regardless of header state */
+  .site-header.on-dark:not(.is-scrolled) .nav-links a{color:var(--muted)}
+}
+#prayer-widget:empty{display:none}
+#prayer-widget{opacity:0;transform:translateY(12px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+#prayer-widget.pw-ready{opacity:1;transform:none}
+.pw-head{
+  display:flex;justify-content:space-between;align-items:baseline;gap:1.2rem;flex-wrap:wrap;
+  padding-bottom:1.3rem;margin-bottom:1.5rem;border-bottom:1px solid var(--line-light);
+}
+.pw-mosque{display:inline-flex;align-items:center;gap:.7rem}
+.pw-mosque svg{width:20px;height:20px;color:var(--brass);flex:none}
+.pw-mname{font-family:var(--serif);font-size:1.45rem;color:var(--paper)}
+.pw-mar{font-family:var(--kufi);font-size:1.05rem;color:var(--brass-soft);margin-left:.2rem}
+.pw-dates{display:flex;gap:1.4rem;flex-wrap:wrap;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+.pw-dates #pw-greg{color:rgba(246,241,231,.75)}
+.pw-dates #pw-hijri{color:var(--brass-soft)}
+.pw-main{display:grid;grid-template-columns:320px 1fr 195px;gap:2.2rem;align-items:center}
+.pw-moon{
+  display:flex;flex-direction:column;align-items:center;gap:.7rem;text-align:center;
+  padding-left:2.2rem;border-left:1px solid var(--line-light);
+}
+.pw-moonsvg{width:108px;height:108px;filter:drop-shadow(0 8px 26px rgba(0,0,0,.45))}
+.pw-moontxt{display:flex;flex-direction:column;gap:.2rem}
+.pw-moontxt strong{font-family:var(--serif);font-weight:500;font-size:1.06rem;color:var(--paper)}
+.pw-moontxt span{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,231,.6)}
+.pw-badge{
+  font-style:normal;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--brass-soft);border:1px solid rgba(184,146,77,.4);border-radius:100px;
+  padding:.28rem .7rem;margin-top:.35rem;background:rgba(184,146,77,.12);
+}
+.pw-next{
+  display:flex;flex-direction:column;gap:.35rem;
+  padding-right:2.4rem;border-right:1px solid var(--line-light);
+}
+.pw-label{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
+.pw-name{font-family:var(--serif);font-size:2rem;color:var(--paper);line-height:1.1}
+.pw-name .pw-ar{font-family:var(--arab);font-size:1.15rem;color:var(--brass-soft);margin-left:.45rem}
+.pw-count{
+  font-size:clamp(2.4rem,4vw,3.1rem);font-weight:300;color:var(--brass-soft);
+  font-variant-numeric:tabular-nums;letter-spacing:.04em;line-height:1.1;
+}
+.pw-meta{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,231,.65)}
+.pw-meta small,.pw-strip small,.pw-strip strong small{font-size:.66em;letter-spacing:.04em}
+.pw-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:.65rem;list-style:none}
+.pw-strip li{
+  display:flex;flex-direction:column;align-items:center;gap:.15rem;text-align:center;
+  padding:.85rem .4rem .75rem;border:1px solid var(--line-light);border-radius:12px;
+  background:rgba(255,255,255,.03);
+  transition:border-color .4s,background .4s,opacity .4s;
+}
+.pw-strip .pw-p{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,241,231,.7)}
+.pw-strip strong{font-size:1.18rem;font-weight:500;color:var(--paper);font-variant-numeric:tabular-nums}
+.pw-strip small{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--brass)}
+.pw-strip li.is-next{
+  background:linear-gradient(165deg,rgba(184,146,77,.3),rgba(184,146,77,.1));
+  border-color:var(--brass);
+}
+.pw-strip li.is-next strong{color:var(--brass-soft)}
+.pw-strip li.is-past{opacity:.42}
+.pw-strip li.pw-sun{opacity:.55}
+
 /* ============ MOBILE NAV + RESPONSIVE ============ */
 @media (max-width:980px){
   .nav-links{
@@ -556,6 +685,14 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
   .pillars,.cards,.video-grid{grid-template-columns:1fr 1fr}
   .res-grid,.contact-grid,.values{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr 1fr}
+  .pw-main{grid-template-columns:1fr;gap:1.6rem}
+  .pw-next{padding-right:0;border-right:none;padding-bottom:1.4rem;border-bottom:1px solid var(--line-light)}
+  .pw-strip{grid-template-columns:repeat(3,1fr)}
+  .pw-moon{
+    flex-direction:row;justify-content:center;text-align:left;
+    padding-left:0;border-left:none;padding-top:1.5rem;border-top:1px solid var(--line-light);
+  }
+  .pw-moontxt{align-items:flex-start}
 }
 @media (max-width:620px){
   .pillars,.cards,.video-grid{grid-template-columns:1fr}
