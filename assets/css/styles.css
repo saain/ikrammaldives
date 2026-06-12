@@ -732,14 +732,25 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
   .pillars,.cards,.video-grid{grid-template-columns:1fr 1fr}
   .res-grid,.contact-grid,.values{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr 1fr}
-  .pw-main{grid-template-columns:1fr;gap:1.6rem}
-  .pw-next{padding-right:0;border-right:none;padding-bottom:1.4rem;border-bottom:1px solid var(--line-light)}
-  .pw-strip{grid-template-columns:repeat(3,1fr)}
-  .pw-moon{
-    flex-direction:row;justify-content:center;text-align:left;
-    padding-left:0;border-left:none;padding-top:1.5rem;border-top:1px solid var(--line-light);
+  /* tablet/mobile: countdown left, moon right, strip below */
+  .pw-main{
+    grid-template-columns:1fr auto;gap:1.4rem 1.2rem;
+    grid-template-areas:"next moon" "strip strip";
   }
-  .pw-moontxt{align-items:flex-start}
+  .pw-next{
+    grid-area:next;padding-right:0;border-right:none;
+    padding-bottom:.4rem;justify-content:center;
+  }
+  .pw-strip{grid-area:strip;grid-template-columns:repeat(3,1fr)}
+  .pw-moon{
+    grid-area:moon;flex-direction:column;justify-content:center;text-align:center;
+    padding-left:0;border-left:none;gap:.45rem;align-self:center;
+  }
+  .pw-moonsvg{width:84px;height:84px}
+  .pw-moontxt{align-items:center;gap:.1rem}
+  .pw-moontxt strong{font-size:.88rem}
+  .pw-moontxt span{font-size:.56rem}
+  .pw-badge{font-size:.54rem;padding:.22rem .55rem}
 }
 @media (max-width:620px){
   .pillars,.cards,.video-grid{grid-template-columns:1fr}
@@ -751,6 +762,37 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
   .footer-top{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;align-items:flex-start}
   .float-badge{right:0}
+
+  /* phone: the board becomes compact rows — like the masjid azan display */
+  .prayer-band-top .wrap{padding-top:6.4rem}
+  .prayer-band .wrap{padding-bottom:2.1rem}
+  .pw-head{
+    flex-direction:column;align-items:flex-start;gap:.45rem;
+    padding-bottom:1rem;margin-bottom:1.1rem;
+  }
+  .pw-mname{font-size:1.2rem}
+  .pw-mar{font-size:.9rem}
+  .pw-mosque svg{width:16px;height:16px}
+  .pw-dates{gap:.8rem;font-size:.62rem;letter-spacing:.1em}
+  .pw-main{gap:1.1rem 1rem}
+  .pw-label{font-size:.6rem}
+  .pw-name{font-size:1.65rem}
+  .pw-count{font-size:2.3rem}
+  .pw-meta{font-size:.64rem;letter-spacing:.1em}
+  .pw-moonsvg{width:74px;height:74px}
+  .pw-strip{grid-template-columns:1fr;gap:.45rem}
+  .pw-strip li{
+    flex-direction:row;align-items:baseline;justify-content:space-between;
+    gap:.8rem;text-align:left;padding:.6rem 1rem;border-radius:10px;
+  }
+  .pw-strip .pw-p{flex:1;font-size:.66rem}
+  .pw-strip strong{font-size:1.05rem}
+  .pw-strip small{min-width:96px;text-align:right;font-size:.6rem}
+  #prayer-widget.is-iqama .pw-strip li.is-next{animation-name:pwBreathSm}
+}
+@keyframes pwBreathSm{
+  0%,100%{box-shadow:0 0 0 0 rgba(184,146,77,.3)}
+  50%{box-shadow:0 0 0 7px rgba(184,146,77,0)}
 }
 
 /* ============ REDUCED MOTION ============ */
