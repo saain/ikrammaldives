@@ -25,6 +25,7 @@
   var HOUR12 = true;             /* false = 24-hour clock */
   var MOSQUE_EN = "Masjidul Ikrām";
   var MOSQUE_AR = "مسجد الإكرام";
+  var MOSQUE_LOC = "S. Hithadhoo · Addu City";
   var DUA_AR = "«إِنَّ الدُّعَاءَ لَا يُرَدُّ بَيْنَ الْأَذَانِ وَالْإِقَامَةِ»";
   var DUA_EN = "Duʿā' between the adhān and the iqāmah is not rejected — at-Tirmidhī";
   /* ------------------------------------------ */
@@ -261,7 +262,8 @@
     var html = "";
     html += '<div class="pw-head">';
     html += '<div class="pw-mosque"><svg viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M50 0l12 26 26-12-12 26 24 10-24 10 12 26-26-12-12 26-12-26-26 12 12-26L0 60l24-10-12-26 26 12z"/></svg>';
-    html += '<span class="pw-mname">' + MOSQUE_EN + '</span><span class="pw-mar">' + MOSQUE_AR + '</span></div>';
+    html += '<span class="pw-mtxt"><span class="pw-mrow"><span class="pw-mname">' + MOSQUE_EN + '</span><span class="pw-mar">' + MOSQUE_AR + "</span></span>";
+    html += '<span class="pw-loc">' + MOSQUE_LOC + "</span></span></div>";
     html += '<div class="pw-dates"><span id="pw-greg">' + gregString() + '</span><span id="pw-hijri">' + hijriString(t) + '</span></div>';
     html += '</div>';
     html += '<div class="pw-main">';

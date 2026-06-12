@@ -614,10 +614,16 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
   display:flex;justify-content:space-between;align-items:baseline;gap:1.2rem;flex-wrap:wrap;
   padding-bottom:1.3rem;margin-bottom:1.5rem;border-bottom:1px solid var(--line-light);
 }
-.pw-mosque{display:inline-flex;align-items:center;gap:.7rem}
-.pw-mosque svg{width:20px;height:20px;color:var(--brass);flex:none}
+.pw-mosque{display:inline-flex;align-items:flex-start;gap:.7rem}
+.pw-mosque svg{width:20px;height:20px;color:var(--brass);flex:none;margin-top:.5rem}
+.pw-mtxt{display:flex;flex-direction:column;gap:.15rem}
+.pw-mrow{display:flex;align-items:baseline;gap:.55rem;flex-wrap:wrap}
 .pw-mname{font-family:var(--serif);font-size:1.45rem;color:var(--paper)}
 .pw-mar{font-family:var(--kufi);font-size:1.05rem;color:var(--brass-soft);margin-left:.2rem}
+.pw-loc{
+  font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(246,241,231,.55);
+}
 .pw-dates{display:flex;gap:1.4rem;flex-wrap:wrap;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
 .pw-dates #pw-greg{color:rgba(246,241,231,.75)}
 .pw-dates #pw-hijri{color:var(--brass-soft)}
