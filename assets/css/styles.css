@@ -148,9 +148,12 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
 }
 .nav{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.45rem 0}
 .brand{display:inline-flex;align-items:center;line-height:0}
-.brand .logo{height:44px;width:auto;display:block;transition:opacity .35s var(--ease)}
+.brand .logo{height:46px;width:auto;display:block;transition:opacity .35s var(--ease)}
 .brand .logo-cream{display:none}
 .brand:hover .logo{opacity:.82}
+/* larger, more prominent mark in the top header */
+.site-header .brand .logo{height:60px}
+@media (max-width:560px){.site-header .brand .logo{height:48px}}
 .nav-links{display:flex;list-style:none;gap:2.1rem;align-items:center}
 .nav-links a{
   font-size:.8rem;letter-spacing:.09em;text-transform:uppercase;
