@@ -1,12 +1,12 @@
 /* ============================================================
    IKRAM — shared stylesheet (multi-page site)
-   Parchment / emerald / brass · Cormorant Garamond + Inter + Amiri
+   Terracotta / Parchment / Espresso · Cormorant Garamond + Jost + Amiri + IBM Plex Sans Arabic
    NOTE: no element is hidden by CSS for animation purposes.
    All animation initial states are set by GSAP (assets/js/animations.js)
    so content stays fully visible if JavaScript fails to load.
    ============================================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Plus+Jakarta+Sans:ital,wght@0,300..700;1,300..600&family=Amiri:ital,wght@0,400;0,700;1,400&family=Reem+Kufi:wght@400..600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap");
 
 :root{
   /* ── IKRAM palette · Terracotta / Parchment / Espresso ──
@@ -15,7 +15,8 @@
   --terra:#ae4828;          /* Primary — buttons, links, the mark */
   --terra-deep:#8f3a20;     /* Hover / active / pressed */
   --clay:#e9c9b8;           /* Tint — badges, soft fills */
-  --olive:#4e7a52;          /* Success */
+  --forest:#1e5b43;         /* Forest Green — secondary brand colour */
+  --olive:#4e7a52;          /* lighter green — success / valid */
   --amber:#c98a3f;          /* Notice */
   --cocoa:#5a3424;          /* Secondary — deep panels, footer */
 
@@ -42,10 +43,10 @@
   --muted:#877a68;          /* Warm Grey — captions, labels */
   --line:rgba(42,32,24,.12);
   --line-light:rgba(242,231,213,.16);
-  --serif:'Fraunces',Georgia,serif;
-  --sans:'Plus Jakarta Sans',system-ui,sans-serif;
-  --arab:'Amiri',serif;
-  --kufi:'Reem Kufi','Amiri',sans-serif;
+  --serif:'Cormorant Garamond',Georgia,serif;   /* Headlines — Cormorant 600 */
+  --sans:'Jost',system-ui,sans-serif;            /* Everything else — Jost */
+  --arab:'Amiri',serif;                          /* Arabic — pairs with Cormorant */
+  --kufi:'IBM Plex Sans Arabic','Amiri',sans-serif; /* Arabic UI — pairs with Jost */
   --ease:cubic-bezier(.22,1,.36,1);
   --radius:18px;
   --shadow-soft:0 24px 60px -16px rgba(42,32,24,.18), 0 6px 18px -8px rgba(42,32,24,.08);
@@ -85,8 +86,8 @@ body{
   overflow-x:hidden;
 }
 h1,h2,h3,h4{
-  font-family:var(--serif);font-weight:560;font-optical-sizing:auto;
-  line-height:1.08;letter-spacing:.1px;color:var(--green);
+  font-family:var(--serif);font-weight:600;font-optical-sizing:auto;
+  line-height:1.1;letter-spacing:-.01em;color:var(--green);
 }
 a{color:inherit;text-decoration:none}
 img,svg{max-width:100%}
@@ -98,7 +99,7 @@ section{position:relative}
 /* type helpers */
 .eyebrow{
   font-family:var(--sans);font-size:.72rem;font-weight:600;
-  letter-spacing:.22em;text-transform:uppercase;color:var(--brass);
+  letter-spacing:.24em;text-transform:uppercase;color:var(--brass);
   display:inline-flex;align-items:center;gap:.7rem;
 }
 .eyebrow::before{content:"";width:32px;height:1px;background:var(--brass);display:inline-block;flex:none}
@@ -107,7 +108,7 @@ section{position:relative}
   background:linear-gradient(115deg,var(--brass) 20%,var(--brass-soft) 55%,var(--brass) 90%);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
-.arabic{font-family:var(--arab);color:var(--green-2);font-size:1.1em}
+.arabic{font-family:var(--arab);color:var(--forest);font-size:1.1em}
 .arrow{display:inline-block;transition:transform .35s var(--ease)}
 a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5px)}
 
@@ -202,11 +203,11 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
 #prayer-hero-mini .phm-txt{display:flex;flex-direction:column;gap:.15rem;flex:1;min-width:0}
 #prayer-hero-mini span.phm-label{
   font-family:var(--sans);font-size:.62rem;font-weight:600;
-  letter-spacing:.22em;text-transform:uppercase;color:var(--brass);display:block;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--brass);display:block;
 }
 #prayer-hero-mini span.phm-name{
-  font-family:var(--serif);font-size:1.55rem;font-weight:560;
-  letter-spacing:0;text-transform:none;color:var(--green);line-height:1.12;display:block;
+  font-family:var(--serif);font-size:1.7rem;font-weight:600;
+  letter-spacing:-.01em;text-transform:none;color:var(--green);line-height:1.12;display:block;
 }
 #prayer-hero-mini .phm-name .pw-ar{font-family:var(--arab);font-size:.95rem;color:var(--brass);margin-left:.35rem}
 #prayer-hero-mini span.phm-meta{
@@ -278,7 +279,7 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
 .lamp{position:relative;z-index:2;width:64px;color:var(--brass-soft)}
 .ayah{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;gap:.7rem}
 .ayah .ar{font-family:var(--arab);font-size:clamp(1.25rem,2vw,1.55rem);color:var(--paper);line-height:1.9}
-.ayah .ref{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-soft)}
+.ayah .ref{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass-soft)}
 .float-badge{
   position:absolute;bottom:-1.2rem;right:max(0px,calc(50% - 230px));
   background:var(--surface);border:1px solid var(--line);border-radius:12px;
@@ -356,7 +357,7 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
   color:var(--green-2);margin-bottom:1.3rem;
 }
 .archline svg{width:24px;height:24px}
-.pillar h3{font-size:1.55rem;margin-bottom:.5rem}
+.pillar h3{font-size:1.72rem;margin-bottom:.5rem}
 .pillar p{font-size:.94rem;color:var(--muted)}
 
 .values{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
@@ -433,7 +434,7 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
 }
 .card .body{padding:1.6rem 1.6rem 1.8rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
 .card .meta{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
-.card h3{font-size:1.42rem;line-height:1.22}
+.card h3{font-size:1.58rem;line-height:1.22}
 .card p{font-size:.92rem;color:var(--muted);flex:1}
 .read{
   margin-top:.6rem;font-size:.76rem;font-weight:600;letter-spacing:.12em;
@@ -459,7 +460,7 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
 }
 .res-item:hover .play{background:var(--green-2);color:var(--paper)}
 .res-item .info{flex:1;min-width:0}
-.res-item h4{font-size:1.18rem;line-height:1.25}
+.res-item h4{font-size:1.3rem;line-height:1.25}
 .res-item .info span{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .dur{
   font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);
@@ -490,13 +491,13 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
   padding:2.4rem 1.4rem 1.2rem;
   background:linear-gradient(transparent,rgba(33,25,19,.88));
 }
-.vtitle h4{color:var(--paper);font-size:1.22rem;line-height:1.25}
+.vtitle h4{color:var(--paper);font-size:1.34rem;line-height:1.25}
 .vtitle span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-soft)}
 
 /* ============ PROSE (article / about story) ============ */
 .prose{max-width:720px;margin:0 auto}
 .prose p{color:var(--muted);font-size:1.05rem;margin-bottom:1.3rem}
-.prose h2{font-size:1.9rem;margin:2.4rem 0 1rem}
+.prose h2{font-size:2.1rem;margin:2.4rem 0 1rem}
 .prose h3{font-size:1.45rem;margin:2rem 0 .8rem;color:var(--green-2)}
 .prose blockquote{
   margin:2rem 0;padding:1.4rem 1.8rem;

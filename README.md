@@ -10,7 +10,8 @@ A multi-page static site (no build step) in a terracotta / parchment / espresso 
 ## Stack
 - Plain HTML/CSS/JS — `assets/css/styles.css`, `assets/js/main.js`, `assets/js/animations.js`
 - GSAP 3.13 + ScrollTrigger (cdnjs), Lenis (jsdelivr) — all loaded via CDN
-- Fonts: Fraunces · Plus Jakarta Sans · Amiri · Reem Kufi (Google Fonts)
+- Fonts: Cormorant Garamond (headlines) · Jost (everything else) · Amiri + IBM Plex Sans Arabic (Arabic) — Google Fonts
+- Palette adds Forest Green `#1E5B43` as the secondary brand colour alongside Terracotta
 - Animations respect `prefers-reduced-motion`; content never hidden if JS fails
 
 ## Run locally
