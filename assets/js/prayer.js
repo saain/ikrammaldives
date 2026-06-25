@@ -153,7 +153,7 @@
       '<image href="assets/img/moon.jpg" x="0" y="0" width="100" height="100" opacity="0.22"/>' +
       '<image href="assets/img/moon.jpg" x="0" y="0" width="100" height="100" mask="url(#pw-ml)"/>' +
       '</g>' +
-      '<circle cx="50" cy="50" r="48" fill="none" stroke="rgba(217,184,120,.45)" stroke-width="1"/>' +
+      '<circle cx="50" cy="50" r="48" fill="none" stroke="rgba(201,102,62,.45)" stroke-width="1"/>' +
       '</svg>';
   }
 

@@ -2,7 +2,7 @@
 
 Website for **IKRAM** — a Maldivian Islamic da'wah jamiyyah founded in 2026, devoted to knowledge, worship, and community.
 
-A multi-page static site (no build step) in a parchment / emerald / brass palette, animated with GSAP + ScrollTrigger and Lenis smooth scrolling.
+A multi-page static site (no build step) in a terracotta / parchment / espresso palette, animated with GSAP + ScrollTrigger and Lenis smooth scrolling. Brand mark: calligraphic IKRAM lockup (terracotta on light, cream on dark).
 
 ## Pages
 `index` · `about` · `articles` · `resources` · `events` · `contact` · `article` (template)
