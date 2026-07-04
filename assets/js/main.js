@@ -44,17 +44,56 @@
     });
   });
 
-  /* ---- Demo contact form ---- */
+  /* ---- Article topic filter (articles.html) ---- */
+  var filterRow = document.querySelector(".filter-row");
+  if (filterRow) {
+    var chips = filterRow.querySelectorAll("[data-filter]");
+    var cards = document.querySelectorAll(".cards .card[data-cat]");
+    var empty = document.querySelector(".filter-empty");
+    chips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        var cat = chip.getAttribute("data-filter");
+        chips.forEach(function (c) {
+          var on = c === chip;
+          c.classList.toggle("btn-primary", on);
+          c.classList.toggle("btn-ghost", !on);
+          c.setAttribute("aria-pressed", on ? "true" : "false");
+        });
+        var shown = 0;
+        cards.forEach(function (card) {
+          var show = cat === "all" || card.getAttribute("data-cat") === cat;
+          card.style.display = show ? "" : "none";
+          if (show) shown++;
+        });
+        if (empty) empty.hidden = shown > 0;
+        if (window.ScrollTrigger) ScrollTrigger.refresh();
+      });
+    });
+  }
+
+  /* ---- Contact form → opens the visitor's email app, pre-filled ----
+     A static site has no backend; mailto keeps the form honest and
+     working everywhere. Swap for a Formspree/API endpoint later if wanted. */
   var form = document.getElementById("contactForm");
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      var val = function (name) {
+        var el = form.querySelector('[name="' + name + '"]');
+        return el ? el.value.trim() : "";
+      };
+      var topic = val("topic") || "Message";
+      var subject = "[ikrammaldives.org] " + topic + " — " + val("name");
+      var body = val("message") + "\n\n— " + val("name") + " · " + val("email");
+      window.location.href =
+        "mailto:info@ikrammaldives.org" +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
       var status = form.querySelector(".form-status");
       if (status) {
         status.textContent =
-          "Jazākum Allāhu khayran — your message has been noted. We will be in touch, in shā’ Allah.";
+          "Jazākum Allāhu khayran — your email app should open with the message ready to send.";
       }
-      form.reset();
     });
   }
 })();
