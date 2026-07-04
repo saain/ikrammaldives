@@ -427,17 +427,12 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
   position:relative;aspect-ratio:16/9.4;overflow:hidden;
   background:linear-gradient(150deg,var(--green-2),var(--green-deep));
 }
-.archwin{
-  position:absolute;inset:0;
-  background-image:var(--pattern-brass);
-  display:flex;align-items:flex-end;justify-content:center;
+.thumb img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;display:block;
+  transition:transform .8s var(--ease);
 }
-.archwin::after{
-  content:"";width:34%;height:62%;margin-bottom:-2px;
-  border:1px solid rgba(201,102,62,.55);border-bottom:none;
-  border-radius:50% 50% 0 0 / 56% 56% 0 0;
-  background:linear-gradient(rgba(201,102,62,.16),rgba(201,102,62,.02));
-}
+.card:hover .thumb img{transform:scale(1.045)}
 .tag{
   position:absolute;top:1rem;left:1rem;z-index:3;
   background:rgba(240,237,224,.92);color:var(--green);
@@ -487,8 +482,12 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
   transition:border-color .45s var(--ease),box-shadow .45s var(--ease);
 }
 .video:hover{border-color:var(--brass)}
-.vbg{position:absolute;inset:-12%;display:flex;align-items:center;justify-content:center;color:rgba(201,102,62,.14)}
-.vbg svg{width:62%;height:62%}
+.vimg{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;display:block;
+  transition:transform .8s var(--ease);
+}
+.video:hover .vimg{transform:scale(1.045)}
 .vplay{
   position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;
   width:58px;height:58px;border-radius:50%;
