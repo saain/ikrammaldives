@@ -429,7 +429,7 @@
      ============================================================ */
   function setupHoverLift(addCleanup) {
     var targets = $all(
-      ".card, .pillar, .res-item, .video, .value, .event, .res-card, .prog"
+      ".card, .pillar, .res-item, .video, .value, .event, .res-card, .prog, .path"
     );
     targets.forEach(function (el) {
       var enter = function () {
