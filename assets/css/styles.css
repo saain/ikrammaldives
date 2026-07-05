@@ -1044,6 +1044,34 @@ body.has-player{padding-bottom:96px}
 .q-khatmah button{background:none;border:0;color:var(--terra);cursor:pointer;font-family:var(--sans);font-size:.78rem;text-decoration:underline;padding:0}
 .q-mark{margin:0 0 1.2rem}
 
+/* ============ LIVE TV (live.html) ============ */
+.live-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
+.live-card{display:flex;flex-direction:column;gap:0}
+.live-frame{
+  position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;
+  background:var(--green-deep);border:1px solid rgba(201,102,62,.25);
+  cursor:pointer;
+}
+.live-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.live-frame:hover img{transform:scale(1.04)}
+.live-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.live-badge{
+  position:absolute;top:1rem;left:1rem;z-index:3;
+  display:inline-flex;align-items:center;gap:.45rem;
+  background:rgba(17,52,57,.75);color:var(--paper);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  padding:.35rem .75rem;border-radius:100px;border:1px solid rgba(240,237,224,.2);
+}
+.live-badge .dot{width:7px;height:7px;border-radius:50%;background:#e2574b;animation:qLive 2s ease-in-out infinite}
+.live-meta{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1.1rem .3rem 0}
+.live-meta h3{font-size:1.5rem}
+.live-meta .ar{font-family:var(--arab);color:var(--terra);font-size:1.05rem}
+.live-sub{padding:.2rem .3rem 0;font-size:.9rem;color:var(--muted)}
+.live-fallback{padding:.6rem .3rem 0;font-size:.76rem}
+.live-fallback a{color:var(--terra);text-decoration:underline}
+@media (max-width:860px){.live-grid{grid-template-columns:1fr}}
+
 /* ============ MOBILE NAV + RESPONSIVE ============ */
 @media (max-width:980px){
   .nav-links{
