@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Listen to the Qur'ān — IKRAM</title>
+<meta name="description" content="Listen to the Qur'ān with beautiful recitation — surah by surah, with translation and classical tafsīr. Free, no account needed." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://api.alquran.cloud" />
+<link rel="preconnect" href="https://cdn.islamic.network" />
+<link rel="icon" type="image/png" href="assets/img/favicon.png" />
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+<meta name="theme-color" content="#113439" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="IKRAM" />
+<meta property="og:title" content="Listen to the Qur'ān — IKRAM" />
+<meta property="og:description" content="Listen to the Qur'ān with beautiful recitation — surah by surah, with translation and classical tafsīr." />
+<meta property="og:image" content="https://www.ikrammaldives.org/assets/img/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://www.ikrammaldives.org/quran.html" />
+<meta property="og:url" content="https://www.ikrammaldives.org/quran.html" />
+<link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="IKRAM home"><img class="logo logo-terra" src="assets/img/logos/ikram-lockup-terracotta.png" alt="IKRAM" width="75" height="44" /><img class="logo logo-cream" src="assets/img/logos/ikram-lockup-cream.png" alt="IKRAM" width="75" height="44" /></a>
+    <nav>
+      <ul class="nav-links" id="site-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="quran.html" aria-current="page">Qur'ān</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="answers.html">Answers</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="events.html">Programs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="resources.html" class="btn btn-ghost nav-cta">Explore Resources</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="page-hero" id="main">
+  <svg class="star" data-parallax="80" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M50 0l12 26 26-12-12 26 24 10-24 10 12 26-26-12-12 26-12-26-26 12 12-26L0 60l24-10-12-26 26 12z"/></svg>
+  <div class="wrap">
+    <span class="eyebrow reveal">Recitation · Translation · Tafsīr</span>
+    <h1 class="reveal d1">Listen to the <span class="em">Qur'ān</span></h1>
+    <p class="reveal d2">Choose a sūrah and a reciter, read along in Arabic with translation, and open classical tafsīr on any āyah. Your place is remembered when you return.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:2.6rem">
+  <div class="wrap">
+    <div class="q-controls reveal">
+      <div class="field grow">
+        <label for="q-search">Find a sūrah</label>
+        <input id="q-search" type="search" placeholder="Search by name or number — e.g. Yasin, 36, Cave" autocomplete="off" />
+      </div>
+      <div class="field">
+        <label for="q-reciter">Reciter</label>
+        <select id="q-reciter">
+          <option value="ar.alafasy" selected>Mishary al-'Afāsī</option>
+          <option value="ar.husary">Maḥmūd al-Ḥuṣarī</option>
+          <option value="ar.abdulbasitmurattal">'Abdul Bāsiṭ (murattal)</option>
+          <option value="ar.abdurrahmaansudais">'Abdur-Raḥmān as-Sudais</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="q-trans">Translation</label>
+        <select id="q-trans">
+          <option value="en.sahih" selected>English — Saheeh International</option>
+          <option value="dv.divehi">Dhivehi — ދިވެހި</option>
+          <option value="none">Arabic only</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="q-tafsir">Tafsīr</label>
+        <select id="q-tafsir">
+          <option value="ibnkathir" selected>Ibn Kathīr — English</option>
+          <option value="ar.muyassar">Al-Muyassar — عربي</option>
+          <option value="none">Off</option>
+        </select>
+      </div>
+    </div>
+
+    <p id="q-resume" hidden style="margin:-1rem 0 1.6rem"></p>
+
+    <div class="q-layout">
+      <div class="q-list reveal" id="q-list" role="listbox" aria-label="Sūrahs of the Qur'ān">
+        <p class="q-status">Loading the sūrah list…</p>
+      </div>
+      <div class="q-reader reveal d2" id="q-reader" aria-live="polite">
+        <p class="q-reader-empty">Select a sūrah to begin listening and reading, in shā' Allah.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:2rem;font-size:.8rem;color:var(--muted);text-align:center">
+      Text &amp; audio from the free <a href="https://alquran.cloud" target="_blank" rel="noopener" style="color:var(--terra)">Al Quran Cloud</a> project · Tafsīr Ibn Kathīr (abridged) &amp; Tafsīr al-Muyassar
+    </p>
+  </div>
+</section>
+
+<!-- PLAYER BAR -->
+<div class="q-player" id="q-player" role="region" aria-label="Audio player">
+  <button class="q-skip" id="q-prev" aria-label="Previous sūrah"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
+  <button class="q-play" id="q-play" aria-label="Play or pause">
+    <svg id="q-ic-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    <svg id="q-ic-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+  </button>
+  <button class="q-skip" id="q-next" aria-label="Next sūrah"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg></button>
+  <div class="q-now">
+    <strong id="q-now-name">—</strong>
+    <span id="q-now-sub">—</span>
+  </div>
+  <div class="q-seek">
+    <span class="q-time" id="q-cur">0:00</span>
+    <div class="q-bar" id="q-bar" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="q-fill" id="q-fill"></div></div>
+    <span class="q-time" id="q-dur">0:00</span>
+  </div>
+</div>
+<audio id="q-audio" preload="none"></audio>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top" data-stagger>
+      <div class="footer-about">
+        <a class="brand" href="index.html"><img class="logo logo-terra" src="assets/img/logos/ikram-lockup-terracotta.png" alt="IKRAM" width="75" height="44" /><img class="logo logo-cream" src="assets/img/logos/ikram-lockup-cream.png" alt="IKRAM" width="75" height="44" /></a>
+        <p>A da'wah jamiyyah devoted to spreading beneficial knowledge and inviting hearts to Allah with wisdom and mercy.</p>
+      </div>
+      <div class="footer-col"><h5>Explore</h5><a href="about.html">About Us</a><a href="articles.html">Articles</a><a href="answers.html">Answers</a><a href="resources.html">Resources</a><a href="events.html">Programs</a></div>
+      <div class="footer-col"><h5>Learn</h5><a href="quran.html">Listen to Qur'ān</a><a href="resources.html">Audio Lessons</a><a href="resources.html">Video Lectures</a><a href="resources.html">Downloads</a></div>
+      <div class="footer-col"><h5>Connect</h5><a href="contact.html">Contact</a><a href="contact.html">Volunteer</a><a href="contact.html">Support</a><a href="contact.html">Newsletter</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> IKRAM Maldives. All rights reserved.</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/ikrammaldives" target="_blank" rel="noopener" aria-label="IKRAM on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/quran.js"></script>
+</body>
+</html>
