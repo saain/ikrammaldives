@@ -882,8 +882,14 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
 .q-reader h2{font-size:1.9rem;margin-bottom:.2rem}
 .q-reader .q-sub{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:1.6rem}
 .q-bismillah{font-family:var(--arab);text-align:center;font-size:1.5rem;color:var(--green-soft);margin:0 0 1.6rem}
-.q-ayah{padding:.9rem 0;border-bottom:1px solid var(--line)}
+.q-ayah{padding:.9rem .7rem;border-bottom:1px solid var(--line);border-left:2px solid transparent;transition:background .4s,border-color .4s}
 .q-ayah:last-child{border-bottom:0}
+.q-ayah.is-clickable{cursor:pointer}
+.q-ayah.is-clickable:hover{background:rgba(15,110,106,.04)}
+.q-ayah.is-playing{
+  background:rgba(15,110,106,.07);
+  border-left-color:var(--terra);border-radius:0 10px 10px 0;
+}
 .q-ayah .ar{
   font-family:var(--arab);font-size:1.55rem;line-height:2.3;color:var(--ink);
   display:block;

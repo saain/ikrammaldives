@@ -89,16 +89,23 @@
           <option value="none">Off</option>
         </select>
       </div>
+      <div class="field">
+        <label for="q-mode">Playback</label>
+        <select id="q-mode">
+          <option value="ayah" selected>Read-along — āyah by āyah</option>
+          <option value="surah">Continuous — full sūrah</option>
+        </select>
+      </div>
     </div>
 
     <p id="q-resume" hidden style="margin:-1rem 0 1.6rem"></p>
 
     <div class="q-layout">
-      <div class="q-list reveal" id="q-list" role="listbox" aria-label="Sūrahs of the Qur'ān">
+      <div class="q-list reveal" id="q-list" role="listbox" aria-label="Sūrahs of the Qur'ān" data-lenis-prevent>
         <p class="q-status">Loading the sūrah list…</p>
       </div>
-      <div class="q-reader reveal d2" id="q-reader" aria-live="polite">
-        <p class="q-reader-empty">Select a sūrah to begin listening and reading, in shā' Allah.</p>
+      <div class="q-reader reveal d2" id="q-reader" aria-live="polite" data-lenis-prevent>
+        <p class="q-reader-empty">Select a sūrah to begin listening and reading, in shā' Allah. In read-along mode the text follows the recitation — tap any āyah to play from there.</p>
       </div>
     </div>
 
