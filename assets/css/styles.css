@@ -912,6 +912,8 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
   background:rgba(15,110,106,.05);border-radius:0 10px 10px 0;
   font-size:.92rem;color:var(--muted);line-height:1.8;
 }
+.q-taf p{margin:0}
+.q-taf p + p{margin-top:.7rem}
 .q-taf[lang="ar"]{font-family:var(--arab);font-size:1.08rem;line-height:2.1;border-left:0;border-right:2px solid var(--brass);border-radius:10px 0 0 10px}
 .q-taf .q-taf-src{
   display:block;margin-top:.5rem;font-size:.64rem;letter-spacing:.14em;

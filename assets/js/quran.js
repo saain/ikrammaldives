@@ -19,10 +19,12 @@
 
   var API = "https://api.alquran.cloud/v1";
   var AUDIO_SURAH = "https://cdn.islamic.network/quran/audio-surah/128/";
-  var TAFSIR_CDN = [
-    "https://cdn.jsdelivr.net/gh/spa5k/tafsir_api@main/tafsir/en-tafisr-ibn-kathir/",
-    "https://cdn.jsdelivr.net/gh/spa5k/tafsir_api@main/tafsir/en-tafsir-ibn-kathir/"
-  ];
+  /* spa5k/tafsir_api dataset · files live at {slug}/{surah}/{ayah}.json */
+  var TAFSIR_CDN = "https://cdn.jsdelivr.net/gh/spa5k/tafsir_api@main/tafsir/";
+  var TAFSIR_EDS = {
+    ibnkathir: { slug: "en-tafisr-ibn-kathir", ar: false, name: "Tafsīr Ibn Kathīr (abridged)" },
+    muyassar: { slug: "ar-tafsir-muyassar", ar: true, name: "تفسير الميسّر" }
+  };
   var STORE = "ikram-quran";
 
   var readerEl = document.getElementById("q-reader");
@@ -53,7 +55,6 @@
   var idx = -1;              // read-along: current āyah index (0-based)
   var pendingSeek = null;    // continuous mode resume
   var prefetch = new Audio();// warms the cache for the next āyah
-  var muyassarCache = {};
 
   /* ---------- helpers ---------- */
   function save(patch) {
@@ -221,50 +222,36 @@
   }
 
   /* ---------- tafsīr ---------- */
+  function esc(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
   function toggleTafsir(block, btn, surah, ayah) {
     var existing = block.querySelector(".q-taf");
     if (existing) { existing.remove(); btn.textContent = "Tafsīr"; return; }
+    var ed = TAFSIR_EDS[tafsirEl.value];
+    if (!ed) return;
     btn.textContent = "Loading…";
-    var done = function (html, langAr, srcName) {
-      btn.textContent = "Hide tafsīr";
-      var more =
-        ' · <a href="https://www.altafsir.com/Tafasir.asp?tMadhNo=0&amp;tTafsirNo=74&amp;tSoraNo=' +
-        surah + "&amp;tAyahNo=" + ayah +
-        '&amp;tDisplay=yes&amp;LanguageID=2" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">More tafāsīr — Altafsir.com</a>';
-      var t = el("div", "q-taf", html + '<span class="q-taf-src">' + srcName + more + "</span>");
-      if (langAr) { t.setAttribute("lang", "ar"); t.setAttribute("dir", "rtl"); }
-      block.appendChild(t);
-    };
     var fail = function () {
       btn.textContent = "Tafsīr";
       var t = el("div", "q-taf", "Tafsīr could not be loaded for this āyah right now.");
       block.appendChild(t);
       setTimeout(function () { t.remove(); }, 3500);
     };
-
-    if (tafsirEl.value === "ar.muyassar") {
-      var cached = muyassarCache[surah];
-      var p = cached
-        ? Promise.resolve(cached)
-        : getJSON(API + "/surah/" + surah + "/ar.muyassar").then(function (j) {
-            muyassarCache[surah] = j.data.ayahs;
-            return j.data.ayahs;
-          });
-      p.then(function (ayahs) {
-        done(ayahs[ayah - 1].text, true, "تفسير الميسّر — مجمع الملك فهد");
-      }).catch(fail);
-      return;
-    }
-
-    var tryFetch = function (i) {
-      if (i >= TAFSIR_CDN.length) { fail(); return; }
-      getJSON(TAFSIR_CDN[i] + surah + "_" + ayah + ".json").then(function (j) {
-        var text = (j && (j.text || j.tafsir || j.content)) || "";
-        if (!text) { fail(); return; }
-        done(text, false, "Tafsīr Ibn Kathīr (abridged)");
-      }).catch(function () { tryFetch(i + 1); });
-    };
-    tryFetch(0);
+    getJSON(TAFSIR_CDN + ed.slug + "/" + surah + "/" + ayah + ".json").then(function (j) {
+      var text = (j && j.text) || "";
+      if (!text.trim()) { fail(); return; }
+      btn.textContent = "Hide tafsīr";
+      var html = "<p>" + esc(text).trim()
+        .replace(/\n{2,}/g, "</p><p>")
+        .replace(/\n/g, "<br>") + "</p>";
+      var more =
+        ' · <a href="https://www.altafsir.com/Tafasir.asp?tMadhNo=0&amp;tTafsirNo=74&amp;tSoraNo=' +
+        surah + "&amp;tAyahNo=" + ayah +
+        '&amp;tDisplay=yes&amp;LanguageID=2" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">More tafāsīr — Altafsir.com</a>';
+      var t = el("div", "q-taf", html + '<span class="q-taf-src">' + ed.name + more + "</span>");
+      if (ed.ar) { t.setAttribute("lang", "ar"); t.setAttribute("dir", "rtl"); }
+      block.appendChild(t);
+    }).catch(fail);
   }
 
   /* ---------- player wiring ---------- */
@@ -353,6 +340,7 @@
 
   /* ---------- boot ---------- */
   var st = load();
+  if (st.tafsir === "ar.muyassar") st.tafsir = "muyassar"; // migrate old value
   if (st.reciter) reciterEl.value = st.reciter;
   if (st.trans) transEl.value = st.trans;
   if (st.tafsir) tafsirEl.value = st.tafsir;
