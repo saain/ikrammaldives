@@ -149,6 +149,13 @@
       readerEl.innerHTML = "";
       readerEl.appendChild(el("h2", null, s.englishName + ' <span class="q-ar" lang="ar" dir="rtl" style="font-size:1.4rem">' + s.name + "</span>"));
       readerEl.appendChild(el("p", "q-sub", s.englishNameTranslation + " · " + s.revelationType + " · " + s.numberOfAyahs + " āyāt"));
+      var mk = el("button", "q-tafbtn q-mark", khDone(n) ? "✓ Completed — tap to unmark" : "Mark sūrah as completed");
+      mk.type = "button";
+      mk.addEventListener("click", function () {
+        khToggle(n);
+        mk.innerHTML = khDone(n) ? "✓ Completed — tap to unmark" : "Mark sūrah as completed";
+      });
+      readerEl.appendChild(mk);
       if (n !== 1 && n !== 9) {
         readerEl.appendChild(el("p", "q-bismillah", "بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ"));
       }
@@ -299,10 +306,16 @@
   audio.addEventListener("ended", function () {
     if (isAyahMode()) {
       if (idx < tracks.length - 1) playAyah(idx + 1, true);
-      else if (current && current.number < 114) openSurah(current.number + 1, { autoplay: true });
+      else if (current) {
+        khMark(current.number); /* finished the last āyah — khatmah progress */
+        if (current.number < 114) openSurah(current.number + 1, { autoplay: true });
+      }
     } else {
       save({ pos: 0 });
-      if (current && current.number < 114) openSurah(current.number + 1, { autoplay: true });
+      if (current) {
+        khMark(current.number);
+        if (current.number < 114) openSurah(current.number + 1, { autoplay: true });
+      }
     }
   });
   barEl.addEventListener("click", function (e) {
@@ -338,6 +351,77 @@
     else openSurah(current.number, { autoplay: wasPlaying, seek: 0 });
   }
 
+  /* ---------- khatmah (reading/listening progress) ---------- */
+  var KH_STORE = "ikram-khatmah";
+  var khEl = document.getElementById("q-khatmah");
+  function khLoad() {
+    try { return JSON.parse(localStorage.getItem(KH_STORE)) || []; } catch (e) { return []; }
+  }
+  function khSave(a) { try { localStorage.setItem(KH_STORE, JSON.stringify(a)); } catch (e) {} }
+  function khDone(n) { return khLoad().indexOf(n) !== -1; }
+  function khMark(n) {
+    var a = khLoad();
+    if (a.indexOf(n) === -1) { a.push(n); khSave(a); }
+    khRender();
+  }
+  function khToggle(n) {
+    var a = khLoad(), i = a.indexOf(n);
+    if (i === -1) a.push(n); else a.splice(i, 1);
+    khSave(a); khRender();
+  }
+  function khRender() {
+    if (!khEl) return;
+    var done = khLoad().length;
+    khEl.hidden = done === 0;
+    document.getElementById("qk-label").textContent =
+      "Khatmah: " + done + " / 114 sūrahs · " + Math.round((done / 114) * 100) + "%";
+    document.getElementById("qk-fill").style.width = (done / 114) * 100 + "%";
+  }
+  var khResetBtn = document.getElementById("qk-reset");
+  if (khResetBtn) khResetBtn.addEventListener("click", function () {
+    if (window.confirm("Start a new khatmah? Your current progress will be cleared.")) {
+      khSave([]); khRender();
+    }
+  });
+
+  /* ---------- live radio (MP3Quran) — hidden unless reachable ---------- */
+  var radioBox = document.getElementById("q-radio");
+  var radioAudio = new Audio();
+  if (radioBox) {
+    var rSel = document.getElementById("q-radio-select");
+    var rBtn = document.getElementById("q-radio-play");
+    var rStop = function () {
+      radioAudio.pause();
+      radioAudio.removeAttribute("src");
+      rBtn.textContent = "Listen";
+    };
+    fetch("https://www.mp3quran.net/api/v3/radios?language=eng")
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        var radios = (j && j.radios) || [];
+        if (!radios.length) return;
+        radios.forEach(function (st) {
+          var o = document.createElement("option");
+          o.value = st.url; o.textContent = st.name;
+          rSel.appendChild(o);
+        });
+        radioBox.hidden = false;
+        rBtn.addEventListener("click", function () {
+          if (!radioAudio.paused) { rStop(); return; }
+          audio.pause(); /* one sound at a time */
+          radioAudio.src = rSel.value;
+          radioAudio.play().then(function () { rBtn.textContent = "Stop"; }).catch(rStop);
+        });
+        rSel.addEventListener("change", function () {
+          if (!radioAudio.paused) {
+            radioAudio.src = rSel.value;
+            radioAudio.play().catch(rStop);
+          }
+        });
+      }).catch(function () { /* unreachable — stays hidden */ });
+    audio.addEventListener("play", function () { if (!radioAudio.paused) rStop(); });
+  }
+
   /* ---------- boot ---------- */
   var st = load();
   if (st.tafsir === "ar.muyassar") st.tafsir = "muyassar"; // migrate old value
@@ -349,10 +433,14 @@
     if (s.selectedIndex === -1) s.selectedIndex = 0;
   });
 
+  khRender();
   getJSON(API + "/surah").then(function (j) {
     surahs = j.data;
     renderList("");
-    if (st.surah && surahs[st.surah - 1]) {
+    var qp = parseInt(new URLSearchParams(window.location.search).get("surah"), 10);
+    if (qp && surahs[qp - 1]) {
+      openSurah(qp, { autoplay: false });
+    } else if (st.surah && surahs[st.surah - 1]) {
       var s = surahs[st.surah - 1];
       var where = st.mode === "surah"
         ? (st.pos ? " at " + fmt(st.pos) : "")
