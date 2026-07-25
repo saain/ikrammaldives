@@ -233,7 +233,7 @@
     if (!ribbon) return;
     ribbon.innerHTML =
       '<a class="pr-in" href="' + (mount ? "#prayer-times" : "index.html#prayer-times") + '">' +
-      '<svg viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M50 0l12 26 26-12-12 26 24 10-24 10 12 26-26-12-12 26-12-26-26 12 12-26L0 60l24-10-12-26 26 12z"/></svg>' +
+      '<img src="assets/img/ornaments/rubhizb-goldsoft.png" alt="" width="12" height="12" loading="lazy" />' +
       '<span id="pr-name"></span><span class="pr-sep">·</span>' +
       '<span id="pr-meta"></span><span class="pr-sep">·</span>' +
       '<strong id="pr-count">--:--</strong></a>';
@@ -261,7 +261,7 @@
     var row = rowFor(t.y, t.m, t.d);
     var html = "";
     html += '<div class="pw-head">';
-    html += '<div class="pw-mosque"><svg viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M50 0l12 26 26-12-12 26 24 10-24 10 12 26-26-12-12 26-12-26-26 12 12-26L0 60l24-10-12-26 26 12z"/></svg>';
+    html += '<div class="pw-mosque"><img src="assets/img/ornaments/rubhizb-goldsoft.png" alt="" width="20" height="20" loading="lazy" />';
     html += '<span class="pw-mtxt"><span class="pw-mrow"><span class="pw-mname">' + MOSQUE_EN + '</span><span class="pw-mar">' + MOSQUE_AR + "</span></span>";
     html += '<span class="pw-loc">' + MOSQUE_LOC + "</span></span></div>";
     html += '<div class="pw-dates"><span id="pw-greg">' + gregString() + '</span><span id="pw-hijri">' + hijriString(t) + '</span></div>';

@@ -199,6 +199,7 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
 }
 .prayer-ribbon .pr-in:hover{color:var(--paper)}
 .prayer-ribbon svg{width:12px;height:12px;color:var(--brass-soft);flex:none}
+.prayer-ribbon img{width:12px;height:12px;flex:none}
 .prayer-ribbon .pr-sep{color:var(--brass);opacity:.7}
 .prayer-ribbon strong{
   color:var(--brass-soft);font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:.1em;
@@ -317,7 +318,7 @@ img.bismillah{
 .page-hero.alt{background:linear-gradient(175deg,var(--paper-2) 0%,var(--paper) 100%)}
 .page-hero .star{
   position:absolute;top:-110px;right:-130px;width:420px;height:420px;
-  color:var(--green);opacity:.06;pointer-events:none;
+  color:var(--green);opacity:.09;pointer-events:none;
 }
 .page-hero .wrap{position:relative;z-index:2}
 .page-hero h1{font-size:clamp(2.6rem,6.5vw,4.6rem);margin-top:1.3rem;max-width:18ch}
@@ -675,6 +676,7 @@ img.bismillah{
 }
 .pw-mosque{display:inline-flex;align-items:flex-start;gap:.7rem}
 .pw-mosque svg{width:20px;height:20px;color:var(--brass);flex:none;margin-top:.5rem}
+.pw-mosque img{width:20px;height:20px;flex:none;margin-top:.5rem}
 .pw-mtxt{display:flex;flex-direction:column;gap:.15rem}
 .pw-mrow{display:flex;align-items:baseline;gap:.55rem;flex-wrap:wrap}
 .pw-mname{font-family:var(--serif);font-size:1.45rem;color:var(--paper)}
