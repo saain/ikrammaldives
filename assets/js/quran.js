@@ -157,7 +157,9 @@
       });
       readerEl.appendChild(mk);
       if (n !== 1 && n !== 9) {
-        readerEl.appendChild(el("p", "q-bismillah", "بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ"));
+        var bs = el("p", "q-bismillah");
+        bs.innerHTML = '<img src="assets/img/basmala-maroon.png" alt="بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ" width="900" height="451" loading="lazy" />';
+        readerEl.appendChild(bs);
       }
       ar.forEach(function (a, i) {
         var text = a.text;

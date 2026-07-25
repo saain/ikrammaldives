@@ -251,6 +251,9 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
   font-family:var(--arab);font-size:clamp(1.2rem,2vw,1.5rem);
   color:var(--green-soft);margin:1.6rem 0 1rem;
 }
+img.bismillah{
+  width:min(300px,66vw);height:auto;display:block;margin:1.9rem 0 1.3rem;
+}
 .hero h1{
   font-size:clamp(3.4rem,9vw,6.8rem);letter-spacing:-.5px;color:var(--green);
 }
@@ -882,6 +885,7 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
 .q-reader h2{font-size:1.9rem;margin-bottom:.2rem}
 .q-reader .q-sub{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:1.6rem}
 .q-bismillah{font-family:var(--arab);text-align:center;font-size:1.5rem;color:var(--green-soft);margin:0 0 1.6rem}
+.q-bismillah img{width:min(250px,58vw);height:auto;display:inline-block}
 .q-ayah{padding:.9rem .7rem;border-bottom:1px solid var(--line);border-left:2px solid transparent;transition:background .4s,border-color .4s}
 .q-ayah:last-child{border-bottom:0}
 .q-ayah.is-clickable{cursor:pointer}
