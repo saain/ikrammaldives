@@ -1001,10 +1001,14 @@ body.has-player{padding-bottom:96px}
 /* ============ DAILY BAND (index) ============ */
 .daily-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:stretch}
 .dcard{
-  display:flex;flex-direction:column;gap:.8rem;
+  position:relative;display:flex;flex-direction:column;gap:.8rem;
   background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
   padding:2rem 2.1rem;
 }
+.dcard .medallion{
+  position:absolute;top:1.4rem;right:1.6rem;width:62px;height:auto;opacity:.88;
+}
+.dcard .medallion + * + .ar{padding-right:78px}
 .dcard .ar{font-family:var(--arab);font-size:1.45rem;line-height:2.15;color:var(--ink)}
 .dcard .en{font-size:.98rem;color:var(--muted);line-height:1.8}
 .dcard .src{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);margin-top:auto}
@@ -1021,6 +1025,7 @@ body.has-player{padding-bottom:96px}
 .adk.is-done{border-color:var(--olive);background:rgba(78,122,82,.05)}
 .adk-body{flex:1;min-width:0}
 .adk-body .ar{font-family:var(--arab);font-size:1.35rem;line-height:2.15;color:var(--ink);display:block}
+.adk-art{display:block;width:min(148px,42vw);height:auto;margin:.3rem 0 .5rem}
 .adk-body .en{font-size:.92rem;color:var(--muted);line-height:1.75;margin-top:.55rem}
 .adk-body .src{display:block;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--terra);margin-top:.6rem}
 .adk-count{
