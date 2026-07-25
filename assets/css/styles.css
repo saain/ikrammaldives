@@ -608,9 +608,10 @@ img.bismillah{
   content:"";position:absolute;inset:0;background-image:var(--pattern-dark);opacity:.5;pointer-events:none;
 }
 .site-footer::after{
-  content:"إكرام";font-family:var(--kufi);font-weight:500;line-height:1;
-  position:absolute;right:1.5rem;bottom:-2.5rem;z-index:1;pointer-events:none;
-  font-size:clamp(8rem,20vw,16rem);color:rgba(216,184,118,.05);
+  content:"";position:absolute;right:.5rem;bottom:-1.8rem;z-index:1;pointer-events:none;
+  width:clamp(240px,32vw,420px);aspect-ratio:45.5/34;
+  background:url("../img/logos/ikram-logo-cream.svg") no-repeat center/contain;
+  opacity:.05;
 }
 .site-footer .wrap{position:relative;z-index:2}
 .footer-top{
