@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" role="img" aria-label="">
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
-<stop offset="0" stop-color="#3a1b26"/><stop offset="1" stop-color="#2c141d"/>
+<stop offset="0" stop-color="#2c4536"/><stop offset="1" stop-color="#1b2a22"/>
 </linearGradient>
 <radialGradient id="glow" cx="0.5" cy="0.42" r="1.05">
-<stop offset="0" stop-color="#d8b876" stop-opacity="0.09"/><stop offset="0.5" stop-color="#d8b876" stop-opacity="0.02"/><stop offset="1" stop-color="#1c0d13" stop-opacity="0.4"/>
+<stop offset="0" stop-color="#cdae6c" stop-opacity="0.09"/><stop offset="0.5" stop-color="#cdae6c" stop-opacity="0.02"/><stop offset="1" stop-color="#101a14" stop-opacity="0.4"/>
 </radialGradient>
 <pattern id="lat" width="140" height="140" patternUnits="userSpaceOnUse">
 <g fill="none" stroke="#f2f0eb" stroke-opacity="0.06">
@@ -14,5 +14,5 @@
 </defs>
 <rect width="800" height="470" fill="url(#bg)"/>
 <rect width="800" height="470" fill="url(#lat)"/>
-<g fill="none" stroke="#d8b876" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" ><path d="M 400 356 Q 396 300 400 268"/><path d="M 400 288 Q 348 270 342 226 Q 392 232 400 288"/><path d="M 400 300 Q 448 284 454 244 Q 410 248 400 300"/><path d="M 320 356 H 480"/><path d="M 344 400 Q 400 416 456 400"/></g><g fill="none" stroke="#f2f0eb" stroke-opacity="0.65" stroke-width="2.0" stroke-linecap="round"><path d="M 330 120 q 6 10 0 16 q -6 -6 0 -16"/><path d="M 400 96 q 6 10 0 16 q -6 -6 0 -16"/><path d="M 470 124 q 6 10 0 16 q -6 -6 0 -16"/><path d="M 365 168 q 6 10 0 16 q -6 -6 0 -16"/><path d="M 435 172 q 6 10 0 16 q -6 -6 0 -16"/></g><rect width="800" height="470" fill="url(#glow)"/>
+<g fill="none" stroke="#cdae6c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" ><path d="M 400 356 Q 396 300 400 268"/><path d="M 400 288 Q 348 270 342 226 Q 392 232 400 288"/><path d="M 400 300 Q 448 284 454 244 Q 410 248 400 300"/><path d="M 320 356 H 480"/><path d="M 344 400 Q 400 416 456 400"/></g><g fill="none" stroke="#f2f0eb" stroke-opacity="0.65" stroke-width="2.0" stroke-linecap="round"><path d="M 330 120 q 6 10 0 16 q -6 -6 0 -16"/><path d="M 400 96 q 6 10 0 16 q -6 -6 0 -16"/><path d="M 470 124 q 6 10 0 16 q -6 -6 0 -16"/><path d="M 365 168 q 6 10 0 16 q -6 -6 0 -16"/><path d="M 435 172 q 6 10 0 16 q -6 -6 0 -16"/></g><rect width="800" height="470" fill="url(#glow)"/>
 </svg>

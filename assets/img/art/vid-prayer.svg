@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="">
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
-<stop offset="0" stop-color="#3a1b26"/><stop offset="1" stop-color="#2c141d"/>
+<stop offset="0" stop-color="#2c4536"/><stop offset="1" stop-color="#1b2a22"/>
 </linearGradient>
 <radialGradient id="glow" cx="0.5" cy="0.42" r="1.05">
-<stop offset="0" stop-color="#d8b876" stop-opacity="0.09"/><stop offset="0.5" stop-color="#d8b876" stop-opacity="0.02"/><stop offset="1" stop-color="#1c0d13" stop-opacity="0.4"/>
+<stop offset="0" stop-color="#cdae6c" stop-opacity="0.09"/><stop offset="0.5" stop-color="#cdae6c" stop-opacity="0.02"/><stop offset="1" stop-color="#101a14" stop-opacity="0.4"/>
 </radialGradient>
 <pattern id="lat" width="140" height="140" patternUnits="userSpaceOnUse">
 <g fill="none" stroke="#f2f0eb" stroke-opacity="0.06">
@@ -14,5 +14,5 @@
 </defs>
 <rect width="800" height="500" fill="url(#bg)"/>
 <rect width="800" height="500" fill="url(#lat)"/>
-<g fill="none" stroke="#d8b876" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" ><rect x="250" y="70" width="300" height="360" rx="6"/><rect x="274" y="94" width="252" height="312" rx="4"/><path d="M 310 406 V 260 Q 310 196 400 150 Q 490 196 490 260 V 406"/></g><g fill="none" stroke="#f2f0eb" stroke-opacity="0.55" stroke-width="1.6" stroke-linecap="round"><circle cx="400" cy="216" r="9"/><line x1="400" y1="150" x2="400" y2="207"/><line x1="272" y1="430" x2="272" y2="452"/><line x1="296" y1="430" x2="296" y2="452"/><line x1="320" y1="430" x2="320" y2="452"/><line x1="344" y1="430" x2="344" y2="452"/><line x1="368" y1="430" x2="368" y2="452"/><line x1="392" y1="430" x2="392" y2="452"/><line x1="416" y1="430" x2="416" y2="452"/><line x1="440" y1="430" x2="440" y2="452"/><line x1="464" y1="430" x2="464" y2="452"/><line x1="488" y1="430" x2="488" y2="452"/><line x1="512" y1="430" x2="512" y2="452"/><line x1="536" y1="430" x2="536" y2="452"/></g><rect width="800" height="500" fill="url(#glow)"/>
+<g fill="none" stroke="#cdae6c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" ><rect x="250" y="70" width="300" height="360" rx="6"/><rect x="274" y="94" width="252" height="312" rx="4"/><path d="M 310 406 V 260 Q 310 196 400 150 Q 490 196 490 260 V 406"/></g><g fill="none" stroke="#f2f0eb" stroke-opacity="0.55" stroke-width="1.6" stroke-linecap="round"><circle cx="400" cy="216" r="9"/><line x1="400" y1="150" x2="400" y2="207"/><line x1="272" y1="430" x2="272" y2="452"/><line x1="296" y1="430" x2="296" y2="452"/><line x1="320" y1="430" x2="320" y2="452"/><line x1="344" y1="430" x2="344" y2="452"/><line x1="368" y1="430" x2="368" y2="452"/><line x1="392" y1="430" x2="392" y2="452"/><line x1="416" y1="430" x2="416" y2="452"/><line x1="440" y1="430" x2="440" y2="452"/><line x1="464" y1="430" x2="464" y2="452"/><line x1="488" y1="430" x2="488" y2="452"/><line x1="512" y1="430" x2="512" y2="452"/><line x1="536" y1="430" x2="536" y2="452"/></g><rect width="800" height="500" fill="url(#glow)"/>
 </svg>

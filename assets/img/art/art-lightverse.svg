@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" role="img" aria-label="">
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
-<stop offset="0" stop-color="#3a1b26"/><stop offset="1" stop-color="#2c141d"/>
+<stop offset="0" stop-color="#2c4536"/><stop offset="1" stop-color="#1b2a22"/>
 </linearGradient>
 <radialGradient id="glow" cx="0.5" cy="0.42" r="1.05">
-<stop offset="0" stop-color="#d8b876" stop-opacity="0.09"/><stop offset="0.5" stop-color="#d8b876" stop-opacity="0.02"/><stop offset="1" stop-color="#1c0d13" stop-opacity="0.4"/>
+<stop offset="0" stop-color="#cdae6c" stop-opacity="0.09"/><stop offset="0.5" stop-color="#cdae6c" stop-opacity="0.02"/><stop offset="1" stop-color="#101a14" stop-opacity="0.4"/>
 </radialGradient>
 <pattern id="lat" width="140" height="140" patternUnits="userSpaceOnUse">
 <g fill="none" stroke="#f2f0eb" stroke-opacity="0.06">
@@ -14,5 +14,5 @@
 </defs>
 <rect width="800" height="470" fill="url(#bg)"/>
 <rect width="800" height="470" fill="url(#lat)"/>
-<g fill="none" stroke="#d8b876" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" ><path d="M 342 200 Q 336 300 400 316 Q 464 300 458 200 Q 434 168 400 166 Q 366 168 342 200 Z"/><path d="M 380 232 H 420 L 413 276 Q 400 288 387 276 Z"/><path d="M 400 200 q 11 12 0 22 q -11 -10 0 -22"/><line x1="400" y1="222" x2="400" y2="232"/><line x1="400" y1="96" x2="400" y2="166"/><circle cx="400" cy="90" r="5"/></g><g fill="none" stroke="#f2f0eb" stroke-opacity="0.6" stroke-width="1.7" stroke-linecap="round"><line x1="463" y1="131" x2="478" y2="105"/><line x1="509" y1="177" x2="535" y2="162"/><line x1="526" y1="240" x2="556" y2="240"/><line x1="509" y1="303" x2="535" y2="318"/><line x1="463" y1="349" x2="478" y2="375"/><line x1="400" y1="366" x2="400" y2="396"/><line x1="337" y1="349" x2="322" y2="375"/><line x1="291" y1="303" x2="265" y2="318"/><line x1="274" y1="240" x2="244" y2="240"/><line x1="291" y1="177" x2="265" y2="162"/><line x1="337" y1="131" x2="322" y2="105"/></g><rect width="800" height="470" fill="url(#glow)"/>
+<g fill="none" stroke="#cdae6c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" ><path d="M 342 200 Q 336 300 400 316 Q 464 300 458 200 Q 434 168 400 166 Q 366 168 342 200 Z"/><path d="M 380 232 H 420 L 413 276 Q 400 288 387 276 Z"/><path d="M 400 200 q 11 12 0 22 q -11 -10 0 -22"/><line x1="400" y1="222" x2="400" y2="232"/><line x1="400" y1="96" x2="400" y2="166"/><circle cx="400" cy="90" r="5"/></g><g fill="none" stroke="#f2f0eb" stroke-opacity="0.6" stroke-width="1.7" stroke-linecap="round"><line x1="463" y1="131" x2="478" y2="105"/><line x1="509" y1="177" x2="535" y2="162"/><line x1="526" y1="240" x2="556" y2="240"/><line x1="509" y1="303" x2="535" y2="318"/><line x1="463" y1="349" x2="478" y2="375"/><line x1="400" y1="366" x2="400" y2="396"/><line x1="337" y1="349" x2="322" y2="375"/><line x1="291" y1="303" x2="265" y2="318"/><line x1="274" y1="240" x2="244" y2="240"/><line x1="291" y1="177" x2="265" y2="162"/><line x1="337" y1="131" x2="322" y2="105"/></g><rect width="800" height="470" fill="url(#glow)"/>
 </svg>

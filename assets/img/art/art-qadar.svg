@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" role="img" aria-label="">
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
-<stop offset="0" stop-color="#3a1b26"/><stop offset="1" stop-color="#2c141d"/>
+<stop offset="0" stop-color="#2c4536"/><stop offset="1" stop-color="#1b2a22"/>
 </linearGradient>
 <radialGradient id="glow" cx="0.5" cy="0.42" r="1.05">
-<stop offset="0" stop-color="#d8b876" stop-opacity="0.09"/><stop offset="0.5" stop-color="#d8b876" stop-opacity="0.02"/><stop offset="1" stop-color="#1c0d13" stop-opacity="0.4"/>
+<stop offset="0" stop-color="#cdae6c" stop-opacity="0.09"/><stop offset="0.5" stop-color="#cdae6c" stop-opacity="0.02"/><stop offset="1" stop-color="#101a14" stop-opacity="0.4"/>
 </radialGradient>
 <pattern id="lat" width="140" height="140" patternUnits="userSpaceOnUse">
 <g fill="none" stroke="#f2f0eb" stroke-opacity="0.06">
@@ -14,5 +14,5 @@
 </defs>
 <rect width="800" height="470" fill="url(#bg)"/>
 <rect width="800" height="470" fill="url(#lat)"/>
-<g fill="none" stroke="#d8b876" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" ><rect x="300" y="135" width="200" height="200" rx="2"/><rect x="300" y="135" width="200" height="200" rx="2" transform="rotate(45 400 235)"/></g><g fill="none" stroke="#f2f0eb" stroke-opacity="0.55" stroke-width="1.7" stroke-linecap="round"><circle cx="400" cy="235" r="56"/><circle cx="400" cy="235" r="7"/></g><rect width="800" height="470" fill="url(#glow)"/>
+<g fill="none" stroke="#cdae6c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" ><rect x="300" y="135" width="200" height="200" rx="2"/><rect x="300" y="135" width="200" height="200" rx="2" transform="rotate(45 400 235)"/></g><g fill="none" stroke="#f2f0eb" stroke-opacity="0.55" stroke-width="1.7" stroke-linecap="round"><circle cx="400" cy="235" r="56"/><circle cx="400" cy="235" r="7"/></g><rect width="800" height="470" fill="url(#glow)"/>
 </svg>

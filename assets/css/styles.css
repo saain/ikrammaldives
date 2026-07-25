@@ -9,31 +9,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap");
 
 :root{
-  /* ── IKRAM palette · Maroon & Gilt (official, Pantone 202 C) ──
-     bg Snow · surface Shell · band Snow White · text Wine Ink
-     primary Maroon #862633 · hover Deep Maroon · accent Antique Gold */
-  --terra:#862633;          /* Primary — buttons, links (Pantone 202 C) */
-  --terra-deep:#6c1e29;     /* Hover / active / pressed */
-  --clay:#ebd5d0;           /* Tint — badges, soft fills */
+  /* ── IKRAM palette · Forest & Gilt — maroon reserved for the logo ──
+     bg Snow White · surface Shell · text Forest Ink
+     primary Deep Forest · hover Darker Forest · accent Antique Gold
+     Logo maroon #1e4d3b appears ONLY in the logo + basmala-gold moments */
+  --terra:#1e4d3b;          /* Primary — buttons, links (deep forest) */
+  --terra-deep:#163b2d;     /* Hover / active / pressed */
+  --clay:#d7e5dc;           /* Tint — badges, soft fills */
   --forest:#8a6a2f;         /* Deep Gold — secondary accent on light */
   --olive:#4e7a52;          /* success / valid */
   --amber:#c98a3f;          /* Notice */
   --cocoa:#5a3424;          /* legacy warm brown (unused surfaces) */
 
-  /* legacy names kept for back-compat (dark scale = deep wine)
-     --green stays near-ink for headings; brass = accent-on-light (maroon),
+  /* legacy names kept for back-compat (dark scale = deep forest)
+     --green stays near-ink for headings; brass = accent-on-light (forest),
      brass-soft = accent-on-dark (soft antique gold). */
-  --green:#241519;          /* ink — headings & text only */
-  --green-2:#48222f;        /* dark band, light end */
-  --green-soft:#5c4046;
-  --green-deep:#2b141d;     /* dark band, deep end + footer */
-  --brass:#862633;          /* accent on light → maroon */
-  --brass-soft:#d8b876;     /* accent on dark → soft gold (AA on band) */
-  --gold:#862633;
-  --gold-light:#d8b876;
-  --gold-soft:#d8b876;
+  --green:#22271f;          /* ink — headings & text only */
+  --green-2:#2e4739;        /* dark band, light end */
+  --green-soft:#41544a;
+  --green-deep:#1c2b23;     /* dark band, deep end + footer */
+  --brass:#1e4d3b;          /* accent on light → deep forest */
+  --brass-soft:#cdae6c;     /* accent on dark → soft gold (AA on band) */
+  --gold:#1e4d3b;
+  --gold-light:#cdae6c;
+  --gold-soft:#cdae6c;
 
-  /* neutrals — Snow White family (Pantone 11-0602), wine-leaning ink */
+  /* neutrals — Snow White family (Pantone 11-0602), forest-leaning ink */
   --paper:#f8f6f1;          /* Snow — page background */
   --paper-2:#f2f0eb;        /* Snow White — alternating section bands */
   --surface:#fdfcf9;        /* Shell — cards & raised panels */
@@ -41,9 +42,9 @@
   --cream-2:#f8f6f1;
   --band:#f2f0eb;
   --border:#ddd7cc;         /* Parchment grey — dividers, inputs */
-  --ink:#241519;            /* Wine Ink — headings & body copy */
-  --muted:#6e6259;          /* Warm Grey — AA on snow */
-  --line:rgba(36,21,25,.1);
+  --ink:#22271f;            /* Forest Ink — headings & body copy */
+  --muted:#6a6f62;          /* Sage Grey — AA on snow */
+  --line:rgba(34,39,31,.1);
   --line-light:rgba(242,240,235,.18);
   --serif:'Cormorant Garamond',Georgia,serif;   /* Headlines — Cormorant 600 */
   --sans:'Jost',system-ui,sans-serif;            /* Everything else — Jost */
@@ -51,21 +52,21 @@
   --kufi:'IBM Plex Sans Arabic','Amiri',sans-serif; /* Arabic UI — pairs with Jost */
   --ease:cubic-bezier(.22,1,.36,1);
   --radius:16px;
-  --shadow-soft:0 18px 44px -14px rgba(32,18,22,.13), 0 4px 12px -6px rgba(32,18,22,.06);
+  --shadow-soft:0 18px 44px -14px rgba(26,32,27,.13), 0 4px 12px -6px rgba(26,32,27,.06);
   /* subtle 8-point star lattice, used on dark + light surfaces */
-  --pattern-light:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%23241519' stroke-opacity='0.035' stroke-width='1'%3E%3Cpath d='M80 0l28 52 52 28-52 28-28 52-28-52L0 80l52-28z'/%3E%3Ccircle cx='80' cy='80' r='40'/%3E%3C/g%3E%3C/svg%3E");
+  --pattern-light:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%2322271f' stroke-opacity='0.035' stroke-width='1'%3E%3Cpath d='M80 0l28 52 52 28-52 28-28 52-28-52L0 80l52-28z'/%3E%3Ccircle cx='80' cy='80' r='40'/%3E%3C/g%3E%3C/svg%3E");
   --pattern-dark:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.045' stroke-width='1'%3E%3Cpath d='M80 0l28 52 52 28-52 28-28 52-28-52L0 80l52-28z'/%3E%3Ccircle cx='80' cy='80' r='40'/%3E%3C/g%3E%3C/svg%3E");
   --pattern-brass:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23C9A356' stroke-opacity='0.1'%3E%3Cpath d='M60 5l15 40 40 15-40 15-15 40-15-40L5 60l40-15z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scrollbar-color:rgba(32,18,22,.3) var(--paper-2)}
+html{scroll-behavior:smooth;scrollbar-color:rgba(26,32,27,.3) var(--paper-2)}
 ::selection{background:var(--terra);color:var(--paper)}
 :focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:4px}
 ::-webkit-scrollbar{width:11px}
 ::-webkit-scrollbar-track{background:var(--paper-2)}
-::-webkit-scrollbar-thumb{background:rgba(32,18,22,.28);border-radius:8px;border:3px solid var(--paper-2)}
-::-webkit-scrollbar-thumb:hover{background:rgba(32,18,22,.45)}
+::-webkit-scrollbar-thumb{background:rgba(26,32,27,.28);border-radius:8px;border:3px solid var(--paper-2)}
+::-webkit-scrollbar-thumb:hover{background:rgba(26,32,27,.45)}
 
 /* accessible skip link — visible only when focused */
 .skip-link{
@@ -80,7 +81,7 @@ html{scroll-behavior:smooth;scrollbar-color:rgba(32,18,22,.3) var(--paper-2)}
 /* brass scroll-progress hairline (element injected by animations.js) */
 .scroll-progress{
   position:fixed;top:0;left:0;right:0;height:2px;z-index:90;
-  background:linear-gradient(90deg,#862633,#a4404e);
+  background:linear-gradient(90deg,#1e4d3b,#2f6b52);
   transform:scaleX(0);transform-origin:0 50%;pointer-events:none;
 }
 body{
@@ -113,7 +114,7 @@ section{position:relative}
 .eyebrow::before{content:"";width:32px;height:1px;background:var(--brass);display:inline-block;flex:none}
 .em{
   font-style:italic;color:var(--brass);
-  background:linear-gradient(115deg,#862633 20%,#a4404e 55%,#862633 90%);
+  background:linear-gradient(115deg,#1e4d3b 20%,#2f6b52 55%,#1e4d3b 90%);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
 .arabic{font-family:var(--arab);color:var(--forest);font-size:1.1em}
@@ -132,12 +133,12 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
 }
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:translateY(0)}
-.btn-primary{background:var(--terra);color:#fdf8f0}
-.btn-primary:hover{background:var(--terra-deep);box-shadow:0 10px 24px rgba(134,38,51,.22);color:#fff}
+.btn-primary{background:var(--terra);color:#eef4f0}
+.btn-primary:hover{background:var(--terra-deep);box-shadow:0 10px 24px rgba(30,77,59,.22);color:#fff}
 .btn-gold{background:var(--surface);color:var(--terra)}
-.btn-gold:hover{background:#fff;color:var(--terra-deep);box-shadow:0 12px 28px rgba(32,18,22,.2)}
-.btn-ghost{border-color:rgba(32,18,22,.24);color:var(--green)}
-.btn-ghost:hover{border-color:var(--brass);color:var(--brass);box-shadow:0 8px 20px rgba(134,38,51,.12)}
+.btn-gold:hover{background:#fff;color:var(--terra-deep);box-shadow:0 12px 28px rgba(26,32,27,.2)}
+.btn-ghost{border-color:rgba(26,32,27,.24);color:var(--green)}
+.btn-ghost:hover{border-color:var(--brass);color:var(--brass);box-shadow:0 8px 20px rgba(30,77,59,.12)}
 .dark .btn-ghost{border-color:rgba(242,240,235,.35);color:var(--paper)}
 .dark .btn-ghost:hover{border-color:var(--brass-soft);color:var(--brass-soft)}
 
@@ -153,7 +154,7 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
   background:rgba(248,246,241,.85);
   -webkit-backdrop-filter:blur(14px) saturate(1.15);
   backdrop-filter:blur(14px) saturate(1.15);
-  box-shadow:0 1px 0 var(--line),0 10px 28px rgba(32,18,22,.06);
+  box-shadow:0 1px 0 var(--line),0 10px 28px rgba(26,32,27,.06);
 }
 .nav{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.45rem 0}
 .brand{display:inline-flex;align-items:center;line-height:0}
@@ -211,7 +212,7 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
 /* ============ HERO MINI PRAYER ROW (option C) ============ */
 #prayer-hero-mini{align-items:center;gap:1.5rem;flex-wrap:nowrap}
 #prayer-hero-mini .phm-moon{flex:none;display:flex}
-#prayer-hero-mini .phm-moon svg{width:62px;height:62px;filter:drop-shadow(0 6px 18px rgba(32,18,22,.35))}
+#prayer-hero-mini .phm-moon svg{width:62px;height:62px;filter:drop-shadow(0 6px 18px rgba(26,32,27,.35))}
 #prayer-hero-mini .phm-txt{display:flex;flex-direction:column;gap:.15rem;flex:1;min-width:0}
 #prayer-hero-mini span.phm-label{
   font-family:var(--sans);font-size:.62rem;font-weight:600;
@@ -235,7 +236,7 @@ a:hover > .arrow, a:hover .read .arrow, .btn:hover .arrow{transform:translateX(5
 .hero{
   position:relative;overflow:hidden;
   background:
-    radial-gradient(900px 480px at 82% 8%,rgba(134,38,51,.09),transparent 65%),
+    radial-gradient(900px 480px at 82% 8%,rgba(30,77,59,.09),transparent 65%),
     linear-gradient(170deg,var(--paper) 0%,var(--paper-2) 100%);
 }
 .hero-pattern{
@@ -276,10 +277,10 @@ img.bismillah{
   position:relative;width:min(360px,78vw);aspect-ratio:.72;
   border-radius:50% 50% 12px 12px / 38% 38% 12px 12px;
   background:
-    radial-gradient(420px 260px at 50% 0%,rgba(201,163,86,.25),transparent 70%),
+    radial-gradient(420px 260px at 50% 0%,rgba(205,174,108,.25),transparent 70%),
     linear-gradient(165deg,var(--green-2),var(--green-deep) 70%);
-  border:1px solid rgba(201,163,86,.35);
-  box-shadow:0 26px 64px rgba(32,18,22,.22), inset 0 0 0 10px rgba(242,240,235,.05);
+  border:1px solid rgba(205,174,108,.35);
+  box-shadow:0 26px 64px rgba(26,32,27,.22), inset 0 0 0 10px rgba(242,240,235,.05);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;
   padding:2.4rem;overflow:hidden;
 }
@@ -288,7 +289,7 @@ img.bismillah{
 }
 .arch::after{
   content:"";position:absolute;inset:14px;
-  border:1px solid rgba(201,163,86,.28);
+  border:1px solid rgba(205,174,108,.28);
   border-radius:50% 50% 8px 8px / 38% 38% 8px 8px;pointer-events:none;
 }
 .lamp{position:relative;z-index:2;width:64px;color:var(--brass-soft)}
@@ -342,9 +343,9 @@ img.bismillah{
 .visual{
   position:relative;min-height:380px;border-radius:var(--radius);overflow:hidden;
   background:
-    radial-gradient(360px 220px at 50% 10%,rgba(201,163,86,.2),transparent 70%),
+    radial-gradient(360px 220px at 50% 10%,rgba(205,174,108,.2),transparent 70%),
     linear-gradient(160deg,var(--green-2),var(--green-deep));
-  border:1px solid rgba(201,163,86,.35);
+  border:1px solid rgba(205,174,108,.35);
   display:flex;align-items:center;justify-content:center;
   box-shadow:var(--shadow-soft);
 }
@@ -392,7 +393,7 @@ img.bismillah{
 /* ============ DARK BANDS ============ */
 .dark{
   position:relative;overflow:hidden;
-  background:linear-gradient(165deg,var(--green-deep) 0%,#371b26 55%,var(--green-2) 100%);
+  background:linear-gradient(165deg,var(--green-deep) 0%,#24382e 55%,var(--green-2) 100%);
   color:var(--paper);padding:6rem 0;
 }
 .dark h2{color:var(--paper);font-size:clamp(2rem,4.4vw,3rem)}
@@ -474,14 +475,14 @@ img.bismillah{
 .res-item .info span{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .dur{
   font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);
-  border:1px solid rgba(134,38,51,.35);padding:.3rem .65rem;border-radius:100px;flex:none;
+  border:1px solid rgba(30,77,59,.35);padding:.3rem .65rem;border-radius:100px;flex:none;
 }
 
 .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
 .video{
   position:relative;aspect-ratio:16/10;border-radius:var(--radius);overflow:hidden;
   background:linear-gradient(155deg,var(--green-2),var(--green-deep));
-  border:1px solid rgba(201,163,86,.25);cursor:pointer;
+  border:1px solid rgba(205,174,108,.25);cursor:pointer;
   transition:border-color .45s var(--ease),box-shadow .45s var(--ease);
 }
 .video:hover{border-color:var(--brass)}
@@ -503,7 +504,7 @@ img.bismillah{
 .vtitle{
   position:absolute;left:0;right:0;bottom:0;z-index:2;
   padding:2.4rem 1.4rem 1.2rem;
-  background:linear-gradient(transparent,rgba(43,20,29,.9));
+  background:linear-gradient(transparent,rgba(25,38,31,.9));
 }
 .vtitle h4{color:var(--paper);font-size:1.34rem;line-height:1.25}
 .vtitle span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-soft)}
@@ -516,7 +517,7 @@ img.bismillah{
 .prose blockquote{
   margin:2rem 0;padding:1.4rem 1.8rem;
   border-left:2px solid var(--brass);
-  background:rgba(134,38,51,.07);border-radius:0 12px 12px 0;
+  background:rgba(30,77,59,.07);border-radius:0 12px 12px 0;
   font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--green);line-height:1.5;
 }
 .prose strong{color:var(--ink)}
@@ -532,8 +533,8 @@ img.bismillah{
 .event:hover{border-color:var(--brass)}
 .event .date{
   flex:none;width:74px;text-align:center;
-  border:1px solid rgba(134,38,51,.4);border-radius:12px;padding:.7rem .4rem;
-  background:linear-gradient(175deg,rgba(134,38,51,.1),transparent);
+  border:1px solid rgba(30,77,59,.4);border-radius:12px;padding:.7rem .4rem;
+  background:linear-gradient(175deg,rgba(30,77,59,.1),transparent);
 }
 .event .date .d{font-family:var(--serif);font-size:1.9rem;color:var(--green);line-height:1}
 .event .date .m{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-top:.3rem}
@@ -556,7 +557,7 @@ img.bismillah{
 }
 .field textarea{min-height:150px;resize:vertical}
 .field input:focus,.field select:focus,.field textarea:focus{
-  outline:none;border-color:var(--brass);box-shadow:0 0 0 3px rgba(134,38,51,.14);
+  outline:none;border-color:var(--brass);box-shadow:0 0 0 3px rgba(30,77,59,.14);
 }
 .field input::placeholder,.field textarea::placeholder{color:#ada08a}
 .form-note{font-size:.8rem;color:var(--muted);margin-top:1rem;font-style:italic}
@@ -584,7 +585,7 @@ img.bismillah{
 .site-footer::after{
   content:"إكرام";font-family:var(--kufi);font-weight:500;line-height:1;
   position:absolute;right:1.5rem;bottom:-2.5rem;z-index:1;pointer-events:none;
-  font-size:clamp(8rem,20vw,16rem);color:rgba(201,163,86,.05);
+  font-size:clamp(8rem,20vw,16rem);color:rgba(205,174,108,.05);
 }
 .site-footer .wrap{position:relative;z-index:2}
 .footer-top{
@@ -621,14 +622,14 @@ img.bismillah{
 
 /* header over the dark band: inverted until scrolled */
 .site-header.on-dark:not(.is-scrolled){
-  background:linear-gradient(rgba(43,20,29,.6),rgba(43,20,29,0));
+  background:linear-gradient(rgba(25,38,31,.6),rgba(25,38,31,0));
 }
 .site-header.on-dark:not(.is-scrolled) .brand .logo-terra{display:none}
 .site-header.on-dark:not(.is-scrolled) .brand .logo-cream{display:block}
 .site-header.on-dark:not(.is-scrolled) .nav-links a{color:rgba(242,240,235,.78)}
 .site-header.on-dark:not(.is-scrolled) .nav-links a:hover{color:var(--paper)}
 .site-header.on-dark:not(.is-scrolled) .nav-cta{
-  border-color:rgba(201,163,86,.5);color:var(--brass-soft);
+  border-color:rgba(205,174,108,.5);color:var(--brass-soft);
 }
 .site-header.on-dark:not(.is-scrolled) .nav-cta:hover{
   border-color:var(--brass-soft);color:var(--paper);
@@ -667,7 +668,7 @@ img.bismillah{
   width:118px;height:118px;
   /* moonlight halo + depth — gives even a thin crescent real presence */
   filter:drop-shadow(0 0 14px rgba(242,240,235,.16))
-         drop-shadow(0 0 30px rgba(201,163,86,.22))
+         drop-shadow(0 0 30px rgba(205,174,108,.22))
          drop-shadow(0 10px 26px rgba(0,0,0,.45));
 }
 .pw-moontxt{display:flex;flex-direction:column;gap:.2rem}
@@ -675,8 +676,8 @@ img.bismillah{
 .pw-moontxt span{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,240,235,.7)}
 .pw-badge{
   font-style:normal;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--brass-soft);border:1px solid rgba(201,163,86,.4);border-radius:100px;
-  padding:.28rem .7rem;margin-top:.35rem;background:rgba(201,163,86,.12);
+  color:var(--brass-soft);border:1px solid rgba(205,174,108,.4);border-radius:100px;
+  padding:.28rem .7rem;margin-top:.35rem;background:rgba(205,174,108,.12);
 }
 .pw-next{
   display:flex;flex-direction:column;gap:.35rem;
@@ -702,7 +703,7 @@ img.bismillah{
 .pw-strip strong{font-size:1.18rem;font-weight:500;color:var(--paper);font-variant-numeric:tabular-nums}
 .pw-strip small{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--brass-soft)}
 .pw-strip li.is-next{
-  background:linear-gradient(165deg,rgba(201,163,86,.3),rgba(201,163,86,.1));
+  background:linear-gradient(165deg,rgba(205,174,108,.3),rgba(205,174,108,.1));
   border-color:var(--brass-soft);
 }
 .pw-strip li.is-next strong{color:var(--brass-soft)}
@@ -716,7 +717,7 @@ img.bismillah{
 }
 .pw-iqfill{
   display:block;height:100%;width:100%;border-radius:2px;
-  background:linear-gradient(90deg,#c9a356,#d8b876);
+  background:linear-gradient(90deg,#c9a356,#cdae6c);
   transition:width 1s linear;
 }
 .pw-dua{display:none;margin-top:.9rem;line-height:1.65;opacity:0;transform:translateY(6px)}
@@ -735,8 +736,8 @@ img.bismillah{
 #prayer-widget.is-iqama .pw-strip li.is-next{animation:pwBreath 4s ease-in-out infinite}
 @keyframes pwDuaIn{to{opacity:1;transform:none}}
 @keyframes pwBreath{
-  0%,100%{box-shadow:0 0 0 0 rgba(201,163,86,.32)}
-  50%{box-shadow:0 0 0 12px rgba(201,163,86,0)}
+  0%,100%{box-shadow:0 0 0 0 rgba(205,174,108,.32)}
+  50%{box-shadow:0 0 0 12px rgba(205,174,108,0)}
 }
 
 /* ---- after iqāmah: congregation in prayer ---- */
@@ -747,7 +748,7 @@ img.bismillah{
 }
 #prayer-widget.is-jamaah .pw-label{color:var(--brass-soft)}
 #prayer-widget.is-jamaah .pw-strip li.is-next{
-  background:linear-gradient(165deg,rgba(201,163,86,.18),rgba(201,163,86,.05));
+  background:linear-gradient(165deg,rgba(205,174,108,.18),rgba(205,174,108,.05));
 }
 
 /* ============ Q&A (answers.html) ============ */
@@ -765,7 +766,7 @@ img.bismillah{
 .qa summary:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:14px}
 .qa-tag{
   flex:none;font-size:.6rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--terra);border:1px solid rgba(134,38,51,.3);background:rgba(134,38,51,.06);
+  color:var(--terra);border:1px solid rgba(30,77,59,.3);background:rgba(30,77,59,.06);
   padding:.26rem .6rem;border-radius:100px;
 }
 .qa summary h3{font-size:1.32rem;line-height:1.3;flex:1}
@@ -811,8 +812,8 @@ img.bismillah{
 .path:hover .read{color:var(--brass)}
 .start-here{
   display:flex;align-items:center;justify-content:space-between;gap:1.6rem;flex-wrap:wrap;
-  background:linear-gradient(135deg,rgba(134,38,51,.08),transparent 60%),var(--surface);
-  border:1px solid rgba(134,38,51,.3);border-radius:var(--radius);
+  background:linear-gradient(135deg,rgba(30,77,59,.08),transparent 60%),var(--surface);
+  border:1px solid rgba(30,77,59,.3);border-radius:var(--radius);
   padding:1.6rem 1.9rem;margin-bottom:2.6rem;
 }
 .start-here h3{font-size:1.5rem;margin-bottom:.2rem}
@@ -864,8 +865,8 @@ img.bismillah{
   transition:background .3s,border-color .3s;
 }
 .q-row:last-child{border-bottom:0}
-.q-row:hover{background:rgba(134,38,51,.06)}
-.q-row.is-active{background:rgba(134,38,51,.1)}
+.q-row:hover{background:rgba(30,77,59,.06)}
+.q-row.is-active{background:rgba(30,77,59,.1)}
 .q-num{
   flex:none;width:38px;height:38px;border-radius:50% 50% 8px 8px / 42% 42% 8px 8px;
   border:1px solid var(--line);color:var(--terra);
@@ -889,9 +890,9 @@ img.bismillah{
 .q-ayah{padding:.9rem .7rem;border-bottom:1px solid var(--line);border-left:2px solid transparent;transition:background .4s,border-color .4s}
 .q-ayah:last-child{border-bottom:0}
 .q-ayah.is-clickable{cursor:pointer}
-.q-ayah.is-clickable:hover{background:rgba(134,38,51,.04)}
+.q-ayah.is-clickable:hover{background:rgba(30,77,59,.04)}
 .q-ayah.is-playing{
-  background:rgba(134,38,51,.07);
+  background:rgba(30,77,59,.07);
   border-left-color:var(--terra);border-radius:0 10px 10px 0;
 }
 .q-ayah .ar{
@@ -900,7 +901,7 @@ img.bismillah{
 }
 .q-ayah .marker{
   font-family:var(--sans);font-size:.72rem;color:var(--terra);
-  border:1px solid rgba(134,38,51,.35);border-radius:100px;
+  border:1px solid rgba(30,77,59,.35);border-radius:100px;
   padding:.1rem .5rem;margin-right:.6rem;vertical-align:middle;white-space:nowrap;
 }
 .q-ayah .tr{display:block;font-size:.95rem;color:var(--muted);margin-top:.45rem;line-height:1.75}
@@ -913,7 +914,7 @@ img.bismillah{
 .q-tafbtn:hover{border-color:var(--brass)}
 .q-taf{
   margin-top:.7rem;padding:.9rem 1.1rem;border-left:2px solid var(--brass);
-  background:rgba(134,38,51,.05);border-radius:0 10px 10px 0;
+  background:rgba(30,77,59,.05);border-radius:0 10px 10px 0;
   font-size:.92rem;color:var(--muted);line-height:1.8;
 }
 .q-taf p{margin:0}
@@ -927,11 +928,11 @@ img.bismillah{
 /* fixed player bar */
 .q-player{
   position:fixed;left:0;right:0;bottom:0;z-index:70;
-  background:linear-gradient(165deg,var(--green-deep),#371b26);
+  background:linear-gradient(165deg,var(--green-deep),#24382e);
   color:var(--paper);border-top:1px solid rgba(242,240,235,.14);
   padding:.8rem clamp(1rem,5vw,3rem);
   display:none;align-items:center;gap:1.2rem;
-  box-shadow:0 -12px 32px rgba(32,18,22,.25);
+  box-shadow:0 -12px 32px rgba(26,32,27,.25);
 }
 .q-player.on{display:flex}
 body.has-player{padding-bottom:96px}
@@ -1043,7 +1044,7 @@ body.has-player{padding-bottom:96px}
   margin:-.6rem 0 1.6rem;font-size:.82rem;color:var(--muted);
 }
 .q-khatmah .bar{flex:1;min-width:160px;height:6px;border-radius:3px;background:var(--paper-2);overflow:hidden}
-.q-khatmah .fill{display:block;height:100%;background:linear-gradient(90deg,var(--terra),#a4404e);border-radius:3px;transition:width .6s var(--ease)}
+.q-khatmah .fill{display:block;height:100%;background:linear-gradient(90deg,var(--terra),#2f6b52);border-radius:3px;transition:width .6s var(--ease)}
 .q-khatmah strong{color:var(--ink);font-weight:500}
 .q-khatmah button{background:none;border:0;color:var(--terra);cursor:pointer;font-family:var(--sans);font-size:.78rem;text-decoration:underline;padding:0}
 .q-mark{margin:0 0 1.2rem}
@@ -1053,7 +1054,7 @@ body.has-player{padding-bottom:96px}
 .live-card{display:flex;flex-direction:column;gap:0}
 .live-frame{
   position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;
-  background:var(--green-deep);border:1px solid rgba(201,163,86,.25);
+  background:var(--green-deep);border:1px solid rgba(205,174,108,.25);
   cursor:pointer;
 }
 .live-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
@@ -1062,7 +1063,7 @@ body.has-player{padding-bottom:96px}
 .live-badge{
   position:absolute;top:1rem;left:1rem;z-index:3;
   display:inline-flex;align-items:center;gap:.45rem;
-  background:rgba(43,20,29,.75);color:var(--paper);
+  background:rgba(25,38,31,.75);color:var(--paper);
   -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
   font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
   padding:.35rem .75rem;border-radius:100px;border:1px solid rgba(242,240,235,.2);
@@ -1159,8 +1160,8 @@ body.has-player{padding-bottom:96px}
   #prayer-widget.is-iqama .pw-strip li.is-next{animation-name:pwBreathSm}
 }
 @keyframes pwBreathSm{
-  0%,100%{box-shadow:0 0 0 0 rgba(201,163,86,.3)}
-  50%{box-shadow:0 0 0 7px rgba(201,163,86,0)}
+  0%,100%{box-shadow:0 0 0 0 rgba(205,174,108,.3)}
+  50%{box-shadow:0 0 0 7px rgba(205,174,108,0)}
 }
 
 /* ============ REDUCED MOTION ============ */
