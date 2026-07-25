@@ -1,6 +1,6 @@
 import math, os
 OUT="/tmp/art/svg"; os.makedirs(OUT,exist_ok=True)
-LAGO_A="#1b2a22"; LAGO_B="#2c4536"; SAND="#f2f0eb"; CORAL="#cdae6c"; CORAL_D="#b89a54"
+LAGO_A="#2c141d"; LAGO_B="#3a1b26"; SAND="#f2f0eb"; CORAL="#d8b876"; CORAL_D="#c9a356"
 
 def star_pts(cx,cy,r1,r2,n=8,rot=0):
     pts=[]
@@ -17,7 +17,7 @@ def head(w,h,name):
 <stop offset="0" stop-color="{LAGO_B}"/><stop offset="1" stop-color="{LAGO_A}"/>
 </linearGradient>
 <radialGradient id="glow" cx="0.5" cy="0.42" r="1.05">
-<stop offset="0" stop-color="{CORAL}" stop-opacity="0.09"/><stop offset="0.5" stop-color="{CORAL}" stop-opacity="0.02"/><stop offset="1" stop-color="#101a14" stop-opacity="0.4"/>
+<stop offset="0" stop-color="{CORAL}" stop-opacity="0.09"/><stop offset="0.5" stop-color="{CORAL}" stop-opacity="0.02"/><stop offset="1" stop-color="#1c0d13" stop-opacity="0.4"/>
 </radialGradient>
 <pattern id="lat" width="140" height="140" patternUnits="userSpaceOnUse">
 <g fill="none" stroke="{SAND}" stroke-opacity="0.06">

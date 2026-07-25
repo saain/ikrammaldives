@@ -435,7 +435,7 @@
       var enter = function () {
         gsap.to(el, {
           y: -6,
-          boxShadow: "0 22px 48px rgba(26,32,27,.13)",
+          boxShadow: "0 22px 48px rgba(32,18,22,.13)",
           duration: 0.4,
           ease: "power2.out",
           overwrite: "auto" /* if hovered mid-reveal, take over y cleanly */
@@ -444,7 +444,7 @@
       var leave = function () {
         gsap.to(el, {
           y: 0,
-          boxShadow: "0 0 0 rgba(26,32,27,0)",
+          boxShadow: "0 0 0 rgba(32,18,22,0)",
           duration: 0.6,
           ease: "power2.out"
         });

@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" role="img" aria-label="">
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
-<stop offset="0" stop-color="#2c4536"/><stop offset="1" stop-color="#1b2a22"/>
+<stop offset="0" stop-color="#3a1b26"/><stop offset="1" stop-color="#2c141d"/>
 </linearGradient>
 <radialGradient id="glow" cx="0.5" cy="0.42" r="1.05">
-<stop offset="0" stop-color="#cdae6c" stop-opacity="0.09"/><stop offset="0.5" stop-color="#cdae6c" stop-opacity="0.02"/><stop offset="1" stop-color="#101a14" stop-opacity="0.4"/>
+<stop offset="0" stop-color="#d8b876" stop-opacity="0.09"/><stop offset="0.5" stop-color="#d8b876" stop-opacity="0.02"/><stop offset="1" stop-color="#1c0d13" stop-opacity="0.4"/>
 </radialGradient>
 <pattern id="lat" width="140" height="140" patternUnits="userSpaceOnUse">
 <g fill="none" stroke="#f2f0eb" stroke-opacity="0.06">
@@ -14,5 +14,5 @@
 </defs>
 <rect width="800" height="470" fill="url(#bg)"/>
 <rect width="800" height="470" fill="url(#lat)"/>
-<g fill="none" stroke="#cdae6c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" ><line x1="400" y1="120" x2="400" y2="330"/><line x1="270" y1="150" x2="530" y2="150"/><circle cx="400" cy="120" r="8"/><path d="M 360 330 H 440"/><path d="M 342 344 H 458"/><line x1="270" y1="150" x2="228" y2="228"/><line x1="270" y1="150" x2="312" y2="228"/><path d="M 218 228 Q 270 274 322 228"/><line x1="530" y1="150" x2="488" y2="228"/><line x1="530" y1="150" x2="572" y2="228"/><path d="M 478 228 Q 530 274 582 228"/></g><g fill="none" stroke="#f2f0eb" stroke-opacity="0.55" stroke-width="1.6" stroke-linecap="round"><circle cx="270" cy="150" r="5"/><circle cx="530" cy="150" r="5"/></g><rect width="800" height="470" fill="url(#glow)"/>
+<g fill="none" stroke="#d8b876" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" ><line x1="400" y1="120" x2="400" y2="330"/><line x1="270" y1="150" x2="530" y2="150"/><circle cx="400" cy="120" r="8"/><path d="M 360 330 H 440"/><path d="M 342 344 H 458"/><line x1="270" y1="150" x2="228" y2="228"/><line x1="270" y1="150" x2="312" y2="228"/><path d="M 218 228 Q 270 274 322 228"/><line x1="530" y1="150" x2="488" y2="228"/><line x1="530" y1="150" x2="572" y2="228"/><path d="M 478 228 Q 530 274 582 228"/></g><g fill="none" stroke="#f2f0eb" stroke-opacity="0.55" stroke-width="1.6" stroke-linecap="round"><circle cx="270" cy="150" r="5"/><circle cx="530" cy="150" r="5"/></g><rect width="800" height="470" fill="url(#glow)"/>
 </svg>

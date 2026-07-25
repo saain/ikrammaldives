@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="">
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
-<stop offset="0" stop-color="#2c4536"/><stop offset="1" stop-color="#1b2a22"/>
+<stop offset="0" stop-color="#3a1b26"/><stop offset="1" stop-color="#2c141d"/>
 </linearGradient>
 <radialGradient id="glow" cx="0.5" cy="0.42" r="1.05">
-<stop offset="0" stop-color="#cdae6c" stop-opacity="0.09"/><stop offset="0.5" stop-color="#cdae6c" stop-opacity="0.02"/><stop offset="1" stop-color="#101a14" stop-opacity="0.4"/>
+<stop offset="0" stop-color="#d8b876" stop-opacity="0.09"/><stop offset="0.5" stop-color="#d8b876" stop-opacity="0.02"/><stop offset="1" stop-color="#1c0d13" stop-opacity="0.4"/>
 </radialGradient>
 <pattern id="lat" width="140" height="140" patternUnits="userSpaceOnUse">
 <g fill="none" stroke="#f2f0eb" stroke-opacity="0.06">
@@ -14,5 +14,5 @@
 </defs>
 <rect width="800" height="450" fill="url(#bg)"/>
 <rect width="800" height="450" fill="url(#lat)"/>
-<g fill="none" stroke="#cdae6c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M 308 330 V 292 Q 308 196 400 168 Q 492 196 492 292 V 330"/><path d="M 296 330 H 504"/><line x1="400" y1="168" x2="400" y2="128"/><path d="M 412 108 A 16 16 0 1 0 412 132 A 13 13 0 1 1 412 108 Z"/></g><g fill="none" stroke="#f2f0eb" stroke-opacity="0.6" stroke-width="1.7" stroke-linecap="round"><path d="M 330 330 V 306"/><path d="M 470 330 V 306"/><path d="M 208 388 V 220 M 232 388 V 220 M 208 220 H 232 M 202 220 L 220 190 L 238 220"/><line x1="220" y1="190" x2="220" y2="172"/><path d="M 140 388 Q 400 412 660 388"/></g><rect width="800" height="450" fill="url(#glow)"/>
+<g fill="none" stroke="#d8b876" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M 308 330 V 292 Q 308 196 400 168 Q 492 196 492 292 V 330"/><path d="M 296 330 H 504"/><line x1="400" y1="168" x2="400" y2="128"/><path d="M 412 108 A 16 16 0 1 0 412 132 A 13 13 0 1 1 412 108 Z"/></g><g fill="none" stroke="#f2f0eb" stroke-opacity="0.6" stroke-width="1.7" stroke-linecap="round"><path d="M 330 330 V 306"/><path d="M 470 330 V 306"/><path d="M 208 388 V 220 M 232 388 V 220 M 208 220 H 232 M 202 220 L 220 190 L 238 220"/><line x1="220" y1="190" x2="220" y2="172"/><path d="M 140 388 Q 400 412 660 388"/></g><rect width="800" height="450" fill="url(#glow)"/>
 </svg>

@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="">
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
-<stop offset="0" stop-color="#2c4536"/><stop offset="1" stop-color="#1b2a22"/>
+<stop offset="0" stop-color="#3a1b26"/><stop offset="1" stop-color="#2c141d"/>
 </linearGradient>
 <radialGradient id="glow" cx="0.5" cy="0.42" r="1.05">
-<stop offset="0" stop-color="#cdae6c" stop-opacity="0.09"/><stop offset="0.5" stop-color="#cdae6c" stop-opacity="0.02"/><stop offset="1" stop-color="#101a14" stop-opacity="0.4"/>
+<stop offset="0" stop-color="#d8b876" stop-opacity="0.09"/><stop offset="0.5" stop-color="#d8b876" stop-opacity="0.02"/><stop offset="1" stop-color="#1c0d13" stop-opacity="0.4"/>
 </radialGradient>
 <pattern id="lat" width="140" height="140" patternUnits="userSpaceOnUse">
 <g fill="none" stroke="#f2f0eb" stroke-opacity="0.06">
@@ -14,5 +14,5 @@
 </defs>
 <rect width="800" height="500" fill="url(#bg)"/>
 <rect width="800" height="500" fill="url(#lat)"/>
-<g fill="none" stroke="#cdae6c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" ><path d="M 236 420 V 226 Q 236 150 330 118 Q 424 150 424 226 V 420"/><path d="M 452 420 V 300 Q 452 250 514 228 Q 576 250 576 300 V 420"/></g><g fill="none" stroke="#f2f0eb" stroke-opacity="0.55" stroke-width="1.7" stroke-linecap="round"><polygon points="514.0,132.0 518.2,147.8 532.4,139.6 524.2,153.8 540.0,158.0 524.2,162.2 532.4,176.4 518.2,168.2 514.0,184.0 509.8,168.2 495.6,176.4 503.8,162.2 488.0,158.0 503.8,153.8 495.6,139.6 509.8,147.8"/><line x1="236" y1="420" x2="576" y2="420"/></g><rect width="800" height="500" fill="url(#glow)"/>
+<g fill="none" stroke="#d8b876" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" ><path d="M 236 420 V 226 Q 236 150 330 118 Q 424 150 424 226 V 420"/><path d="M 452 420 V 300 Q 452 250 514 228 Q 576 250 576 300 V 420"/></g><g fill="none" stroke="#f2f0eb" stroke-opacity="0.55" stroke-width="1.7" stroke-linecap="round"><polygon points="514.0,132.0 518.2,147.8 532.4,139.6 524.2,153.8 540.0,158.0 524.2,162.2 532.4,176.4 518.2,168.2 514.0,184.0 509.8,168.2 495.6,176.4 503.8,162.2 488.0,158.0 503.8,153.8 495.6,139.6 509.8,147.8"/><line x1="236" y1="420" x2="576" y2="420"/></g><rect width="800" height="500" fill="url(#glow)"/>
 </svg>
