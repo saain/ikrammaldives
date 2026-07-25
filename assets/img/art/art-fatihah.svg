@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" role="img" aria-label="">
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
-<stop offset="0" stop-color="#17434a"/><stop offset="1" stop-color="#123a40"/>
+<stop offset="0" stop-color="#3a1b26"/><stop offset="1" stop-color="#2c141d"/>
 </linearGradient>
 <radialGradient id="glow" cx="0.5" cy="0.42" r="1.05">
-<stop offset="0" stop-color="#de9673" stop-opacity="0.09"/><stop offset="0.5" stop-color="#de9673" stop-opacity="0.02"/><stop offset="1" stop-color="#0c2b30" stop-opacity="0.4"/>
+<stop offset="0" stop-color="#d8b876" stop-opacity="0.09"/><stop offset="0.5" stop-color="#d8b876" stop-opacity="0.02"/><stop offset="1" stop-color="#1c0d13" stop-opacity="0.4"/>
 </radialGradient>
 <pattern id="lat" width="140" height="140" patternUnits="userSpaceOnUse">
-<g fill="none" stroke="#f0ede0" stroke-opacity="0.06">
+<g fill="none" stroke="#f2f0eb" stroke-opacity="0.06">
 <polygon points="70.0,4.0 80.3,45.1 116.7,23.3 94.9,59.7 136.0,70.0 94.9,80.3 116.7,116.7 80.3,94.9 70.0,136.0 59.7,94.9 23.3,116.7 45.1,80.3 4.0,70.0 45.1,59.7 23.3,23.3 59.7,45.1"/><circle cx="70" cy="70" r="34"/>
 </g>
 </pattern>
 </defs>
 <rect width="800" height="470" fill="url(#bg)"/>
 <rect width="800" height="470" fill="url(#lat)"/>
-<g fill="none" stroke="#de9673" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" ><path d="M 400 150 Q 330 122 260 150 V 258 Q 330 230 400 258 Q 470 230 540 258 V 150 Q 470 122 400 150 V 258"/><line x1="304" y1="382" x2="452" y2="270"/><line x1="496" y1="382" x2="348" y2="270"/></g><g fill="none" stroke="#f0ede0" stroke-opacity="0.55" stroke-width="1.5" stroke-linecap="round"><path d="M 284 166 Q 336 143 378 166"/><path d="M 422 166 Q 464 143 516 166"/><path d="M 284 190 Q 336 167 378 190"/><path d="M 422 190 Q 464 167 516 190"/><path d="M 284 214 Q 336 191 378 214"/><path d="M 422 214 Q 464 191 516 214"/><path d="M 284 238 Q 336 215 378 238"/><path d="M 422 238 Q 464 215 516 238"/></g><rect width="800" height="470" fill="url(#glow)"/>
+<g fill="none" stroke="#d8b876" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" ><path d="M 400 150 Q 330 122 260 150 V 258 Q 330 230 400 258 Q 470 230 540 258 V 150 Q 470 122 400 150 V 258"/><line x1="304" y1="382" x2="452" y2="270"/><line x1="496" y1="382" x2="348" y2="270"/></g><g fill="none" stroke="#f2f0eb" stroke-opacity="0.55" stroke-width="1.5" stroke-linecap="round"><path d="M 284 166 Q 336 143 378 166"/><path d="M 422 166 Q 464 143 516 166"/><path d="M 284 190 Q 336 167 378 190"/><path d="M 422 190 Q 464 167 516 190"/><path d="M 284 214 Q 336 191 378 214"/><path d="M 422 214 Q 464 191 516 214"/><path d="M 284 238 Q 336 215 378 238"/><path d="M 422 238 Q 464 215 516 238"/></g><rect width="800" height="470" fill="url(#glow)"/>
 </svg>

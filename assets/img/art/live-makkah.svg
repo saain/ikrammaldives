@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="">
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
-<stop offset="0" stop-color="#17434a"/><stop offset="1" stop-color="#123a40"/>
+<stop offset="0" stop-color="#3a1b26"/><stop offset="1" stop-color="#2c141d"/>
 </linearGradient>
 <radialGradient id="glow" cx="0.5" cy="0.42" r="1.05">
-<stop offset="0" stop-color="#de9673" stop-opacity="0.09"/><stop offset="0.5" stop-color="#de9673" stop-opacity="0.02"/><stop offset="1" stop-color="#0c2b30" stop-opacity="0.4"/>
+<stop offset="0" stop-color="#d8b876" stop-opacity="0.09"/><stop offset="0.5" stop-color="#d8b876" stop-opacity="0.02"/><stop offset="1" stop-color="#1c0d13" stop-opacity="0.4"/>
 </radialGradient>
 <pattern id="lat" width="140" height="140" patternUnits="userSpaceOnUse">
-<g fill="none" stroke="#f0ede0" stroke-opacity="0.06">
+<g fill="none" stroke="#f2f0eb" stroke-opacity="0.06">
 <polygon points="70.0,4.0 80.3,45.1 116.7,23.3 94.9,59.7 136.0,70.0 94.9,80.3 116.7,116.7 80.3,94.9 70.0,136.0 59.7,94.9 23.3,116.7 45.1,80.3 4.0,70.0 45.1,59.7 23.3,23.3 59.7,45.1"/><circle cx="70" cy="70" r="34"/>
 </g>
 </pattern>
 </defs>
 <rect width="800" height="450" fill="url(#bg)"/>
 <rect width="800" height="450" fill="url(#lat)"/>
-<g fill="none" stroke="#de9673" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M 295 340 V 160 L 400 130 L 505 160 V 340 L 400 368 Z"/><path d="M 295 160 L 400 186 L 505 160"/><path d="M 400 186 V 368"/></g><g fill="none" stroke="#f0ede0" stroke-opacity="0.6" stroke-width="1.7" stroke-linecap="round"><path d="M 295 210 L 400 238 L 505 210"/><path d="M 295 222 L 400 250 L 505 222"/><path d="M 434 300 V 252 Q 446 244 458 250 V 296"/><path d="M 140 388 Q 400 414 660 388"/></g><rect width="800" height="450" fill="url(#glow)"/>
+<g fill="none" stroke="#d8b876" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M 295 340 V 160 L 400 130 L 505 160 V 340 L 400 368 Z"/><path d="M 295 160 L 400 186 L 505 160"/><path d="M 400 186 V 368"/></g><g fill="none" stroke="#f2f0eb" stroke-opacity="0.6" stroke-width="1.7" stroke-linecap="round"><path d="M 295 210 L 400 238 L 505 210"/><path d="M 295 222 L 400 250 L 505 222"/><path d="M 434 300 V 252 Q 446 244 458 250 V 296"/><path d="M 140 388 Q 400 414 660 388"/></g><rect width="800" height="450" fill="url(#glow)"/>
 </svg>
