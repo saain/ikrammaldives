@@ -281,8 +281,8 @@ img.bismillah{
     linear-gradient(165deg,var(--green-2),var(--green-deep) 70%);
   border:1px solid rgba(216,184,118,.35);
   box-shadow:0 26px 64px rgba(32,18,22,.22), inset 0 0 0 10px rgba(242,240,235,.05);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;
-  padding:2.4rem;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;
+  padding:2rem;overflow:hidden;
 }
 .arch::before{
   content:"";position:absolute;inset:0;background-image:var(--pattern-brass);opacity:.6;
@@ -293,6 +293,10 @@ img.bismillah{
   border-radius:50% 50% 8px 8px / 38% 38% 8px 8px;pointer-events:none;
 }
 .lamp{position:relative;z-index:2;width:64px;color:var(--brass-soft)}
+.arch .nur-img{
+  position:relative;z-index:2;width:min(190px,52%);height:auto;
+  filter:drop-shadow(0 8px 26px rgba(0,0,0,.35));
+}
 .ayah{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;gap:.7rem}
 .ayah .ar{font-family:var(--arab);font-size:clamp(1.25rem,2vw,1.55rem);color:var(--paper);line-height:1.9}
 .ayah .ref{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass-soft)}
