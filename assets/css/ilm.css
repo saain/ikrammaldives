@@ -1,0 +1,281 @@
+/* =========================================================
+   IKRAM — Ilm Library section
+   Rides on the site stylesheet (Snow, Ink & Gold system).
+   Load order on every ilm page:
+     styles.css  →  ilm.css
+   This file adds only the library's own register: the arched
+   At-a-glance niche, article prose set in the display serif,
+   series cards, and footnotes. All tokens come from styles.css.
+   ========================================================= */
+
+/* ---------- breadcrumbs ---------- */
+.crumbs{
+  font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);
+}
+.crumbs a{transition:color .3s}
+.crumbs a:hover{color:var(--green)}
+.crumbs .sep{color:var(--brass);padding:0 .5em}
+
+/* ---------- Ilm landing hero (deep wine band, like the home prayer band) ---------- */
+.ilm-hero{padding:9.8rem 0 5.4rem;text-align:center}
+.ilm-hero .eyebrow{color:var(--brass-soft)}
+.ilm-hero .eyebrow::before{background:var(--brass-soft)}
+.ilm-hero .eyebrow::after{content:"";width:32px;height:1px;background:var(--brass-soft);display:inline-block;flex:none}
+.ilm-ayah{
+  font-family:var(--arab);font-size:clamp(2rem,4.6vw,3.1rem);
+  color:var(--brass-soft);line-height:1.9;margin-top:1.7rem;
+}
+.ilm-trans{
+  font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,1.9vw,1.35rem);
+  color:rgba(242,240,235,.88);margin-top:.7rem;
+}
+.ilm-hero .ref{
+  display:block;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--brass-soft);margin-top:1.1rem;
+}
+.ilm-hero h1{color:var(--paper);font-size:clamp(2.8rem,6.5vw,4.6rem);margin-top:2.5rem}
+.ilm-hero h1 .ar{font-family:var(--arab);font-weight:400;font-size:.52em;color:var(--brass-soft)}
+.ilm-sub{max-width:58ch;margin:1.2rem auto 0;color:rgba(242,240,235,.82);font-size:1.04rem}
+
+/* ---------- landing: lead + section cards ---------- */
+.ilm-lead{max-width:640px;margin:2.8rem auto 3rem;text-align:center;color:var(--muted);font-size:1.05rem}
+.ilm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.ilm-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:2.1rem 1.9rem;display:flex;flex-direction:column;gap:.6rem;
+  transition:border-color .45s var(--ease),box-shadow .45s var(--ease);
+}
+.ilm-card:hover{border-color:var(--brass)}
+.ilm-card h3{font-size:1.62rem}
+.ilm-card p{font-size:.94rem;color:var(--muted);flex:1}
+.ilm-card h3 .ar,.ilm-feature h3 .ar{
+  font-family:var(--arab);font-weight:400;font-size:.82em;margin-left:.35rem;color:var(--brass);
+}
+.ilm-tag{
+  align-self:flex-start;font-size:.64rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);border:1px solid var(--line);border-radius:100px;
+  padding:.3rem .75rem;margin-top:.5rem;
+}
+
+/* the open section — a wine niche spanning the row */
+.ilm-feature{
+  grid-column:1 / -1;position:relative;overflow:hidden;text-align:center;
+  background:linear-gradient(165deg,var(--green-2) 0%,#371b26 45%,var(--green-deep) 100%);
+  border:1px solid rgba(216,184,118,.35);
+  border-radius:140px 140px var(--radius) var(--radius);
+  padding:3.8rem 2.4rem 2.8rem;box-shadow:var(--shadow-soft);
+}
+.ilm-feature::before{
+  content:"";position:absolute;inset:0;background-image:var(--pattern-brass);
+  opacity:.55;pointer-events:none;
+}
+.ilm-feature::after{
+  content:"";position:absolute;inset:12px;border:1px solid rgba(216,184,118,.26);
+  border-radius:128px 128px 10px 10px;pointer-events:none;
+}
+.ilm-feature > *{position:relative;z-index:2}
+.ilm-open{
+  display:inline-block;font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--brass-soft);border:1px solid rgba(216,184,118,.45);background:rgba(216,184,118,.12);
+  border-radius:100px;padding:.32rem .85rem;margin-bottom:1.2rem;
+}
+.ilm-feature h3{color:var(--paper);font-size:2.05rem}
+.ilm-feature h3 .ar{color:var(--brass-soft)}
+.ilm-feature p{color:rgba(242,240,235,.85);max-width:60ch;margin:.6rem auto 0;font-size:.97rem}
+
+/* gold pill CTA shared by feature + entry cards */
+.ilm-go{
+  display:inline-flex;align-items:center;gap:.55rem;margin-top:1.6rem;
+  font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--brass-soft);border:1px solid rgba(216,184,118,.5);border-radius:100px;
+  padding:.68rem 1.5rem;
+  transition:background .35s var(--ease),color .35s var(--ease),border-color .35s;
+}
+.ilm-go:hover,.entry-card:hover .ilm-go{
+  background:var(--brass-soft);color:var(--green-deep);border-color:var(--brass-soft);
+}
+
+/* ---------- series index (Seerah) ---------- */
+.entry-card{
+  display:block;max-width:52rem;margin:0 auto;position:relative;overflow:hidden;text-align:center;
+  background:linear-gradient(165deg,var(--green-2) 0%,#371b26 45%,var(--green-deep) 100%);
+  border:1px solid rgba(216,184,118,.35);
+  border-radius:140px 140px var(--radius) var(--radius);
+  padding:3.8rem 2.4rem 2.8rem;box-shadow:var(--shadow-soft);
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s;
+}
+.entry-card:hover{transform:translateY(-4px);border-color:rgba(216,184,118,.6)}
+.entry-card::before{
+  content:"";position:absolute;inset:0;background-image:var(--pattern-brass);
+  opacity:.55;pointer-events:none;
+}
+.entry-card::after{
+  content:"";position:absolute;inset:12px;border:1px solid rgba(216,184,118,.26);
+  border-radius:128px 128px 10px 10px;pointer-events:none;
+}
+.entry-card > *{position:relative;z-index:2}
+.entry-card .no{
+  font-size:.68rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--brass-soft);
+}
+.entry-card h2{color:var(--paper);font-size:clamp(1.9rem,3.8vw,2.5rem);margin-top:.55rem}
+.entry-card .date{
+  font-family:var(--serif);font-style:italic;font-size:1.08rem;
+  color:var(--brass-soft);margin-top:.25rem;
+}
+.entry-card p{color:rgba(242,240,235,.85);max-width:40rem;margin:1.1rem auto 0;font-size:.97rem}
+.entry-card em{color:var(--brass-soft)}
+.entry-card .meta{
+  margin-top:1.5rem;display:flex;justify-content:center;gap:.6rem 1.7rem;flex-wrap:wrap;
+  font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(242,240,235,.66);
+}
+
+.upcoming{max-width:52rem;margin:3.8rem auto 0}
+.upcoming h2{
+  font-family:var(--sans);font-size:.74rem;font-weight:600;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:1.3rem;
+}
+.upcoming ol{list-style:none;border-top:1px solid var(--line)}
+.upcoming li{
+  display:flex;align-items:baseline;gap:1.2rem;padding:1.05rem .4rem;
+  border-bottom:1px solid var(--line);
+}
+.upcoming .n{font-family:var(--serif);color:var(--brass);font-size:1.1rem;min-width:1.6rem}
+.upcoming .t{font-family:var(--serif);font-size:1.24rem;color:var(--green);flex:1}
+.upcoming .y{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- article: the At-a-glance niche ---------- */
+.glance{
+  max-width:52rem;margin:0 auto;position:relative;overflow:hidden;color:var(--paper);
+  background:linear-gradient(170deg,var(--green-2) 0%,#371b26 48%,var(--green-deep) 100%);
+  border:1px solid rgba(216,184,118,.35);
+  border-radius:230px 230px var(--radius) var(--radius);
+  padding:4.6rem 2.8rem 2.6rem;box-shadow:var(--shadow-soft);
+}
+.glance::before{
+  content:"";position:absolute;inset:0;background-image:var(--pattern-brass);
+  opacity:.5;pointer-events:none;
+}
+.glance::after{
+  content:"";position:absolute;inset:14px;border:1px solid rgba(216,184,118,.26);
+  border-radius:216px 216px 10px 10px;pointer-events:none;
+}
+.glance > *{position:relative;z-index:2}
+.glance .label{
+  text-align:center;font-size:.7rem;font-weight:600;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--brass-soft);margin-bottom:1.7rem;
+}
+.glance table{width:100%;border-collapse:collapse}
+.glance th,.glance td{
+  text-align:left;vertical-align:top;padding:.8rem .4rem;
+  border-bottom:1px solid rgba(216,184,118,.16);
+}
+.glance tr:last-child th,.glance tr:last-child td{border-bottom:none}
+.glance th{
+  font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brass-soft);width:11rem;padding-top:1rem;
+}
+.glance td{font-family:'Cormorant Garamond','Amiri',Georgia,serif;font-size:1.14rem;color:var(--paper);line-height:1.6}
+.glance td em{color:var(--brass-soft)}
+.glance sup{line-height:0}
+.glance sup a{font-family:var(--sans);font-size:.66em;font-weight:600;color:var(--brass-soft);padding:0 .1em}
+
+/* ---------- article prose — read in the display serif, like a book ---------- */
+.ilm-prose{
+  max-width:720px;margin:0 auto;
+  font-family:'Cormorant Garamond','Amiri',Georgia,serif; /* Amiri fallback carries ﷺ and inline Arabic */
+  font-size:1.24rem;line-height:1.78;color:var(--ink);
+}
+.ilm-prose > *{margin-bottom:1.35rem}
+.ilm-prose .section-label{
+  font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--brass);text-align:center;margin:3.4rem 0 1.6rem;
+}
+.ilm-prose h2{
+  font-size:1.95rem;color:var(--green);margin:3rem 0 1.1rem;
+  display:flex;align-items:baseline;gap:.85rem;
+}
+.ilm-prose h2 .no{
+  font-family:var(--sans);font-size:.8rem;font-weight:600;
+  color:var(--brass);letter-spacing:.08em;
+}
+.ilm-prose h3{font-size:1.42rem;color:var(--green-2);margin:2rem 0 .8rem}
+.ilm-prose p strong{font-weight:600;color:var(--green-2)}
+.ilm-lede::first-letter{
+  font-weight:600;font-size:3.1em;float:left;line-height:.8;
+  padding:.08em .14em 0 0;color:var(--green-2);
+}
+.ilm-prose blockquote{
+  margin:1.9rem 0;padding:1.2rem 1.5rem 1.2rem 1.6rem;
+  border-left:2px solid var(--brass);background:rgba(43,26,31,.06);
+  border-radius:0 12px 12px 0;
+  font-style:italic;font-size:1.28rem;color:var(--green);line-height:1.6;
+}
+.ilm-prose blockquote .vref{
+  display:inline-block;font-family:var(--sans);font-style:normal;font-size:.68rem;
+  font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--brass);margin-left:.6em;
+}
+.ilm-prose ul{padding-left:1.3rem}
+.ilm-prose ul li{margin-bottom:.7rem}
+.ilm-prose .ar{font-family:var(--arab);font-size:1.02em}
+.ilm-prose sup{line-height:0}
+.ilm-prose sup a{
+  font-family:var(--sans);font-size:.66em;font-weight:600;
+  color:var(--brass);padding:0 .12em;transition:color .3s;
+}
+.ilm-prose sup a:hover{color:var(--green)}
+.sources h3{font-size:1.32rem;color:var(--green-2);margin:1.8rem 0 .6rem}
+.sources li{font-size:1.08rem}
+
+/* ---------- footnotes, colophon, series nav ---------- */
+.footnotes{max-width:720px;margin:3.6rem auto 0;padding-top:2rem;border-top:1px solid var(--line)}
+.footnotes h2{
+  font-family:var(--sans);font-size:.74rem;font-weight:600;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem;
+}
+.footnotes ol{list-style:none;counter-reset:fn}
+.footnotes li{
+  counter-increment:fn;position:relative;padding-left:2rem;
+  font-size:.92rem;color:var(--muted);margin-bottom:.9rem;line-height:1.7;
+}
+.footnotes li::before{
+  content:counter(fn);position:absolute;left:0;top:.05rem;
+  font-family:var(--serif);color:var(--brass);font-size:1.05rem;
+}
+.footnotes .ar{font-family:var(--arab)}
+.footnotes .back{color:var(--brass);margin-left:.35em;transition:color .3s}
+.footnotes .back:hover{color:var(--green)}
+.colophon{
+  max-width:720px;margin:3rem auto 0;text-align:center;
+  font-size:.86rem;font-style:italic;color:var(--muted);
+}
+.series-nav{
+  max-width:720px;margin:2.4rem auto 0;display:flex;justify-content:space-between;gap:1rem;
+  font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+}
+.series-nav a{color:var(--green);transition:color .3s}
+.series-nav a:hover{color:var(--brass)}
+.series-nav .off{color:var(--muted);opacity:.7}
+
+/* honorific ﷺ falls back to Amiri where Jost carries the text */
+.ilm-feature p,.entry-card p,.footnotes li{font-family:'Jost','Amiri',system-ui,sans-serif}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .ilm-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .ilm-grid{grid-template-columns:1fr}
+  .ilm-hero{padding:8.6rem 0 4.2rem}
+  .glance{padding:3.6rem 1.4rem 1.7rem;border-radius:140px 140px var(--radius) var(--radius)}
+  .glance::after{inset:10px;border-radius:130px 130px 10px 10px}
+  .glance th{display:block;width:auto;padding-bottom:0;border-bottom:none}
+  .glance td{display:block;padding-top:.15rem}
+  .ilm-feature,.entry-card{padding:3rem 1.4rem 2.1rem;border-radius:110px 110px var(--radius) var(--radius)}
+  .ilm-feature::after,.entry-card::after{inset:10px;border-radius:100px 100px 10px 10px}
+  .ilm-prose{font-size:1.13rem}
+  .entry-card .meta{gap:.5rem 1rem}
+}

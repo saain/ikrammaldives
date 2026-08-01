@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" role="img" aria-label="">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+<stop offset="0" stop-color="#3a1b26"/><stop offset="1" stop-color="#2c141d"/>
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.42" r="1.05">
+<stop offset="0" stop-color="#d8b876" stop-opacity="0.09"/><stop offset="0.5" stop-color="#d8b876" stop-opacity="0.02"/><stop offset="1" stop-color="#1c0d13" stop-opacity="0.4"/>
+</radialGradient>
+<pattern id="lat" width="140" height="140" patternUnits="userSpaceOnUse">
+<g fill="none" stroke="#f2f0eb" stroke-opacity="0.06">
+<polygon points="70.0,4.0 80.3,45.1 116.7,23.3 94.9,59.7 136.0,70.0 94.9,80.3 116.7,116.7 80.3,94.9 70.0,136.0 59.7,94.9 23.3,116.7 45.1,80.3 4.0,70.0 45.1,59.7 23.3,23.3 59.7,45.1"/><circle cx="70" cy="70" r="34"/>
+</g>
+</pattern>
+</defs>
+<rect width="800" height="470" fill="url(#bg)"/>
+<rect width="800" height="470" fill="url(#lat)"/>
+<g fill="none" stroke="#d8b876" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M 588 128 A 46 46 0 1 0 588 220 A 37 37 0 1 1 588 128 Z"/>
+<ellipse cx="368" cy="300" rx="54" ry="14"/>
+<ellipse cx="368" cy="300" rx="34" ry="8.5"/>
+<path d="M 314 300 L 314 336 M 422 300 L 422 336"/>
+<ellipse cx="368" cy="340" rx="54" ry="12"/>
+<path d="M 220 306 Q 232 296 246 304"/>
+<path d="M 476 310 Q 490 300 504 308"/>
+<path d="M 120 372 Q 400 340 680 372"/>
+</g>
+<g fill="none" stroke="#f2f0eb" stroke-opacity="0.55" stroke-width="1.8" stroke-linecap="round">
+<path d="M 250 128 l -9 22 M 300 104 l -9 22 M 348 140 l -9 22 M 208 176 l -9 22 M 292 196 l -9 22 M 350 96 l 0 0"/>
+<circle cx="368" cy="300" r="2.4"/>
+</g>
+<rect width="800" height="470" fill="url(#glow)"/>
+</svg>
