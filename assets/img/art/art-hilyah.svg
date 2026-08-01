@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" role="img" aria-label="">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+<stop offset="0" stop-color="#3a1b26"/><stop offset="1" stop-color="#2c141d"/>
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.42" r="1.05">
+<stop offset="0" stop-color="#d8b876" stop-opacity="0.09"/><stop offset="0.5" stop-color="#d8b876" stop-opacity="0.02"/><stop offset="1" stop-color="#1c0d13" stop-opacity="0.4"/>
+</radialGradient>
+<pattern id="lat" width="140" height="140" patternUnits="userSpaceOnUse">
+<g fill="none" stroke="#f2f0eb" stroke-opacity="0.06">
+<polygon points="70.0,4.0 80.3,45.1 116.7,23.3 94.9,59.7 136.0,70.0 94.9,80.3 116.7,116.7 80.3,94.9 70.0,136.0 59.7,94.9 23.3,116.7 45.1,80.3 4.0,70.0 45.1,59.7 23.3,23.3 59.7,45.1"/><circle cx="70" cy="70" r="34"/>
+</g>
+</pattern>
+</defs>
+<rect width="800" height="470" fill="url(#bg)"/>
+<rect width="800" height="470" fill="url(#lat)"/>
+<g fill="none" stroke="#d8b876" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="400" cy="196" r="72"/>
+<circle cx="400" cy="196" r="58" stroke-opacity="0.45" stroke-width="1.6"/>
+<path d="M 258 320 Q 330 306 400 320 Q 470 334 542 320"/>
+<path d="M 288 348 Q 344 338 400 348 Q 456 358 512 348" stroke-opacity="0.6" stroke-width="1.8"/>
+<path d="M 400 96 l 0 -18 M 472 124 l 12 -12 M 328 124 l -12 -12 M 500 196 l 18 0 M 300 196 l -18 0"/>
+</g>
+<g fill="none" stroke="#f2f0eb" stroke-opacity="0.55" stroke-width="1.8" stroke-linecap="round">
+<path d="M 160 140 l 6 0 m -3 -3 l 0 6 M 620 110 l 6 0 m -3 -3 l 0 6 M 662 236 l 6 0 m -3 -3 l 0 6"/>
+<circle cx="216" cy="228" r="3"/><circle cx="596" cy="176" r="3"/>
+</g>
+<rect width="800" height="470" fill="url(#glow)"/>
+</svg>
