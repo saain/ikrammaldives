@@ -150,8 +150,8 @@
       '<path d="' + litPath(m.p) + '" fill="#fff" filter="url(#pw-ms)"/></mask>' +
       '</defs>' +
       '<g clip-path="url(#pw-mc)">' +
-      '<image href="assets/img/moon.jpg" x="0" y="0" width="100" height="100" opacity="0.22"/>' +
-      '<image href="assets/img/moon.jpg" x="0" y="0" width="100" height="100" mask="url(#pw-ml)"/>' +
+      '<image href="/assets/img/moon.jpg" x="0" y="0" width="100" height="100" opacity="0.22"/>' +
+      '<image href="/assets/img/moon.jpg" x="0" y="0" width="100" height="100" mask="url(#pw-ml)"/>' +
       '</g>' +
       '<circle cx="50" cy="50" r="48" fill="none" stroke="rgba(201,102,62,.45)" stroke-width="1"/>' +
       '</svg>';
@@ -233,7 +233,7 @@
     if (!ribbon) return;
     ribbon.innerHTML =
       '<a class="pr-in" href="' + (mount ? "#prayer-times" : "index.html#prayer-times") + '">' +
-      '<img src="assets/img/ornaments/rubhizb-goldsoft.png" alt="" width="12" height="12" loading="lazy" />' +
+      '<img src="/assets/img/ornaments/rubhizb-goldsoft.png" alt="" width="12" height="12" loading="lazy" />' +
       '<span id="pr-name"></span><span class="pr-sep">·</span>' +
       '<span id="pr-meta"></span><span class="pr-sep">·</span>' +
       '<strong id="pr-count">--:--</strong></a>';
@@ -261,7 +261,7 @@
     var row = rowFor(t.y, t.m, t.d);
     var html = "";
     html += '<div class="pw-head">';
-    html += '<div class="pw-mosque"><img src="assets/img/ornaments/rubhizb-goldsoft.png" alt="" width="20" height="20" loading="lazy" />';
+    html += '<div class="pw-mosque"><img src="/assets/img/ornaments/rubhizb-goldsoft.png" alt="" width="20" height="20" loading="lazy" />';
     html += '<span class="pw-mtxt"><span class="pw-mrow"><span class="pw-mname">' + MOSQUE_EN + '</span><span class="pw-mar">' + MOSQUE_AR + "</span></span>";
     html += '<span class="pw-loc">' + MOSQUE_LOC + "</span></span></div>";
     html += '<div class="pw-dates"><span id="pw-greg">' + gregString() + '</span><span id="pw-hijri">' + hijriString(t) + '</span></div>';

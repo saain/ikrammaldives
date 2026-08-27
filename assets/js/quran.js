@@ -158,7 +158,7 @@
       readerEl.appendChild(mk);
       if (n !== 1 && n !== 9) {
         var bs = el("p", "q-bismillah");
-        bs.innerHTML = '<img src="assets/img/basmala-ink.png" alt="بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ" width="900" height="451" loading="lazy" />';
+        bs.innerHTML = '<img src="/assets/img/basmala-ink.png" alt="بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ" width="900" height="451" loading="lazy" />';
         readerEl.appendChild(bs);
       }
       ar.forEach(function (a, i) {

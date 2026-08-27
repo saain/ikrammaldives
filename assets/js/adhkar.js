@@ -74,13 +74,13 @@
         ar: "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، اللَّهُمَّ لَا مَانِعَ لِمَا أَعْطَيْتَ، وَلَا مُعْطِيَ لِمَا مَنَعْتَ، وَلَا يَنْفَعُ ذَا الْجَدِّ مِنْكَ الْجَدُّ",
         en: "None has the right to be worshipped except Allah alone, without partner: His is the dominion and His is the praise, and He is able to do all things. O Allah, none can withhold what You give, and none can give what You withhold, and the might of the mighty cannot benefit them against You." },
       { id: "s-subhan", count: 33, src: "Muslim",
-        ar: "سُبْحَانَ اللَّهِ", img: "assets/img/tasbih-subhan-ink.png",
+        ar: "سُبْحَانَ اللَّهِ", img: "/assets/img/tasbih-subhan-ink.png",
         en: "Glory be to Allah." },
       { id: "s-hamd", count: 33, src: "Muslim",
-        ar: "الْحَمْدُ لِلَّهِ", img: "assets/img/tasbih-hamd-ink.png",
+        ar: "الْحَمْدُ لِلَّهِ", img: "/assets/img/tasbih-hamd-ink.png",
         en: "All praise is for Allah." },
       { id: "s-akbar", count: 33, src: "Muslim",
-        ar: "اللَّهُ أَكْبَرُ", img: "assets/img/tasbih-akbar-ink.png",
+        ar: "اللَّهُ أَكْبَرُ", img: "/assets/img/tasbih-akbar-ink.png",
         en: "Allah is the Greatest — then complete the hundred with: lā ilāha illa Allāhu waḥdahu lā sharīka lah, lahul-mulku wa lahul-ḥamdu wa huwa 'alā kulli shay'in qadīr." },
       "kursi", "ikhlas", "falaq", "nas"
     ]
