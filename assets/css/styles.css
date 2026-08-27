@@ -1210,3 +1210,184 @@ body.has-player{padding-bottom:96px}
   .arrow{transition:none}
   a:hover > .arrow,.btn:hover .arrow{transform:none}
 }
+
+/* ============ SUPPORT / CONTRIBUTE (support.html + home teaser) ============ */
+/* "Support IKRAM" link inside the mobile menu only (the header button hides ≤980px) */
+.nav-mobile-only{display:none}
+
+/* --- ways to contribute: two cards (light member card · dark patron card) --- */
+.ways{display:grid;grid-template-columns:1fr 1fr;gap:1.7rem;align-items:stretch}
+.way{
+  position:relative;overflow:hidden;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:2.5rem 2.3rem 2.4rem 2.6rem;
+  display:flex;flex-direction:column;gap:.45rem;
+  box-shadow:var(--shadow-soft);
+  transition:border-color .45s var(--ease),transform .45s var(--ease),box-shadow .45s var(--ease);
+}
+.way::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--terra)}
+.way:hover{border-color:var(--brass);transform:translateY(-3px)}
+.way .kicker{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);font-weight:600}
+.way h3{font-size:1.95rem;margin-top:.35rem}
+.way .figure{display:flex;align-items:baseline;gap:.75rem;flex-wrap:wrap;margin:1.1rem 0 .8rem}
+.way .figure .cur{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.way .figure strong{
+  font-family:var(--serif);font-weight:600;font-size:clamp(3.6rem,6vw,4.8rem);
+  line-height:.9;color:var(--green);letter-spacing:-.02em;font-variant-numeric:lining-nums;
+}
+.way .figure .per{font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--brass)}
+.way .pledge{
+  font-family:var(--serif);font-style:italic;font-weight:600;
+  font-size:clamp(2.8rem,4.8vw,3.8rem);line-height:1;color:var(--brass-soft);
+  margin:1.1rem 0 .8rem;
+}
+.way p{font-size:.97rem;color:var(--muted);max-width:36ch}
+.way .btn{align-self:flex-start;margin-top:1.3rem}
+.way.dark-way{
+  background:linear-gradient(160deg,var(--green-deep) 0%,#371b26 55%,var(--green-2) 100%);
+  border-color:rgba(216,184,118,.28);color:var(--paper);
+}
+.way.dark-way::before{background:linear-gradient(180deg,#c9a356,var(--brass-soft) 50%,#c9a356)}
+.way.dark-way::after{
+  content:"";position:absolute;inset:-30% 0;z-index:0;pointer-events:none;
+  background-image:var(--pattern-dark);opacity:.7;
+}
+.way.dark-way > *{position:relative;z-index:1}
+.way.dark-way h3{color:var(--paper)}
+.way.dark-way .kicker{color:var(--brass-soft)}
+.way.dark-way p{color:rgba(242,240,235,.8)}
+.way.dark-way:hover{border-color:var(--brass-soft)}
+
+/* --- how it works: three numbered steps --- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:3.6rem}
+.step{padding:1.7rem 0 0;border-top:1px solid var(--line);position:relative}
+.step::before{content:"";position:absolute;left:0;top:-1px;width:44px;height:1px;background:var(--brass)}
+.step .n{font-family:var(--serif);font-size:2.1rem;color:var(--brass);line-height:1;display:block;margin-bottom:.7rem}
+.step h4{font-size:1.36rem;margin-bottom:.4rem}
+.step p{font-size:.92rem;color:var(--muted)}
+.step a{color:var(--terra);border-bottom:1px solid rgba(43,26,31,.3);transition:color .3s,border-color .3s}
+.step a:hover{color:var(--brass);border-color:var(--brass)}
+
+/* --- bank account panels --- */
+.accounts{display:grid;grid-template-columns:1fr 1fr;gap:1.7rem}
+.account{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:2.1rem 2.1rem 2rem;position:relative;overflow:hidden;
+  transition:border-color .45s var(--ease);
+}
+.account:hover{border-color:var(--brass)}
+.account::after{
+  content:"";position:absolute;right:-46px;top:-46px;width:190px;height:190px;pointer-events:none;
+  background:url("../img/ornaments/rubhizb-ink.png") no-repeat center/contain;opacity:.06;
+}
+.account .kicker{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);font-weight:600;
+}
+.account .kicker .cur{
+  font-family:var(--serif);font-size:1rem;letter-spacing:0;text-transform:none;
+  color:var(--green-deep);background:var(--clay);border-radius:100px;padding:.1rem .7rem;
+}
+.account dl{display:grid;grid-template-columns:auto 1fr;gap:.7rem 1.4rem;margin-top:1.3rem;align-items:baseline}
+.account dt{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.account dd{font-size:1.04rem;color:var(--ink)}
+.account dd.num{
+  display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;
+  font-family:var(--sans);font-size:1.5rem;font-weight:500;letter-spacing:.1em;
+  color:var(--green);font-variant-numeric:tabular-nums lining-nums;line-height:1.2;
+}
+.copy-btn{
+  font-family:var(--sans);font-size:.64rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid rgba(43,26,31,.28);border-radius:100px;background:none;color:var(--terra);
+  padding:.38rem .85rem;cursor:pointer;display:inline-flex;align-items:center;gap:.45rem;
+  transition:border-color .3s,background .3s,color .3s,transform .3s var(--ease);
+}
+.copy-btn svg{width:13px;height:13px;flex:none}
+.copy-btn:hover{border-color:var(--brass);color:var(--brass)}
+.copy-btn.copied{background:var(--olive);border-color:var(--olive);color:#fff}
+.pay-note{
+  margin-top:1.9rem;display:flex;gap:1rem;align-items:flex-start;
+  padding:1.15rem 1.4rem;border-left:2px solid var(--brass);border-radius:0 12px 12px 0;
+  background:rgba(43,26,31,.045);font-size:.93rem;color:var(--muted);line-height:1.7;
+}
+.pay-note svg{width:18px;height:18px;flex:none;color:var(--brass);margin-top:.25rem}
+.pay-note em{color:var(--ink);font-style:italic}
+
+/* --- where it goes --- */
+.funds{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;
+  margin-top:3.8rem;padding-top:3rem;border-top:1px solid var(--line);
+}
+.fund{display:flex;gap:1.1rem;align-items:flex-start}
+.fund .archline{flex:none;margin:0;width:48px;height:48px}
+.fund .archline svg{width:21px;height:21px}
+.fund h4{font-size:1.32rem;margin-bottom:.25rem}
+.fund p{font-size:.9rem;color:var(--muted)}
+
+/* --- closing call --- */
+.support-cta{
+  margin-top:3.8rem;padding:2.6rem clamp(1.4rem,4vw,3rem);border-radius:var(--radius);
+  background:var(--surface);border:1px solid var(--line);
+  display:grid;grid-template-columns:1.2fr auto;gap:1.6rem 2.6rem;align-items:center;
+  position:relative;overflow:hidden;
+}
+.support-cta::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,#8a6a2f,#c9a356,#8a6a2f)}
+.support-cta h3{font-size:clamp(1.8rem,3.4vw,2.4rem);font-style:italic}
+.support-cta p{color:var(--muted);margin-top:.5rem;max-width:52ch}
+.support-cta .actions{display:flex;gap:.9rem;flex-wrap:wrap}
+
+/* --- homepage teaser panel --- */
+.support-teaser{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,4vw,3.6rem);align-items:center;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(2rem,4vw,3.4rem);position:relative;overflow:hidden;box-shadow:var(--shadow-soft);
+}
+.support-teaser::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,#8a6a2f,#c9a356,#8a6a2f)}
+.support-teaser::after{
+  content:"";position:absolute;right:-70px;bottom:-90px;width:280px;height:280px;pointer-events:none;
+  background:url("../img/ornaments/flower8-ink.png") no-repeat center/contain;opacity:.045;
+}
+.support-teaser > *{position:relative;z-index:1}
+.support-teaser h2{font-size:clamp(2rem,4vw,2.9rem);margin-top:1rem}
+.support-teaser p{color:var(--muted);margin-top:1rem;max-width:46ch}
+.support-teaser .btn{margin-top:1.6rem}
+.teaser-figs{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.teaser-fig{
+  border:1px solid var(--line);border-radius:12px;padding:1.4rem 1.3rem 1.3rem;background:var(--paper);
+  position:relative;overflow:hidden;
+}
+.teaser-fig::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--terra)}
+.teaser-fig{transition:border-color .45s var(--ease),transform .45s var(--ease)}
+.teaser-fig:hover{border-color:var(--brass);transform:translateY(-3px)}
+.teaser-fig.is-dark{background:linear-gradient(160deg,var(--green-deep),var(--green-2));border-color:rgba(216,184,118,.3);color:var(--paper)}
+.teaser-fig.is-dark::before{background:var(--brass-soft)}
+.teaser-fig small{display:block;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);font-weight:600}
+.teaser-fig.is-dark small{color:var(--brass-soft)}
+.teaser-fig strong{display:block;font-family:var(--serif);font-weight:600;font-size:2.5rem;line-height:1;margin-top:.55rem;color:var(--green)}
+.teaser-fig strong i{font-style:italic;font-weight:500;font-size:.5em;color:var(--brass);margin-left:.15em}
+.teaser-fig.is-dark strong{color:var(--brass-soft);font-style:italic;font-size:2.1rem}
+.teaser-fig span{display:block;font-size:.82rem;color:var(--muted);margin-top:.45rem;line-height:1.5}
+.teaser-fig.is-dark span{color:rgba(242,240,235,.75)}
+
+@media (max-width:980px){
+  /* mobile menu on the home page: current-page link must stay readable on the parchment panel */
+  .site-header.on-dark:not(.is-scrolled) .nav-links a[aria-current]{color:var(--green)}
+  .nav-mobile-only{display:block}
+  .site-header .nav-links .nav-mobile-only a,
+  .site-header.on-dark:not(.is-scrolled) .nav-links .nav-mobile-only a{color:var(--brass);font-weight:600}
+  .site-header .nav-links .nav-mobile-only a::after{background:var(--brass)}
+}
+@media (max-width:860px){
+  .ways,.accounts,.steps,.funds,.support-teaser{grid-template-columns:1fr}
+  .support-cta{grid-template-columns:1fr}
+  .steps{gap:1.2rem;margin-top:2.8rem}
+  .funds{margin-top:3rem;padding-top:2.4rem}
+}
+@media (max-width:480px){
+  .way{padding:2rem 1.5rem 2rem 1.8rem}
+  .account{padding:1.7rem 1.4rem 1.6rem}
+  .account dl{grid-template-columns:1fr;gap:.2rem 0}
+  .account dt{margin-top:.7rem}
+  .account dd.num{font-size:1.3rem;letter-spacing:.07em}
+  .teaser-figs{grid-template-columns:1fr}
+}
