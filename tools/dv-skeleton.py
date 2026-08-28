@@ -21,18 +21,18 @@ ILM = ["ilm/index.html", "ilm/seerah/index.html", "ilm/seerah/badr/index.html", 
 
 # ---------------------------------------------------------------- Dhivehi chrome
 NAV_DV = [  # (href, label)  — same order as the English nav
-    ("index.html", "މައި ޞަފްޙާ"),
-    ("about.html", "ތަޢާރަފް"),
-    ("quran.html", "ޤުރުއާން"),
-    ("articles.html", "ލިޔުންތައް"),
+    ("index.html", "ފުރަތަމަ ޞަފްޙާ"),
+    ("about.html", "ތަޢާރަފު"),
+    ("quran.html", "ޤުރްއާން"),
+    ("articles.html", "މަޒުމޫނުތައް"),
     ("../ilm/", "ޢިލްމު"),
-    ("answers.html", "ސުވާލާއި ޖަވާބު"),
+    ("answers.html", "ޖަވާބުތައް"),
     ("resources.html", "ވަސީލަތްތައް"),
     ("events.html", "ޕްރޮގްރާމްތައް"),
     ("contact.html", "ގުޅުއްވާ"),
 ]
-SUPPORT_DV = "އިކްރާމަށް އެހީވެދެއްވާ"
-SKIP_DV = "މައިގަނޑު ބަޔަށް ދާން"
+SUPPORT_DV = "އިކްރާމަށް އެހީތެރިވެދެއްވާ"
+SKIP_DV = "ޞަފްޙާގެ މައިގަނޑަށް ދުރުވޭ"
 MENU_DV = "މެނޫ"
 
 FOOTER_DV = """<footer class="site-footer">
@@ -40,16 +40,16 @@ FOOTER_DV = """<footer class="site-footer">
     <div class="footer-top" data-stagger>
       <div class="footer-about">
         <a class="brand" href="index.html"><img class="logo logo-terra" src="../assets/img/logos/ikram-logo-maroon.svg" alt="IKRAM" width="80" height="60" /><img class="logo logo-cream" src="../assets/img/logos/ikram-logo-cream.svg" alt="IKRAM" width="80" height="60" /></a>
-        <p>ފައިދާހުރި ޢިލްމު ފެތުރުމަށާއި، ޙިކުމަތާއި ރަޙްމަތާއެކު ހިތްތައް ﷲ އަށް ދަޢުވަތު ދިނުމަށް މަސައްކަތްކުރާ ދަޢުވާ ޖަމްޢިއްޔާއެއް.</p>
+        <p>ފައިދާހުރި ޢިލްމު ފެތުރުމަށާއި، ޙިކްމަތްތެރިކަމާއި އޯގާތެރިކަމާއެކު ހިތްތައް ﷲގެ މަގަށް ދަޢުވަތު ދިނުމަށް ޚާއްޞަވެފައިވާ ދަޢުވަތުގެ ޖަމްޢިއްޔާއެއް.</p>
       </div>
-      <div class="footer-col"><h5>ބައްލަވާ</h5><a href="about.html">އަޅުގަނޑުމެންގެ ތަޢާރަފް</a><a href="articles.html">ލިޔުންތައް</a><a href="../ilm/">ޢިލްމު ލައިބްރަރީ</a><a href="answers.html">ސުވާލާއި ޖަވާބު</a><a href="resources.html">ވަސީލަތްތައް</a><a href="events.html">ޕްރޮގްރާމްތައް</a></div>
-      <div class="footer-col"><h5>އުނގެނުން</h5><a href="quran.html">ޤުރުއާން އަޑުއައްސަވާ</a><a href="live.html">މައްކާ އަދި މަދީނާ ލައިވް</a><a href="adhkar.html">އަޛްކާރު</a><a href="names.html">ﷲގެ 99 ނަންފުޅު</a><a href="../ilm/seerah/">ސީރަތު ލައިބްރަރީ</a><a href="resources.html">އޯޑިއޯ ދަރުސްތައް</a><a href="resources.html">ޑައުންލޯޑްތައް</a></div>
-      <div class="footer-col"><h5>ގުޅުން</h5><a href="contact.html">ގުޅުއްވާ</a><a href="contact.html">ވޮލަންޓިއަރު</a><a href="support.html">އެހީތެރިވުން</a><a href="contact.html">ނިއުސްލެޓަރ</a></div>
+      <div class="footer-col"><h5>ހޯދާބަލާ</h5><a href="about.html">އަޅުގަނޑުމެންގެ ތަޢާރަފު</a><a href="articles.html">މަޒުމޫނުތައް</a><a href="../ilm/">ޢިލްމު ކުތުބުޚާނާ</a><a href="answers.html">ޖަވާބުތައް</a><a href="resources.html">ވަސީލަތްތައް</a><a href="events.html">ޕްރޮގްރާމްތައް</a></div>
+      <div class="footer-col"><h5>އުނގެނޭ</h5><a href="quran.html">ޤުރްއާން އަޑުއައްސަވާ</a><a href="live.html">މައްކާ އަދި މަދީނާ ލައިވް</a><a href="adhkar.html">އަޛްކާރު</a><a href="names.html">ﷲގެ 99 އިސްމުފުޅުތައް</a><a href="../ilm/seerah/">ސީރަތު ކުތުބުޚާނާ</a><a href="resources.html">އޯޑިއޯ ދަރުސްތައް</a><a href="resources.html">ޑައުންލޯޑްތައް</a></div>
+      <div class="footer-col"><h5>ގުޅިލައްވާ</h5><a href="contact.html">ގުޅުއްވާ</a><a href="contact.html">ޚިދުމަތުގައި ބައިވެރިވުން</a><a href="support.html">އެހީތެރިކަން</a><a href="contact.html">ޚަބަރު ސިޓީ</a></div>
     </div>
     <div class="footer-bottom">
-      <p>© <span id="year"></span> އިކްރާމް މޯލްޑިވްސް. ހުރިހާ ޙައްޤުތަކެއް ލިބިގެންވެއެވެ.</p>
+      <p>© <span id="year"></span> އިކްރާމް މޯލްޑިވްސް. އެންމެހައި ޙައްޤުތައް އެކުލެވިގެންވަނީ.</p>
       <div class="socials">
-        <a href="https://www.instagram.com/ikrammaldives" target="_blank" rel="noopener" aria-label="އިންސްޓަގްރާމްގައި އިކްރާމް"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://www.instagram.com/ikrammaldives" target="_blank" rel="noopener" aria-label="އިކްރާމް އިންސްޓަގްރާމްގައި"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
       </div>
     </div>
   </div>
@@ -136,7 +136,7 @@ def make_dv(page):
     en_back = "../index.html" if page == "index" else "../%s.html" % page
     header = ('<header class="site-header%s">\n'
               '  <div class="wrap nav">\n'
-              '    <a class="brand" href="index.html" aria-label="އިކްރާމް — މައި ޞަފްޙާ"><img class="logo logo-terra" src="../assets/img/logos/ikram-logo-maroon.svg" alt="IKRAM" width="80" height="60" /><img class="logo logo-cream" src="../assets/img/logos/ikram-logo-cream.svg" alt="IKRAM" width="80" height="60" /></a>\n'
+              '    <a class="brand" href="index.html" aria-label="އިކްރާމް — ފުރަތަމަ ޞަފްޙާ"><img class="logo logo-terra" src="../assets/img/logos/ikram-logo-maroon.svg" alt="IKRAM" width="80" height="60" /><img class="logo logo-cream" src="../assets/img/logos/ikram-logo-cream.svg" alt="IKRAM" width="80" height="60" /></a>\n'
               '    <nav>\n'
               '      <ul class="nav-links" id="site-nav">\n' + "\n".join(lis) + '\n'
               '      </ul>\n'
