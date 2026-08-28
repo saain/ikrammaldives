@@ -1418,6 +1418,19 @@ html[lang="dv"] .footer-col a:lang(dv){font-size:1rem}
 html[lang="dv"] .footer-about p:lang(dv){font-size:1rem;max-width:40ch}
 html[lang="dv"] .footer-bottom:lang(dv){font-size:.9rem}
 html[lang="dv"] .skip-link:lang(dv){font-size:.95rem;letter-spacing:0;text-transform:none}
+/* Thaana metrics for the home-page components (phase 2) */
+html[lang="dv"] .topic-pills a:lang(dv){font-size:.88rem;letter-spacing:0;text-transform:none;padding:.34rem .95rem .4rem}
+html[lang="dv"] .hero-meta span:lang(dv){font-size:1.7rem;line-height:1.35}
+html[lang="dv"] .hero-meta small:lang(dv){font-size:.84rem;letter-spacing:.02em;text-transform:none}
+html[lang="dv"] .float-badge:lang(dv){font-size:.92rem;line-height:1.9;max-width:265px}
+html[lang="dv"] .read:lang(dv){font-size:.92rem;letter-spacing:0;text-transform:none}
+html[lang="dv"] .ayah .ref:lang(dv){font-size:.85rem;letter-spacing:.02em;text-transform:none}
+html[lang="dv"] .verse-banner .ref:lang(dv),html[lang="dv"] .verse .ref:lang(dv){font-size:.88rem;letter-spacing:.02em;text-transform:none}
+html[lang="dv"] .verse-banner .tr:lang(dv){line-height:2.05}
+html[lang="dv"] .verse .tr:lang(dv){line-height:2.1;font-size:clamp(1.05rem,1.9vw,1.35rem)}
+html[lang="dv"] .dcard .src:lang(dv){font-size:.82rem;letter-spacing:.02em;text-transform:none}
+html[lang="dv"] .hero-sub:lang(dv){font-size:clamp(1.2rem,2.2vw,1.65rem);line-height:1.9}
+html[lang="dv"] .lede:lang(dv){font-size:1.12rem;max-width:44ch}
 /* sections still in English inside a Dhivehi page keep their own metrics */
 html[lang="dv"] [lang="en"]{line-height:1.7}
 
