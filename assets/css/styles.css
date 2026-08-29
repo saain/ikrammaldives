@@ -1401,12 +1401,26 @@ body.has-player{padding-bottom:96px}
   font-weight:400;font-style:normal;font-display:swap;
   unicode-range:U+0780-07BF;
 }
+/* MV Waheed — display Thaana for headings (calligraphy of Abdulla Waheed · 2009) */
+@font-face{
+  font-family:"MV Waheed";
+  src:url("../fonts/MVWaheed.woff2") format("woff2");
+  font-weight:400;font-style:normal;font-display:swap;
+  unicode-range:U+0780-07BF;
+}
 html[lang="dv"]{
   --sans:'Faruma','Jost','Amiri',system-ui,sans-serif;
   --serif:'Faruma','Cormorant Garamond','Amiri',Georgia,serif;
   font-synthesis:none;               /* Faruma has one weight — never fake bold/italic Thaana */
 }
 html[lang="dv"] body{line-height:1.95}
+/* headings and display figures wear MV Waheed; body stays Faruma */
+html[lang="dv"] :is(h1,h2,h3,h4,h5):lang(dv),
+html[lang="dv"] .hero-meta span:lang(dv),
+html[lang="dv"] .teaser-fig strong:lang(dv),
+html[lang="dv"] .way .pledge:lang(dv),
+html[lang="dv"] .pw-mname:lang(dv),
+html[lang="dv"] .pw-name:lang(dv){font-family:'MV Waheed','Cormorant Garamond','Amiri',Georgia,serif}
 html[lang="dv"] :is(h1,h2,h3,h4,h5):lang(dv){line-height:1.45;letter-spacing:0}
 /* Thaana is read at a slightly larger size than the Latin UI labels it replaces */
 html[lang="dv"] .nav-links a:lang(dv){font-size:1.05rem;letter-spacing:0;text-transform:none}
